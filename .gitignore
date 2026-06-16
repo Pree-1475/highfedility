@@ -1,0 +1,44 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Logs
+*.log
+logs/
+
+# Node & Python virtual environments
+node_modules/
+jspm_packages/
+.venv/
+venv/
+ENV/
+env/
+pyvenv.cfg
+
+# Compiled / build output
+dist/
+build/
+out/
+
+# Database files
+*.sqlite3
+*.sqlite3-journal
+
+# Local Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE configurations
+.idea/
+*.suo
+*.ntvsca*
+*.njsproj
+*.sln
+*.sw?
+.vscode/workspace.json
+.vscode/tasks.json

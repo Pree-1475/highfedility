@@ -1,0 +1,92 @@
+[
+  {
+    "model": "brands.brand",
+    "pk": 1,
+    "fields": {
+      "name": "GM",
+      "slug": "gm",
+      "logo": null
+    }
+  },
+  {
+    "model": "brands.brand",
+    "pk": 2,
+    "fields": {
+      "name": "Kookaburra",
+      "slug": "kookaburra",
+      "logo": null
+    }
+  },
+  {
+    "model": "brands.brand",
+    "pk": 3,
+    "fields": {
+      "name": "DSC",
+      "slug": "dsc",
+      "logo": null
+    }
+  },
+  {
+    "model": "brands.brand",
+    "pk": 4,
+    "fields": {
+      "name": "SS Ton",
+      "slug": "ss-ton",
+      "logo": null
+    }
+  },
+  {
+    "model": "brands.brand",
+    "pk": 5,
+    "fields": {
+      "name": "SG",
+      "slug": "sg",
+      "logo": null
+    }
+  },
+  {
+    "model": "brands.brand",
+    "pk": 6,
+    "fields": {
+      "name": "Gray-Nicolls",
+      "slug": "gray-nicolls",
+      "logo": null
+    }
+  },
+  {
+    "model": "brands.brand",
+    "pk": 7,
+    "fields": {
+      "name": "New Balance",
+      "slug": "new-balance",
+      "logo": null
+    }
+  },
+  {
+    "model": "brands.brand",
+    "pk": 8,
+    "fields": {
+      "name": "Shrey",
+      "slug": "shrey",
+      "logo": null
+    }
+  },
+  {
+    "model": "brands.brand",
+    "pk": 9,
+    "fields": {
+      "name": "Masuri",
+      "slug": "masuri",
+      "logo": null
+    }
+  },
+  {
+    "model": "brands.brand",
+    "pk": 10,
+    "fields": {
+      "name": "MR.WILLOW",
+      "slug": "mr-willow",
+      "logo": null
+    }
+  }
+]

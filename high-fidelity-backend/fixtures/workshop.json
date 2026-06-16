@@ -1,0 +1,92 @@
+[
+  {
+    "model": "wagtailcore.page",
+    "pk": 4,
+    "fields": {
+      "title": "Workshop & Services",
+      "draft_title": "Workshop & Services",
+      "slug": "workshop-page",
+      "content_type": [
+        "workshop",
+        "workshoppage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/workshop-page/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": true,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2026-06-15T00:00:00Z",
+      "last_published_at": "2026-06-15T00:00:00Z",
+      "latest_revision_created_at": "2026-06-15T00:00:00Z",
+      "live_revision": null,
+      "depth": 2,
+      "path": "00010003",
+      "numchild": 0
+    }
+  },
+  {
+    "model": "workshop.workshoppage",
+    "pk": 4,
+    "fields": {
+      "page_ptr": 4,
+      "hero_title": "Expert Care.\nPeak Performance.",
+      "hero_description": "Professional bat knocking, repairs, and full restoration services by experienced craftsmen to extend the lifespan of your gear.",
+      "hero_image": null,
+      "hero_cta_text": "Book a Service",
+      "hero_cta_link": "https://wa.me/60123456789",
+      "usp_image": null,
+      "usp_badge": "Exclusive",
+      "usp_badge_text": "The Only Knocking Machine in JB",
+      "usp_title": "Ready for\nMatch Play.",
+      "usp_description_1": "Properly knocking in a cricket bat is crucial for its performance and longevity. At MR.WILLOW, we operate Johor Bahru's only dedicated bat knocking machine.",
+      "usp_description_2": "Our automated process ensures consistent, even compression across the blade and edges, mimicking hours of manual knocking in a fraction of the time.",
+      "cta_title": "Does Your Bat\nNeed Attention?",
+      "cta_description": "Drop by our store in Johor Bahru or message us a photo of your bat for a quick consultation.",
+      "cta_whatsapp_link": "https://wa.me/60123456789"
+    }
+  },
+  {
+    "model": "workshop.workshopknockingbullet",
+    "pk": 1,
+    "fields": {
+      "page": 4,
+      "sort_order": 0,
+      "bullet_text": "Prevents early cracking and damage"
+    }
+  },
+  {
+    "model": "workshop.workshopknockingbullet",
+    "pk": 2,
+    "fields": {
+      "page": 4,
+      "sort_order": 1,
+      "bullet_text": "Expands the sweet spot"
+    }
+  },
+  {
+    "model": "workshop.workshopknockingbullet",
+    "pk": 3,
+    "fields": {
+      "page": 4,
+      "sort_order": 2,
+      "bullet_text": "Improves ping and rebound"
+    }
+  },
+  {
+    "model": "workshop.workshopknockingbullet",
+    "pk": 4,
+    "fields": {
+      "page": 4,
+      "sort_order": 3,
+      "bullet_text": "Saves you 6-8 hours of manual work"
+    }
+  }
+]

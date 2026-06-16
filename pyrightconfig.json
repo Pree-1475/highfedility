@@ -1,0 +1,7 @@
+{
+  "venvPath": "high-fidelity-backend",
+  "venv": ".venv",
+  "extraPaths": [
+    "high-fidelity-backend"
+  ]
+}

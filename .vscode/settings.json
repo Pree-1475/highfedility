@@ -1,0 +1,10 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/high-fidelity-backend/.venv/Scripts/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/high-fidelity-backend"
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/high-fidelity-backend"
+  ],
+  "typescript.tsdk": "High-Fidelity Frontend/node_modules/typescript/lib"
+}

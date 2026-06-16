@@ -1,0 +1,62 @@
+[
+  {
+    "model": "workshop.workshopservice",
+    "pk": 1,
+    "fields": {
+      "page": 4,
+      "sort_order": 0,
+      "title": "Professional Bat Knocking",
+      "desc": "Machine-assisted knocking for perfect compression and readiness."
+    }
+  },
+  {
+    "model": "workshop.workshopservice",
+    "pk": 2,
+    "fields": {
+      "page": 4,
+      "sort_order": 1,
+      "title": "Bat Repair & Restoration",
+      "desc": "Fixing toe damage, edge cracks, and handle replacements."
+    }
+  },
+  {
+    "model": "workshop.workshopservice",
+    "pk": 3,
+    "fields": {
+      "page": 4,
+      "sort_order": 2,
+      "title": "Grip Replacement",
+      "desc": "Premium octopus and spiral grips applied professionally."
+    }
+  },
+  {
+    "model": "workshop.workshopservice",
+    "pk": 4,
+    "fields": {
+      "page": 4,
+      "sort_order": 3,
+      "title": "Bat Oiling & Sanding",
+      "desc": "Raw linseed oil application and fine sanding to retain moisture."
+    }
+  },
+  {
+    "model": "workshop.workshopservice",
+    "pk": 5,
+    "fields": {
+      "page": 4,
+      "sort_order": 4,
+      "title": "Weight Reduction",
+      "desc": "Careful shaving of the profile to reduce pickup weight."
+    }
+  },
+  {
+    "model": "workshop.workshopservice",
+    "pk": 6,
+    "fields": {
+      "page": 4,
+      "sort_order": 5,
+      "title": "Toe Guard Application",
+      "desc": "Protective toe guard fitting to prevent water damage and splitting."
+    }
+  }
+]

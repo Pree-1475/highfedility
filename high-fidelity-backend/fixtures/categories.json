@@ -1,0 +1,92 @@
+[
+  {
+    "model": "store_collections.category",
+    "pk": 1,
+    "fields": {
+      "name": "Cricket Bats",
+      "slug": "cricket-bats",
+      "description": "Premium English Willow, Kashmir Willow and training bats."
+    }
+  },
+  {
+    "model": "store_collections.category",
+    "pk": 2,
+    "fields": {
+      "name": "Batting Gloves",
+      "slug": "batting-gloves",
+      "description": "Adult and junior batting gloves for match and training play."
+    }
+  },
+  {
+    "model": "store_collections.category",
+    "pk": 3,
+    "fields": {
+      "name": "Protection Gear",
+      "slug": "protection-gear",
+      "description": "Batting pads, thigh guards, helmets, and other safety equipment."
+    }
+  },
+  {
+    "model": "store_collections.category",
+    "pk": 4,
+    "fields": {
+      "name": "Cricket Shoes",
+      "slug": "cricket-shoes",
+      "description": "Batting spikes, bowling spikes, and all-round rubber shoes."
+    }
+  },
+  {
+    "model": "store_collections.category",
+    "pk": 5,
+    "fields": {
+      "name": "Wicket Keeping Gear",
+      "slug": "wicket-keeping-gear",
+      "description": "Keeping gloves, keeping pads, and inner gloves."
+    }
+  },
+  {
+    "model": "store_collections.category",
+    "pk": 6,
+    "fields": {
+      "name": "Kit Bags",
+      "slug": "kit-bags",
+      "description": "Duffle and wheelie kit bags in adult and junior sizes."
+    }
+  },
+  {
+    "model": "store_collections.category",
+    "pk": 7,
+    "fields": {
+      "name": "Cricket Balls",
+      "slug": "cricket-balls",
+      "description": "Leather match balls, tennis balls, and training windballs."
+    }
+  },
+  {
+    "model": "store_collections.category",
+    "pk": 8,
+    "fields": {
+      "name": "Coaching Gear",
+      "slug": "coaching-gear",
+      "description": "Sidearms, field cones, marker discs, and training equipment."
+    }
+  },
+  {
+    "model": "store_collections.category",
+    "pk": 9,
+    "fields": {
+      "name": "Wickets & Stumps",
+      "slug": "wickets-stumps",
+      "description": "Match stumps, spring-back stumps, and plastic training stumps."
+    }
+  },
+  {
+    "model": "store_collections.category",
+    "pk": 10,
+    "fields": {
+      "name": "Accessories",
+      "slug": "accessories",
+      "description": "Bat grips, grip cones, bat covers, and other accessories."
+    }
+  }
+]

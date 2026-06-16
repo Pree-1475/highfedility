@@ -1,0 +1,63 @@
+/* ── Marquee Scrolling ──────────────────────────────────────────────────────── */
+@keyframes scroll-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-marquee {
+  animation: scroll-marquee 25s linear infinite;
+}
+
+/* ── Scrollbar Hiding ───────────────────────────────────────────────────────── */
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ── Product Slider Track ───────────────────────────────────────────────────── */
+.fp-slider-track {
+  --card-w: 280px;
+  --gap: 1.5rem;
+  padding-left: 24px;
+  padding-right: 24px;
+  transform: translateX(calc(-1 * var(--current-index, 0) * (var(--card-w) + var(--gap))));
+}
+
+@media (min-width: 1024px) {
+  .fp-slider-track {
+    --card-w: 320px;
+    --gap: 2rem;
+    padding-left: calc(50vw - 160px);
+    padding-right: calc(50vw - 160px);
+  }
+}
+
+/* ── Sticky Why-Cards Stacking ──────────────────────────────────────────────── */
+.why-card {
+  --sticky-offset: 24px;
+  top: calc(8% + var(--card-idx) * var(--sticky-offset));
+}
+
+@media (min-width: 1024px) {
+  .why-card {
+    --sticky-offset: 40px;
+    top: calc(12% + var(--card-idx) * var(--sticky-offset));
+  }
+}
+
+/* ── Collections Product Glow Pulse ────────────────────────────────────────── */
+@keyframes highlight-glow {
+  0%, 100% { outline: 0px solid transparent; background-color: white; }
+  50% { outline: 3px solid #1a3b28; background-color: rgba(26, 59, 40, 0.05); }
+}
+
+.highlight-pulse {
+  animation: highlight-glow 2.0s ease-in-out;
+  border-color: #1a3b28 !important;
+  transform: scale(1.02);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}

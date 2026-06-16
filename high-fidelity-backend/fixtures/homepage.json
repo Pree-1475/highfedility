@@ -1,0 +1,290 @@
+[
+  {
+    "model": "wagtailcore.page",
+    "pk": 3,
+    "fields": {
+      "title": "MR.WILLOW",
+      "draft_title": "MR.WILLOW",
+      "slug": "home-page",
+      "content_type": [
+        "homepage",
+        "homepage"
+      ],
+      "live": true,
+      "has_unpublished_changes": false,
+      "url_path": "/home-page/",
+      "owner": 1,
+      "seo_title": "",
+      "show_in_menus": true,
+      "search_description": "",
+      "go_live_at": null,
+      "expire_at": null,
+      "expired": false,
+      "locked": false,
+      "locked_at": null,
+      "locked_by": null,
+      "first_published_at": "2026-06-15T00:00:00Z",
+      "last_published_at": "2026-06-15T00:00:00Z",
+      "latest_revision_created_at": "2026-06-15T00:00:00Z",
+      "live_revision": null,
+      "depth": 2,
+      "path": "00010002",
+      "numchild": 0
+    }
+  },
+  {
+    "model": "homepage.homepage",
+    "pk": 3,
+    "fields": {
+      "page_ptr": 3,
+      "hero_subtitle": "Johor Bahru · Malaysia",
+      "hero_title": "WHERE\nCRICKET\nGETS\nSERIOUS.",
+      "hero_description": "Premium equipment, expert bat knocking, and coaching for every level of the game — all under one roof.",
+      "hero_primary_cta_text": "Visit Our Store",
+      "hero_primary_cta_link": "/contact",
+      "hero_secondary_cta_text": "Contact Us",
+      "hero_secondary_cta_link": "https://wa.me/60123456789",
+      "custom_bats_image": null,
+      "custom_bats_title": "Crafted\nTo Your\nGame.",
+      "custom_bats_description": "Every MR.WILLOW custom bat begins with a conversation. Your preferred weight, balance, handle type, and edge thickness — handcrafted for the way you play.",
+      "custom_bats_primary_cta_text": "Start Your Order",
+      "custom_bats_primary_cta_link": "/custom-bats",
+      "custom_bats_secondary_cta_text": "Ask Us",
+      "custom_bats_secondary_cta_link": "https://wa.me/60123456789",
+      "custom_bats_tags": "English Willow, Kashmir Willow, Custom Weight, Handle Preference, Grip Selection",
+      "visit_title": "Come See Us In Johor Bahru.",
+      "visit_address": "No. 12, Jalan Perang,\nTaman Perang,\n80150 Johor Bahru, Johor.",
+      "visit_phone": "+60 7-334 5678",
+      "visit_whatsapp": "https://wa.me/60123456789",
+      "visit_directions_link": "https://maps.google.com",
+      "visit_image": null,
+      "footer_text": "Johor Bahru's premier cricket destination. Equipment, training, and expertise for every player.",
+      "footer_address": "No. 12, Jalan Perang\nTaman Perang, 80150\nJohor Bahru, Johor",
+      "footer_phone": "+60 7-334 5678",
+      "footer_email": "hello@mrwillow.my",
+      "footer_whatsapp": "https://wa.me/60123456789",
+      "footer_copyright": "© 2024 MR.WILLOW Cricket Store. All rights reserved."
+    }
+  },
+  {
+    "model": "homepage.homepagestat",
+    "pk": 1,
+    "fields": {
+      "page": 3,
+      "sort_order": 0,
+      "val": "2018",
+      "label": "Est."
+    }
+  },
+  {
+    "model": "homepage.homepagestat",
+    "pk": 2,
+    "fields": {
+      "page": 3,
+      "sort_order": 1,
+      "val": "500+",
+      "label": "Bats Knocked"
+    }
+  },
+  {
+    "model": "homepage.homepagestat",
+    "pk": 3,
+    "fields": {
+      "page": 3,
+      "sort_order": 2,
+      "val": "#1",
+      "label": "Cricket Store in JB"
+    }
+  },
+  {
+    "model": "homepage.homepagepillar",
+    "pk": 1,
+    "fields": {
+      "page": 3,
+      "sort_order": 0,
+      "title": "EQUIPMENT",
+      "desc": "Bats, gear and accessories from trusted brands.",
+      "link": "/collections",
+      "icon_name": "Package"
+    }
+  },
+  {
+    "model": "homepage.homepagepillar",
+    "pk": 2,
+    "fields": {
+      "page": 3,
+      "sort_order": 1,
+      "title": "BAT KNOCKING",
+      "desc": "Professional preparation for match-ready performance.",
+      "link": "/services",
+      "icon_name": "Hammer"
+    }
+  },
+  {
+    "model": "homepage.homepagepillar",
+    "pk": 3,
+    "fields": {
+      "page": 3,
+      "sort_order": 2,
+      "title": "REPAIRS",
+      "desc": "Restore performance and extend equipment lifespan.",
+      "link": "/services",
+      "icon_name": "Wrench"
+    }
+  },
+  {
+    "model": "homepage.homepagepillar",
+    "pk": 4,
+    "fields": {
+      "page": 3,
+      "sort_order": 3,
+      "title": "CUSTOM BATS",
+      "desc": "Built and prepared for your game.",
+      "link": "/custom-bats",
+      "icon_name": "Swords"
+    }
+  },
+  {
+    "model": "homepage.homepagepillar",
+    "pk": 5,
+    "fields": {
+      "page": 3,
+      "sort_order": 4,
+      "title": "TRAIN & PLAY",
+      "desc": "Facilities, equipment and cricket essentials.",
+      "link": "/training",
+      "icon_name": "Users"
+    }
+  },
+  {
+    "model": "homepage.homepagewhycard",
+    "pk": 1,
+    "fields": {
+      "page": 3,
+      "sort_order": 0,
+      "card_number": "01",
+      "label": "COMPLIMENTARY SERVICE",
+      "title": "FREE BAT KNOCKING",
+      "body": "Every bat purchased from MR WILLOW includes complimentary bat knocking, helping prepare it for match play while improving durability and performance.",
+      "image": null,
+      "video_url": "https://assets.mixkit.co/videos/preview/mixkit-cricket-player-batting-in-nets-practice-42211-large.mp4"
+    }
+  },
+  {
+    "model": "homepage.homepagewhycard",
+    "pk": 2,
+    "fields": {
+      "page": 3,
+      "sort_order": 1,
+      "card_number": "02",
+      "label": "IN-HOUSE EXPERTISE",
+      "title": "OWN WORKSHOP",
+      "body": "Repairs, maintenance and bat care handled in-house by people who understand cricket equipment.",
+      "image": null,
+      "video_url": ""
+    }
+  },
+  {
+    "model": "homepage.homepagewhycard",
+    "pk": 3,
+    "fields": {
+      "page": 3,
+      "sort_order": 2,
+      "card_number": "03",
+      "label": "PREMIUM SELECTION",
+      "title": "TRUSTED BRANDS",
+      "body": "Equipment from the brands players already know and trust.",
+      "image": null,
+      "video_url": ""
+    }
+  },
+  {
+    "model": "homepage.homepagewhycard",
+    "pk": 4,
+    "fields": {
+      "page": 3,
+      "sort_order": 3,
+      "card_number": "04",
+      "label": "PERSONALIZED SERVICE",
+      "title": "EXPERT ADVICE",
+      "body": "Get recommendations based on age, skill level, playing style and budget.",
+      "image": null,
+      "video_url": ""
+    }
+  },
+  {
+    "model": "homepage.homepagefeaturedproduct",
+    "pk": 1,
+    "fields": {
+      "page": 3,
+      "sort_order": 0,
+      "product": 1
+    }
+  },
+  {
+    "model": "homepage.homepagefeaturedproduct",
+    "pk": 2,
+    "fields": {
+      "page": 3,
+      "sort_order": 1,
+      "product": 4
+    }
+  },
+  {
+    "model": "homepage.homepagefeaturedproduct",
+    "pk": 3,
+    "fields": {
+      "page": 3,
+      "sort_order": 2,
+      "product": 8
+    }
+  },
+  {
+    "model": "homepage.homepagefeaturedproduct",
+    "pk": 4,
+    "fields": {
+      "page": 3,
+      "sort_order": 3,
+      "product": 11
+    }
+  },
+  {
+    "model": "homepage.homepagefeaturedproduct",
+    "pk": 5,
+    "fields": {
+      "page": 3,
+      "sort_order": 4,
+      "product": 12
+    }
+  },
+  {
+    "model": "homepage.homepageoperatinghour",
+    "pk": 1,
+    "fields": {
+      "page": 3,
+      "sort_order": 0,
+      "day": "Monday – Friday",
+      "time": "10:00 AM – 9:00 PM"
+    }
+  },
+  {
+    "model": "homepage.homepageoperatinghour",
+    "pk": 2,
+    "fields": {
+      "page": 3,
+      "sort_order": 1,
+      "day": "Saturday",
+      "time": "9:00 AM – 9:00 PM"
+    }
+  },
+  {
+    "model": "homepage.homepageoperatinghour",
+    "pk": 3,
+    "fields": {
+      "page": 3,
+      "sort_order": 2,
+      "day": "Sunday",
+      "time": "11:00 AM – 6:00 PM"
+    }
+  }
+]
