@@ -1,4 +1,5 @@
 export interface BusinessSettingsData {
+  announcement_enabled: boolean;
   announcement_text: string;
   whatsapp_number: string;
   whatsapp_url: string;

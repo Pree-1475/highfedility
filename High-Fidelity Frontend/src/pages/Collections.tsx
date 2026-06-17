@@ -156,6 +156,7 @@ export default function Collections() {
 
   const [activeType, setActiveType] = useState("All");
   const [filterOpen, setFilterOpen] = useState(false);
+  const [sortByPrice, setSortByPrice] = useState<"none" | "asc" | "desc">("none");
 
   // Redirect homepage aliases to canonical categories in URL for compatibility and consistency
   useEffect(() => {
@@ -196,12 +197,22 @@ export default function Collections() {
   }, [activeCategory]);
 
   const filteredProducts = useMemo(() => {
-    return products.filter((p) => {
+    let result = products.filter((p) => {
       const matchCat = activeCategory === "All" || p.category === activeCategory;
       const matchType = activeType === "All" || p.type === activeType;
       return matchCat && matchType;
     });
-  }, [products, activeCategory, activeType]);
+
+    if (sortByPrice !== "none") {
+      result.sort((a, b) => {
+        const priceA = parseFloat(a.price.replace(/[^0-9.]/g, ""));
+        const priceB = parseFloat(b.price.replace(/[^0-9.]/g, ""));
+        return sortByPrice === "asc" ? priceA - priceB : priceB - priceA;
+      });
+    }
+
+    return result;
+  }, [products, activeCategory, activeType, sortByPrice]);
 
   const handleCategoryChange = (cat: string) => {
     setSearchParams(cat === "All" ? {} : { category: cat });
@@ -238,6 +249,8 @@ export default function Collections() {
           filterOpen={filterOpen}
           onFilterOpenChange={setFilterOpen}
           resultsCount={filteredProducts.length}
+          sortByPrice={sortByPrice}
+          onSortChange={setSortByPrice}
         />
 
         <ProductGrid

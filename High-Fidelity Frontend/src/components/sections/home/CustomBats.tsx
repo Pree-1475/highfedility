@@ -11,22 +11,22 @@ interface CustomBatsProps {
 export default function CustomBats({ data }: CustomBatsProps) {
   const renderedTitle = data?.custom_bats_title
     ? data.custom_bats_title.split("\n").map((line: string, idx: number) => {
-        if (line.trim().toUpperCase() === "GAME.") {
-          return <span key={idx} className="text-[#7ec89a]">GAME.<br /></span>;
-        }
-        return <span key={idx}>{line}<br /></span>;
-      })
+      if (line.trim().toUpperCase() === "GAME.") {
+        return <span key={idx} className="text-[#7ec89a]">GAME.<br /></span>;
+      }
+      return <span key={idx}>{line}<br /></span>;
+    })
     : (
-        <>
-          Crafted
-          <br />
-          To Your
-          <br />
-          <span className="text-[#7ec89a]">Game.</span>
-        </>
-      );
+      <>
+        Crafted
+        <br />
+        To Your
+        <br />
+        <span className="text-[#7ec89a]">Game.</span>
+      </>
+    );
 
-  const description = data?.custom_bats_description || 
+  const description = data?.custom_bats_description ||
     "Every MR.WILLOW custom bat begins with a conversation. Your preferred weight, balance, handle type, and edge thickness — handcrafted for the way you play.";
 
   const imageSrc = data?.custom_bats_image || PH.act1;
@@ -42,26 +42,26 @@ export default function CustomBats({ data }: CustomBatsProps) {
   const tags = data?.custom_bats_tags
     ? data.custom_bats_tags.split(",").map((t: string) => t.trim())
     : [
-        "English Willow",
-        "Kashmir Willow",
-        "Custom Weight",
-        "Handle Preference",
-        "Grip Selection",
-      ];
+      "English Willow",
+      "Kashmir Willow",
+      "Custom Weight",
+      "Handle Preference",
+      "Grip Selection",
+    ];
 
   return (
-    <section className="bg-[#1a3b28] grid lg:grid-cols-2 min-h-[640px]">
-      <div className="relative overflow-hidden bg-[#122a1c] min-h-[400px] lg:min-h-auto">
+    <section className="bg-[#1c2117] grid lg:grid-cols-2 min-h-[640px]">
+      <div className="relative overflow-hidden bg-[#1a1816] min-h-[400px] lg:min-h-auto">
         <img
           src={imageSrc}
           alt="Custom cricket bat crafting process"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#1a3b28]/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#1c2117]/55" />
       </div>
 
       <div className="relative flex flex-col justify-center px-12 lg:px-16 xl:px-20 py-20 overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#2d5c3f]/25 rounded-full pointer-events-none" />
+        <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#2a3023]/25 rounded-full pointer-events-none" />
 
         <SectionLabel n="05" label="Custom Bats" />
         <h2
@@ -78,14 +78,14 @@ export default function CustomBats({ data }: CustomBatsProps) {
           {isPrimaryInternal ? (
             <Link
               to={primaryLink}
-              className="inline-flex items-center gap-2.5 bg-white text-[#1a3b28] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#f5f3ec] transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 bg-white text-[#1c2117] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#f5f3ec] transition-colors duration-200"
             >
               {primaryText} <ArrowRight size={14} />
             </Link>
           ) : (
             <a
               href={primaryLink}
-              className="inline-flex items-center gap-2.5 bg-white text-[#1a3b28] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#f5f3ec] transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 bg-white text-[#1c2117] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#f5f3ec] transition-colors duration-200"
             >
               {primaryText} <ArrowRight size={14} />
             </a>

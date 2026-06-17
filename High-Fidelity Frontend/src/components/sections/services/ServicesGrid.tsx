@@ -26,9 +26,9 @@ export default function ServicesGrid({ data }: ServicesGridProps) {
             Repair, Restore & <br />Extend Lifespan
           </h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[rgba(28,33,23,0.1)]">
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-px overflow-x-auto snap-x snap-mandatory hide-scroll pb-6 sm:pb-0 sm:bg-[rgba(28,33,23,0.1)] -mx-10 px-10 sm:mx-0 sm:px-0">
           {services.map((s, i) => (
-            <div key={i} className="bg-white p-10 hover:bg-[#f5f3ec] transition-colors">
+            <div key={i} className="shrink-0 w-[85vw] sm:w-auto snap-center bg-white p-10 hover:bg-[#f5f3ec] transition-colors rounded-xl sm:rounded-none border border-[rgba(28,33,23,0.06)] sm:border-0">
               <span style={DF} className="text-[32px] font-black text-[#c8c4b8] leading-none block mb-4">0{i + 1}</span>
               <h3 style={DF} className="text-[24px] font-bold text-[#1c2117] uppercase mb-3 leading-tight">{s.title}</h3>
               <p className="text-[13px] leading-relaxed text-[#6b7462]">{s.desc}</p>

@@ -7,7 +7,6 @@ import ShopByCategory from "../components/sections/home/ShopByCategory";
 import WhyMrWillow from "../components/sections/home/WhyMrWillow";
 import CustomBatsSection from "../components/sections/home/CustomBats";
 import Community from "../components/sections/home/Community";
-import VisitStore from "../components/sections/home/VisitStore";
 import { getHomepageData } from "../services/homepage";
 import { HomePageData } from "../types";
 
@@ -57,7 +56,6 @@ export default function Home() {
       <WhyMrWillow data={data} />
       <CustomBatsSection data={data} />
       <Community />
-      <VisitStore data={data} />
     </>
   );
 }

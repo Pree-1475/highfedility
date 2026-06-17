@@ -18,7 +18,7 @@ export default function KnockingMachineUSP({ data }: KnockingMachineUSPProps) {
       <span key={idx}>
         {parts.map((part, pIdx) => {
           if (part === "Match Play.") {
-            return <span key={pIdx} className="text-[#1a3b28]">Match Play.</span>;
+            return <span key={pIdx} className="text-[#1c2117]">Match Play.</span>;
           }
           return part;
         })}
@@ -61,7 +61,7 @@ export default function KnockingMachineUSP({ data }: KnockingMachineUSPProps) {
           <ul className="flex flex-col gap-4">
             {bullets.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="text-[#1a3b28] mt-1">✦</span>
+                <span className="text-[#1c2117] mt-1">✦</span>
                 <span className="text-[14px] font-semibold text-[#1c2117]">{item}</span>
               </li>
             ))}

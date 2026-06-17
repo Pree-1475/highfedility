@@ -30,12 +30,12 @@ export default function ContactDetails() {
         <br />
         Out To
         <br />
-        <span className="text-[#1a3b28]">Us.</span>
+        <span className="text-[#1c2117]">Us.</span>
       </h1>
 
       {/* Address */}
       <div className="flex gap-4 mb-8">
-        <MapPin size={18} className="text-[#1a3b28] shrink-0 mt-0.5" />
+        <MapPin size={18} className="text-[#1c2117] shrink-0 mt-0.5" />
         <div>
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-1.5">
             Address
@@ -48,7 +48,7 @@ export default function ContactDetails() {
 
       {/* Hours */}
       <div className="flex gap-4 mb-8">
-        <Clock size={18} className="text-[#1a3b28] shrink-0 mt-0.5" />
+        <Clock size={18} className="text-[#1c2117] shrink-0 mt-0.5" />
         <div className="flex-1 max-w-[320px]">
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-3">
             Operating Hours
@@ -69,7 +69,7 @@ export default function ContactDetails() {
 
       {/* Phone & Email */}
       <div className="flex gap-4 mb-12">
-        <Phone size={18} className="text-[#1a3b28] shrink-0 mt-0.5" />
+        <Phone size={18} className="text-[#1c2117] shrink-0 mt-0.5" />
         <div>
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-1.5">
             Contact Details
@@ -85,7 +85,7 @@ export default function ContactDetails() {
           href={whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2.5 bg-[#1a3b28] text-white text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#2d5c3f] transition-colors duration-200"
+          className="inline-flex items-center gap-2.5 bg-[#1c2117] text-white text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#2a3023] transition-colors duration-200"
         >
           <MessageCircle size={14} />
           WhatsApp Us

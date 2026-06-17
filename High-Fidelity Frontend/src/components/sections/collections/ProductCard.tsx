@@ -32,14 +32,14 @@ export default function ProductCard({
           {product.name}
         </h3>
         <p className="text-[11px] md:text-[12px] text-[#6b7462] mb-1.5">{product.sub}</p>
-        <p style={DF} className="text-[15px] font-bold text-[#1a3b28] mb-4 mt-auto">{product.price}</p>
+        <p style={DF} className="text-[15px] font-bold text-[#1c2117] mb-4 mt-auto">{product.price}</p>
         
         <button
           onClick={onInquiryToggle}
           className={`w-full text-[10px] font-bold tracking-[0.16em] uppercase py-3.5 border transition-colors cursor-pointer ${
             inInquiry 
               ? "bg-[#1c2117] text-white border-[#1c2117]" 
-              : "border-[#1c2117] text-[#1c2117] hover:bg-[#1a3b28] hover:text-white hover:border-[#1a3b28]"
+              : "border-[#1c2117] text-[#1c2117] hover:bg-[#1c2117] hover:text-white hover:border-[#1c2117]"
           }`}
         >
           {inInquiry ? "Added to Inquiry" : "Add to Enquiry"}

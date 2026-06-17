@@ -17,7 +17,7 @@ export default function EnrollmentCTA() {
         </p>
         <a
           href={link}
-          className="inline-flex items-center gap-2.5 bg-[#1a3b28] text-white text-[11px] font-bold tracking-[0.13em] uppercase px-8 py-4 hover:bg-[#2d5c3f] transition-colors duration-200"
+          className="inline-flex items-center gap-2.5 bg-[#1c2117] text-white text-[11px] font-bold tracking-[0.13em] uppercase px-8 py-4 hover:bg-[#2a3023] transition-colors duration-200"
         >
           <MessageCircle size={14} /> WhatsApp Us Now
         </a>

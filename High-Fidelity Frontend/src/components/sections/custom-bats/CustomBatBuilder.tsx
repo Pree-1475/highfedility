@@ -90,6 +90,7 @@ export default function CustomBatBuilder() {
   const ordersEnabled = settings?.custom_bat_orders_enabled !== false; // defaults to true if settings fail or are loading
 
   // Configurator state
+  const [willowType, setWillowType] = useState<string>("English Willow");
   const [shape, setShape] = useState<ShapeOption>("Semi Concaved");
   const [size, setSize] = useState<string>("Short Handle");
   const [sizeGroup, setSizeGroup] = useState<"adult" | "junior">("adult");
@@ -101,10 +102,11 @@ export default function CustomBatBuilder() {
   const [notes, setNotes] = useState<string>("");
 
   const [activeStep, setActiveStep] = useState<number>(1);
-  const totalSteps = 6;
+  const totalSteps = 7;
 
   // Reset form to defaults
   const handleReset = () => {
+    setWillowType("English Willow");
     setShape("Semi Concaved");
     setSize("Short Handle");
     setSizeGroup("adult");
@@ -123,6 +125,7 @@ export default function CustomBatBuilder() {
     const message = `Hello MR.WILLOW! I am interested in building a custom cricket bat. Here is my ideal configuration:
 
 ✦ CONFIGURATION DETAILS ✦
+• Willow Type: ${willowType}
 • Shape: ${shape}
 • Size: ${size}
 • Sweet Spot: ${sweetSpot}
@@ -145,12 +148,12 @@ Looking forward to hearing back!`;
   };
 
   return (
-    <section className="bg-[#f5f3ec] py-20 px-6 lg:px-10 border-t border-[rgba(28,33,23,0.06)]">
+    <section id="consult" className="bg-[#f5f3ec] py-16 lg:py-20 px-4 sm:px-6 lg:px-10 border-t border-[rgba(28,33,23,0.06)] overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-16 max-w-[800px] mx-auto">
           <SectionLabel n="02" label="Bat Configurator" />
           <h2 style={DF} className="text-[44px] sm:text-[54px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase mb-4">
-            Interactive <br />Bat Builder
+            Bat Builder
           </h2>
           <p className="text-[15px] leading-relaxed text-[#6b7462]">
             Tailor every dimension of your willow to match your unique playing technique. 
@@ -160,14 +163,14 @@ Looking forward to hearing back!`;
           {!ordersEnabled && (
             <div className="mt-8 inline-flex items-center gap-3 bg-[#e8a356]/12 border border-[#e8a356]/40 text-[#c77c22] px-6 py-3 text-[12px] font-bold tracking-[0.05em] uppercase rounded-sm">
               <AlertTriangle size={16} />
-              Custom Bats Currently Unavailable to General Public
+              All custom bats are currently not open to general public
             </div>
           )}
         </div>
 
-        <div className="grid lg:grid-cols-[1.5fr_1fr] gap-10 items-start">
+        <div className={`grid lg:grid-cols-[1.5fr_1fr] gap-10 items-start ${!ordersEnabled ? "opacity-50 pointer-events-none" : ""}`}>
           {/* LEFT: STEP CONFIGURATOR */}
-          <div className="bg-white border border-[rgba(28,33,23,0.08)] shadow-sm p-8 sm:p-10 rounded-sm">
+          <div className="bg-white border border-[rgba(28,33,23,0.08)] shadow-sm p-5 sm:p-10 rounded-sm w-full max-w-full overflow-hidden">
             {/* Steps Progress bar */}
             <div className="mb-10">
               <div className="flex justify-between items-center mb-4">
@@ -175,30 +178,31 @@ Looking forward to hearing back!`;
                   Step {activeStep} of {totalSteps}
                 </span>
                 <span className="text-[12px] font-bold text-[#1c2117]">
-                  {activeStep === 1 && "Select Bat Shape Profile"}
-                  {activeStep === 2 && "Choose Size & Dimensions"}
-                  {activeStep === 3 && "Specify Sweet Spot Position"}
-                  {activeStep === 4 && "Select Bat Weight"}
-                  {activeStep === 5 && "Configure Handle Details"}
-                  {activeStep === 6 && "Add Player Level & Notes"}
+                  {activeStep === 1 && "Select Willow Type"}
+                  {activeStep === 2 && "Select Bat Shape Profile"}
+                  {activeStep === 3 && "Choose Size & Dimensions"}
+                  {activeStep === 4 && "Specify Sweet Spot Position"}
+                  {activeStep === 5 && "Select Bat Weight"}
+                  {activeStep === 6 && "Configure Handle Details"}
+                  {activeStep === 7 && "Add Player Level & Notes"}
                 </span>
               </div>
               <div className="w-full bg-[#f0ede4] h-1 rounded-full overflow-hidden">
                 <div 
-                  className="bg-[#1a3b28] h-full transition-all duration-300 ease-out" 
+                  className="bg-[#1c2117] h-full transition-all duration-300 ease-out" 
                   style={{ width: `${(activeStep / totalSteps) * 100}%` }}
                 />
               </div>
               
               {/* Horizontal steps navigation tabs */}
-              <div className="flex justify-between mt-6 border-b border-[#f0ede4] pb-2 overflow-x-auto gap-2">
-                {[1, 2, 3, 4, 5, 6].map((stepNum) => (
+              <div className="flex justify-between mt-6 border-b border-[#f0ede4] pb-2 overflow-x-auto gap-2 hide-scroll snap-x w-full">
+                {[1, 2, 3, 4, 5, 6, 7].map((stepNum) => (
                   <button
                     key={stepNum}
                     onClick={() => setActiveStep(stepNum)}
-                    className={`text-[11px] font-bold tracking-[0.1em] uppercase py-2 px-3 border-b-2 transition-all shrink-0 ${
+                    className={`text-[11px] font-bold tracking-[0.1em] uppercase py-2 px-3 border-b-2 transition-all shrink-0 snap-center ${
                       activeStep === stepNum 
-                        ? "border-[#1a3b28] text-[#1a3b28]" 
+                        ? "border-[#1c2117] text-[#1c2117]" 
                         : "border-transparent text-[#c8c4b8] hover:text-[#1c2117]"
                     }`}
                   >
@@ -208,8 +212,45 @@ Looking forward to hearing back!`;
               </div>
             </div>
 
-            {/* STEP 1: BAT SHAPE */}
+            {/* STEP 1: WILLOW TYPE */}
             {activeStep === 1 && (
+              <div className="animate-fadeIn">
+                <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Willow Type</h3>
+                <p className="text-[13px] text-[#6b7462] mb-8">
+                  Choose between the premium punch of English Willow or the durable value of Kashmir Willow.
+                </p>
+
+                <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                  {["English Willow", "Kashmir Willow"].map((wType) => {
+                    const isSelected = willowType === wType;
+                    return (
+                      <div
+                        key={wType}
+                        onClick={() => setWillowType(wType)}
+                        className={`border cursor-pointer p-6 rounded-sm transition-all flex flex-col justify-center items-center gap-3 text-center ${
+                          isSelected 
+                            ? "border-[#1c2117] bg-[#fdfdfc] shadow-sm" 
+                            : "border-[rgba(28,33,23,0.08)] bg-white hover:border-[#1c2117]/35"
+                        }`}
+                      >
+                        <div className={`w-4 h-4 border rounded-full flex items-center justify-center transition-colors ${
+                          isSelected ? "border-[#1c2117] bg-[#1c2117]" : "border-[#c8c4b8]"
+                        }`}>
+                          {isSelected && <Check size={10} className="text-white" />}
+                        </div>
+                        <span className="text-[14px] font-bold uppercase tracking-[0.05em] text-[#1c2117]">{wType}</span>
+                        <p className="text-[11px] leading-relaxed text-[#6b7462]">
+                          {wType === "English Willow" ? "Premium performance, lighter pickup, larger sweet spot." : "Durable, heavier pickup, excellent value for regular practice."}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* STEP 2: BAT SHAPE */}
+            {activeStep === 2 && (
               <div className="animate-fadeIn">
                 <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Bat Shape Profile</h3>
                 <p className="text-[13px] text-[#6b7462] mb-8">
@@ -226,7 +267,7 @@ Looking forward to hearing back!`;
                         onClick={() => setShape(opt.name)}
                         className={`border cursor-pointer p-6 rounded-sm transition-all text-center flex flex-col justify-between items-center ${
                           isSelected 
-                            ? "border-[#1a3b28] bg-[#fdfdfc] shadow-sm" 
+                            ? "border-[#1c2117] bg-[#fdfdfc] shadow-sm" 
                             : "border-[rgba(28,33,23,0.08)] bg-white hover:border-[#1c2117]/35"
                         }`}
                       >
@@ -240,7 +281,7 @@ Looking forward to hearing back!`;
                               <path d="M 15,75 Q 2,40 35,22 Q 55,20 75,22 Q 108,40 95,75" stroke="#1c2117" strokeWidth="2.5" fill="#f5f3ec" />
                               {/* Spine line */}
                               <line x1="55" y1="20" x2="55" y2="79" stroke="#1c2117" strokeWidth="1" strokeDasharray="3 3" />
-                              <text x="55" y="55" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1a3b28" className="tracking-widest uppercase">FULL</text>
+                              <text x="55" y="55" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1c2117" className="tracking-widest uppercase">FULL</text>
                             </svg>
                           )}
                           {opt.name === "Semi Concaved" && (
@@ -251,7 +292,7 @@ Looking forward to hearing back!`;
                               <path d="M 15,75 Q 3,42 32,24 Q 45,35 55,20 Q 65,35 78,24 Q 107,42 95,75" stroke="#1c2117" strokeWidth="2.5" fill="#f5f3ec" />
                               {/* Spine line */}
                               <line x1="55" y1="20" x2="55" y2="79" stroke="#1c2117" strokeWidth="1" strokeDasharray="3 3" />
-                              <text x="55" y="55" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1a3b28" className="tracking-widest uppercase">SEMI</text>
+                              <text x="55" y="55" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1c2117" className="tracking-widest uppercase">SEMI</text>
                             </svg>
                           )}
                           {opt.name === "Concaved" && (
@@ -262,14 +303,14 @@ Looking forward to hearing back!`;
                               <path d="M 15,75 Q 5,45 28,26 Q 44,45 55,18 Q 66,45 82,26 Q 105,45 95,75" stroke="#1c2117" strokeWidth="2.5" fill="#f5f3ec" />
                               {/* Spine line */}
                               <line x1="55" y1="18" x2="55" y2="79" stroke="#1c2117" strokeWidth="1" strokeDasharray="3 3" />
-                              <text x="55" y="57" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1a3b28" className="tracking-widest uppercase">CONCAVED</text>
+                              <text x="55" y="57" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1c2117" className="tracking-widest uppercase">CONCAVED</text>
                             </svg>
                           )}
                         </div>
 
                         <div className="flex items-center gap-2 mb-2">
                           <div className={`w-3.5 h-3.5 border rounded-full flex items-center justify-center transition-colors ${
-                            isSelected ? "border-[#1a3b28] bg-[#1a3b28]" : "border-[#c8c4b8]"
+                            isSelected ? "border-[#1c2117] bg-[#1c2117]" : "border-[#c8c4b8]"
                           }`}>
                             {isSelected && <Check size={8} className="text-white" />}
                           </div>
@@ -283,8 +324,8 @@ Looking forward to hearing back!`;
               </div>
             )}
 
-            {/* STEP 2: SIZE */}
-            {activeStep === 2 && (
+            {/* STEP 3: SIZE */}
+            {activeStep === 3 && (
               <div className="animate-fadeIn">
                 <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Bat Size Selection</h3>
                 <p className="text-[13px] text-[#6b7462] mb-6">
@@ -297,7 +338,7 @@ Looking forward to hearing back!`;
                     onClick={() => setSizeGroup("adult")}
                     className={`py-3 px-6 text-[11px] font-black tracking-[0.15em] uppercase border-b-2 transition-all ${
                       sizeGroup === "adult" 
-                        ? "border-[#1a3b28] text-[#1a3b28]" 
+                        ? "border-[#1c2117] text-[#1c2117]" 
                         : "border-transparent text-[#c8c4b8] hover:text-[#1c2117]"
                     }`}
                   >
@@ -307,7 +348,7 @@ Looking forward to hearing back!`;
                     onClick={() => setSizeGroup("junior")}
                     className={`py-3 px-6 text-[11px] font-black tracking-[0.15em] uppercase border-b-2 transition-all ${
                       sizeGroup === "junior" 
-                        ? "border-[#1a3b28] text-[#1a3b28]" 
+                        ? "border-[#1c2117] text-[#1c2117]" 
                         : "border-transparent text-[#c8c4b8] hover:text-[#1c2117]"
                     }`}
                   >
@@ -324,12 +365,12 @@ Looking forward to hearing back!`;
                         onClick={() => setSize(sz)}
                         className={`border cursor-pointer p-4 transition-all flex justify-between items-center rounded-sm ${
                           isSelected 
-                            ? "border-[#1a3b28] bg-[#fdfdfc] font-bold text-[#1a3b28]" 
+                            ? "border-[#1c2117] bg-[#fdfdfc] font-bold text-[#1c2117]" 
                             : "border-[rgba(28,33,23,0.08)] bg-white text-[#1c2117] hover:border-[#1c2117]/35"
                         }`}
                       >
                         <span className="text-[12px] uppercase tracking-[0.05em]">{sz}</span>
-                        {isSelected && <Check size={14} className="text-[#1a3b28]" />}
+                        {isSelected && <Check size={14} className="text-[#1c2117]" />}
                       </div>
                     );
                   })}
@@ -337,8 +378,8 @@ Looking forward to hearing back!`;
               </div>
             )}
 
-            {/* STEP 3: SWEET SPOT */}
-            {activeStep === 3 && (
+            {/* STEP 4: SWEET SPOT */}
+            {activeStep === 4 && (
               <div className="animate-fadeIn">
                 <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Sweet Spot Placement</h3>
                 <p className="text-[13px] text-[#6b7462] mb-8">
@@ -367,7 +408,7 @@ Looking forward to hearing back!`;
                         d="M 92,160 L 92,190 L 128,190 L 128,160 Q 126,145 116,132 L 104,132 Q 94,145 92,160"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "High" 
-                            ? "fill-[#1a3b28]/25 stroke-[#1a3b28] stroke-2" 
+                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
                             : "fill-transparent hover:fill-[#1c2117]/5"
                         }`}
                         onClick={() => setSweetSpot("High")}
@@ -378,7 +419,7 @@ Looking forward to hearing back!`;
                         x="92" y="190" width="36" height="30"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "Mid High" 
-                            ? "fill-[#1a3b28]/25 stroke-[#1a3b28] stroke-2" 
+                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
                             : "fill-transparent hover:fill-[#1c2117]/5"
                         }`}
                         onClick={() => setSweetSpot("Mid High")}
@@ -389,7 +430,7 @@ Looking forward to hearing back!`;
                         x="92" y="220" width="36" height="30"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "Mid" 
-                            ? "fill-[#1a3b28]/25 stroke-[#1a3b28] stroke-2" 
+                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
                             : "fill-transparent hover:fill-[#1c2117]/5"
                         }`}
                         onClick={() => setSweetSpot("Mid")}
@@ -400,7 +441,7 @@ Looking forward to hearing back!`;
                         x="92" y="250" width="36" height="30"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "Mid Low" 
-                            ? "fill-[#1a3b28]/25 stroke-[#1a3b28] stroke-2" 
+                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
                             : "fill-transparent hover:fill-[#1c2117]/5"
                         }`}
                         onClick={() => setSweetSpot("Mid Low")}
@@ -411,7 +452,7 @@ Looking forward to hearing back!`;
                         d="M 92,280 L 92,305 Q 92,320 110,320 Q 128,320 128,305 L 128,280 Z"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "Low" 
-                            ? "fill-[#1a3b28]/25 stroke-[#1a3b28] stroke-2" 
+                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
                             : "fill-transparent hover:fill-[#1c2117]/5"
                         }`}
                         onClick={() => setSweetSpot("Low")}
@@ -441,13 +482,13 @@ Looking forward to hearing back!`;
                           onClick={() => setSweetSpot(s.name)}
                           className={`border cursor-pointer p-4 rounded-sm transition-all flex flex-col ${
                             isSelected 
-                              ? "border-[#1a3b28] bg-[#fdfdfc] shadow-sm" 
+                              ? "border-[#1c2117] bg-[#fdfdfc] shadow-sm" 
                               : "border-[rgba(28,33,23,0.06)] bg-white hover:border-[#1c2117]/25"
                           }`}
                         >
                           <div className="flex items-center justify-between mb-1">
                             <span className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#1c2117]">{s.label}</span>
-                            {isSelected && <Check size={14} className="text-[#1a3b28]" />}
+                            {isSelected && <Check size={14} className="text-[#1c2117]" />}
                           </div>
                           <p className="text-[11px] leading-relaxed text-[#6b7462]">{s.desc}</p>
                         </div>
@@ -458,8 +499,8 @@ Looking forward to hearing back!`;
               </div>
             )}
 
-            {/* STEP 4: WEIGHT */}
-            {activeStep === 4 && (
+            {/* STEP 5: WEIGHT */}
+            {activeStep === 5 && (
               <div className="animate-fadeIn">
                 <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Bat Weight Selection</h3>
                 <p className="text-[13px] text-[#6b7462] mb-6">
@@ -473,7 +514,7 @@ Looking forward to hearing back!`;
                   <select
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
-                    className="w-full bg-[#fbfaf8] border border-[rgba(28,33,23,0.15)] rounded-sm py-3 px-4 text-[13px] text-[#1c2117] outline-none focus:border-[#1a3b28] focus:ring-1 focus:ring-[#1a3b28] transition-colors"
+                    className="w-full bg-[#fbfaf8] border border-[rgba(28,33,23,0.15)] rounded-sm py-3 px-4 text-[13px] text-[#1c2117] outline-none focus:border-[#1c2117] focus:ring-1 focus:ring-[#1c2117] transition-colors"
                   >
                     <optgroup label="2 Pound Range (Most Common)">
                       {WEIGHTS_2LB.map((w) => (
@@ -495,8 +536,8 @@ Looking forward to hearing back!`;
               </div>
             )}
 
-            {/* STEP 5: HANDLE OPTIONS */}
-            {activeStep === 5 && (
+            {/* STEP 6: HANDLE OPTIONS */}
+            {activeStep === 6 && (
               <div className="animate-fadeIn">
                 <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Handle Customization</h3>
                 <p className="text-[13px] text-[#6b7462] mb-8">
@@ -508,7 +549,7 @@ Looking forward to hearing back!`;
                   <span className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#1c2117] mb-3">
                     Handle Shape
                   </span>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {(["Oval", "Semi Oval", "Round"] as HandleShapeOption[]).map((hShape) => {
                       const isSelected = handleShape === hShape;
                       return (
@@ -517,7 +558,7 @@ Looking forward to hearing back!`;
                           onClick={() => setHandleShape(hShape)}
                           className={`border cursor-pointer p-4 text-center rounded-sm transition-all ${
                             isSelected 
-                              ? "border-[#1a3b28] bg-[#fdfdfc] font-bold text-[#1a3b28]" 
+                              ? "border-[#1c2117] bg-[#fdfdfc] font-bold text-[#1c2117]" 
                               : "border-[rgba(28,33,23,0.08)] bg-white text-[#1c2117] hover:border-[#1c2117]/35"
                           }`}
                         >
@@ -538,7 +579,7 @@ Looking forward to hearing back!`;
                   <span className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#1c2117] mb-3">
                     Handle Thickness
                   </span>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {(["Thin", "Standard", "Thick"] as HandleThicknessOption[]).map((hThick) => {
                       const isSelected = handleThickness === hThick;
                       return (
@@ -547,7 +588,7 @@ Looking forward to hearing back!`;
                           onClick={() => setHandleThickness(hThick)}
                           className={`border cursor-pointer p-4 text-center rounded-sm transition-all ${
                             isSelected 
-                              ? "border-[#1a3b28] bg-[#fdfdfc] font-bold text-[#1a3b28]" 
+                              ? "border-[#1c2117] bg-[#fdfdfc] font-bold text-[#1c2117]" 
                               : "border-[rgba(28,33,23,0.08)] bg-white text-[#1c2117] hover:border-[#1c2117]/35"
                           }`}
                         >
@@ -565,8 +606,8 @@ Looking forward to hearing back!`;
               </div>
             )}
 
-            {/* STEP 6: PLAYER LEVEL & NOTES */}
-            {activeStep === 6 && (
+            {/* STEP 7: PLAYER LEVEL & NOTES */}
+            {activeStep === 7 && (
               <div className="animate-fadeIn">
                 <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Player Details & Notes</h3>
                 <p className="text-[13px] text-[#6b7462] mb-6">
@@ -587,7 +628,7 @@ Looking forward to hearing back!`;
                           onClick={() => setPlayerLevel(lvl)}
                           className={`border cursor-pointer p-3 text-center rounded-sm transition-all ${
                             isSelected 
-                              ? "border-[#1a3b28] bg-[#fdfdfc] font-bold text-[#1a3b28]" 
+                              ? "border-[#1c2117] bg-[#fdfdfc] font-bold text-[#1c2117]" 
                               : "border-[rgba(28,33,23,0.08)] bg-white text-[#1c2117] hover:border-[#1c2117]/35"
                           }`}
                         >
@@ -607,14 +648,14 @@ Looking forward to hearing back!`;
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     placeholder="E.g. I prefer heavy back-foot driving, looking for a Grade 1+ English Willow with an orange grip if possible."
-                    className="w-full bg-[#fbfaf8] border border-[rgba(28,33,23,0.15)] rounded-sm p-4 text-[13px] text-[#1c2117] outline-none focus:border-[#1a3b28] focus:ring-1 focus:ring-[#1a3b28] transition-colors h-32 resize-none"
+                    className="w-full bg-[#fbfaf8] border border-[rgba(28,33,23,0.15)] rounded-sm p-4 text-[13px] text-[#1c2117] outline-none focus:border-[#1c2117] focus:ring-1 focus:ring-[#1c2117] transition-colors h-32 resize-none"
                   />
                 </div>
               </div>
             )}
 
             {/* Stepper controls */}
-            <div className="flex justify-between items-center pt-6 border-t border-[#f0ede4] mt-8">
+            <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-6 sm:gap-0 pt-6 border-t border-[#f0ede4] mt-8 w-full">
               <button
                 onClick={handleReset}
                 className="inline-flex items-center gap-1.5 text-[10px] font-black tracking-[0.15em] uppercase text-[#c8c4b8] hover:text-[#1c2117] transition-colors"
@@ -622,7 +663,7 @@ Looking forward to hearing back!`;
                 <RotateCcw size={12} /> Reset Form
               </button>
               
-              <div className="flex gap-3">
+              <div className="flex gap-3 w-full sm:w-auto justify-between sm:justify-start">
                 {activeStep > 1 && (
                   <button
                     onClick={() => setActiveStep(activeStep - 1)}
@@ -644,7 +685,7 @@ Looking forward to hearing back!`;
                     onClick={handleSubmitEnquiry}
                     className={`inline-flex items-center gap-2.5 text-white text-[11px] font-black tracking-[0.15em] uppercase px-7 py-4 transition-colors ${
                       ordersEnabled 
-                        ? "bg-[#1a3b28] hover:bg-[#275c3f] cursor-pointer" 
+                        ? "bg-[#1c2117] hover:bg-[#275c3f] cursor-pointer" 
                         : "bg-[#c8c4b8] cursor-not-allowed opacity-50"
                     }`}
                   >
@@ -657,13 +698,17 @@ Looking forward to hearing back!`;
           </div>
 
           {/* RIGHT: CONFIGURATION PREVIEW CARD */}
-          <div className="sticky top-8 bg-[#1a3b28] text-white border border-[#234d35] p-8 rounded-sm shadow-md">
+          <div className="sticky top-8 bg-[#1c2117] text-white border border-[rgba(163,124,86,0.3)] p-8 rounded-sm shadow-md">
             <h3 style={DF} className="text-[22px] font-black tracking-wide uppercase mb-6 text-white border-b border-white/10 pb-4">
               Your Custom Bat Spec
             </h3>
 
             {/* Spec Details Grid */}
-            <div className="flex flex-col gap-5 mb-8">
+            <div className="flex flex-col gap-4 mb-8">
+              <div className="flex justify-between items-center text-[13px] border-b border-white/5 pb-2">
+                <span className="text-white/55 tracking-wider uppercase text-[10px] font-semibold">Willow</span>
+                <span className="font-bold text-white uppercase">{willowType}</span>
+              </div>
               <div className="flex justify-between items-center text-[13px] border-b border-white/5 pb-2">
                 <span className="text-white/55 tracking-wider uppercase text-[10px] font-semibold">Shape Profile</span>
                 <span className="font-bold text-white uppercase">{shape}</span>
@@ -694,14 +739,14 @@ Looking forward to hearing back!`;
               </div>
               <div className="text-[13px]">
                 <span className="text-white/55 tracking-wider uppercase text-[10px] font-semibold block mb-2">Instructions Summary</span>
-                <p className="text-[11px] leading-relaxed text-white/70 bg-[#122a1c] p-3 rounded-sm italic border border-white/5 max-h-24 overflow-y-auto">
+                <p className="text-[11px] leading-relaxed text-white/70 bg-[#1a1816] p-3 rounded-sm italic border border-white/5 max-h-24 overflow-y-auto">
                   {notes.trim() || "No additional custom instructions specified."}
                 </p>
               </div>
             </div>
 
             {/* Dynamic visual preview panel (3D / vector bat contour) */}
-            <div className="bg-[#122a1c] border border-white/10 rounded-sm p-6 text-center">
+            <div className="bg-[#1a1816] border border-white/10 rounded-sm p-6 text-center">
               <span className="text-[9px] tracking-[0.2em] text-[#7ec89a] font-bold uppercase block mb-4">
                 Dynamic Spec Rendering
               </span>

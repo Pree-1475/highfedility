@@ -21,7 +21,7 @@ export default function ProductGrid({
           {filteredProducts.length} Results
         </span>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-5">
         {filteredProducts.map((p) => {
           const inInquiry = inquiryItems.some((i) => i.id === p.id);
           const productSlug = `${p.brand}-${p.name}`

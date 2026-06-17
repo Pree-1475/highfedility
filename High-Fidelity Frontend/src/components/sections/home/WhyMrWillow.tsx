@@ -13,6 +13,7 @@ const DEFAULT_CARDS = [
     title: "FREE BAT KNOCKING",
     body: "Every bat purchased from MR WILLOW includes complimentary bat knocking, helping prepare it for match play while improving durability and performance.",
     video: "https://assets.mixkit.co/videos/preview/mixkit-cricket-player-batting-in-nets-practice-42211-large.mp4",
+    image: PH.act1,
   },
   {
     n: "02",
@@ -42,7 +43,7 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
 
 
   return (
-    <section className="bg-[#f5f3ec] pt-20 pb-16 lg:pb-20 px-6 lg:px-10 relative w-full">
+    <section className="bg-[#f5f3ec] pt-20 pb-16 lg:pb-24 px-6 lg:px-10 relative w-full">
       {/* Header */}
       <div className="max-w-[1400px] mx-auto mb-16 text-center lg:text-left">
         <SectionLabel n="04" label="Why MR.WILLOW" />
@@ -50,7 +51,7 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
           style={DF}
           className="text-[44px] md:text-[56px] font-black leading-[0.9] tracking-tight text-[#1c2117] uppercase mt-2"
         >
-          Why Players Choose <span className="text-[#1a3b28]">MR.WILLOW</span>
+          Why Players Choose <span className="text-[#1c2117]">MR.WILLOW</span>
         </h2>
         <p className="mt-4 text-[15px] text-[#6b7462] max-w-xl mx-auto lg:mx-0">
           We're Johor Bahru's cricket hub — where craftsmanship meets the game.
@@ -58,30 +59,28 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
       </div>
 
       {/* Sticky Stacking Cards Container */}
-      <div className="max-w-[1400px] mx-auto relative flex flex-col gap-0">
+      <div className="max-w-[1400px] mx-auto relative flex flex-col pb-[5vh] lg:pb-[10vh]">
         {cards.map(({ n, label, title, body, video, image }, index) => {
           return (
             <div
               key={n}
-              className={`why-card sticky w-full bg-[#fdfcf7] rounded-2xl border border-[rgba(28,33,23,0.06)] p-6 md:p-8 lg:p-12 shadow-[0_-10px_30px_rgba(0,0,0,0.015),0_15px_30px_rgba(28,33,23,0.03)] flex items-center ${
-                index === cards.length - 1 ? "mb-0" : "mb-12 lg:mb-16"
-              }`}
+              className={`why-card sticky w-full bg-[#fdfcf7] rounded-2xl border border-[rgba(28,33,23,0.06)] px-6 pb-6 pt-6 md:px-8 md:pb-8 lg:px-12 lg:pb-12 lg:pt-8 shadow-[0_-10px_30px_rgba(0,0,0,0.015),0_15px_30px_rgba(28,33,23,0.03)] flex items-center`}
               style={{
                 zIndex: index + 10,
+                top: `calc(100px + ${index * 72}px)`,
+                marginBottom: `calc(40px + ${(cards.length - 1 - index) * 72}px)`,
                 color: "#1c2117",
-                transform: `scale(${0.97 + index * 0.01})`,
                 transformOrigin: "top center",
-                ['--card-idx' as any]: index,
               }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-[45fr_55fr] gap-8 lg:gap-12 items-center w-full">
                 {/* Left Column - Copy */}
-                <div className="flex flex-col h-full justify-center">
+                <div className="flex flex-col justify-start h-[260px] md:h-[220px] lg:h-auto lg:h-full lg:justify-center">
                   <div className="flex items-center justify-between mb-4 lg:mb-8">
-                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#1a3b28] bg-[#1a3b28]/5 px-3 py-1.5 rounded-full w-max">
+                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#1c2117] bg-[#1c2117]/5 px-3 py-1.5 rounded-full w-max">
                       {label}
                     </span>
-                    <span style={DF} className="text-[36px] font-black text-[#1a3b28] leading-none pt-1">
+                    <span style={DF} className="text-[36px] font-black text-[#1c2117] leading-none pt-1">
                       {n}
                     </span>
                   </div>
@@ -99,8 +98,8 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
                 </div>
 
                 {/* Right Column - Media */}
-                <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#eae8e0] border border-[rgba(28,33,23,0.04)] shadow-inner">
-                  {video ? (
+                <div className={`relative w-full aspect-video rounded-xl overflow-hidden bg-[#eae8e0] border border-[rgba(28,33,23,0.04)] shadow-inner ${video && image ? 'grid grid-cols-2' : ''}`}>
+                  {video && (
                     <video
                       src={video}
                       autoPlay
@@ -109,11 +108,12 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
                       playsInline
                       className="w-full h-full object-cover"
                     />
-                  ) : (
+                  )}
+                  {image && (
                     <img
                       src={image}
                       alt={title}
-                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      className={`w-full h-full object-cover transition-transform duration-700 hover:scale-105 ${video ? 'border-l border-[rgba(28,33,23,0.04)]' : ''}`}
                     />
                   )}
                 </div>

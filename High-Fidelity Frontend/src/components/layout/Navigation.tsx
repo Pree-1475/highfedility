@@ -61,10 +61,10 @@ export function Navigation() {
           : "border-b border-black/[0.07]"
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-10 flex items-center h-[72px]">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center h-[72px]">
         {/* Logo */}
-        <Link to="/" className="flex items-center shrink-0">
-          <img src={logo} alt="MR.WILLOW" className="h-[60px] w-auto object-contain" />
+        <Link to="/" className="flex items-center shrink-0 h-full py-1">
+          <img src={logo} alt="MR.WILLOW" className="h-full w-auto object-contain scale-[1.2] origin-left" />
         </Link>
 
         {/* Desktop links */}
@@ -75,8 +75,8 @@ export function Navigation() {
               to={link.path}
               className={`text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors duration-150 ${
                 location.pathname === link.path
-                  ? "text-[#1a3b28]"
-                  : "text-[#1c2117] hover:text-[#1a3b28]"
+                  ? "text-[#a37c56]"
+                  : "text-[#1c2117] hover:text-[#a37c56]"
               }`}
             >
               {link.name}
@@ -89,7 +89,7 @@ export function Navigation() {
           href={whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="hidden lg:flex items-center gap-2 bg-[#1a3b28] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 hover:bg-[#2d5c3f] transition-colors duration-200 shrink-0"
+          className="hidden lg:flex items-center gap-2 bg-[#a37c56] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 hover:bg-[#8a654b] transition-colors duration-200 shrink-0"
         >
           <MessageCircle size={13} />
           WhatsApp Us
@@ -107,14 +107,14 @@ export function Navigation() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-black/[0.07] px-10 py-8 flex flex-col gap-5">
+        <div className="lg:hidden bg-white border-t border-black/[0.07] px-6 py-8 flex flex-col gap-5">
           {links.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               className={`text-[12px] font-semibold tracking-[0.14em] uppercase ${
                 location.pathname === link.path
-                  ? "text-[#1a3b28]"
+                  ? "text-[#a37c56]"
                   : "text-[#1c2117]"
               }`}
             >
@@ -125,7 +125,7 @@ export function Navigation() {
             href={whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 bg-[#1a3b28] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 w-fit mt-2"
+            className="flex items-center gap-2 bg-[#a37c56] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 w-fit mt-2"
           >
             <MessageCircle size={13} />
             WhatsApp Us

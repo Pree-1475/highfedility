@@ -4,7 +4,7 @@ import { SectionLabel } from "../../ui/SectionLabel";
 
 export default function TrainingHero() {
   return (
-    <section className="bg-[#1a3b28] text-white pt-20 pb-16 px-10 relative overflow-hidden">
+    <section className="bg-[#1c2117] text-white pt-20 pb-16 px-10 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(255,255,255,0.018) 40px,rgba(255,255,255,0.018) 41px)" }} />
       <div className="max-w-[1440px] mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
         <div>
@@ -18,12 +18,12 @@ export default function TrainingHero() {
           </p>
           <a
             href="#enroll"
-            className="inline-flex items-center gap-2.5 bg-white text-[#1a3b28] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#f5f3ec] transition-colors duration-200"
+            className="inline-flex items-center gap-2.5 bg-white text-[#1c2117] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#f5f3ec] transition-colors duration-200"
           >
             Enroll Now <ArrowRight size={14} />
           </a>
         </div>
-        <div className="relative aspect-[4/3] overflow-hidden bg-[#122a1c]">
+        <div className="relative aspect-[4/3] overflow-hidden bg-[#1a1816]">
           <img src={PH.field} alt="Cricket Training Session" className="w-full h-full object-cover" />
         </div>
       </div>

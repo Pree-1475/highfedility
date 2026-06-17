@@ -59,9 +59,9 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
             <Link
               key={title}
               to={link}
-              className="flex flex-col group w-[78%] sm:w-[320px] lg:w-auto shrink-0 snap-start bg-white border border-[rgba(28,33,23,0.06)] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#1a3b28]/30"
+              className="flex flex-col group w-[78%] sm:w-[320px] lg:w-auto shrink-0 snap-start bg-white border border-[rgba(28,33,23,0.06)] p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[#1c2117]/30"
             >
-              <div className="w-14 h-14 rounded-full bg-[#1a3b28]/5 flex items-center justify-center mb-8 text-[#1a3b28] group-hover:bg-[#1a3b28] group-hover:text-white transition-colors duration-300">
+              <div className="w-14 h-14 rounded-full bg-[#1c2117]/5 flex items-center justify-center mb-8 text-[#1c2117] group-hover:bg-[#1c2117] group-hover:text-white transition-colors duration-300">
                 {icon}
               </div>
               <h3
@@ -73,7 +73,7 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
               <p className="text-[13px] leading-relaxed text-[#6b7462] flex-grow mb-8">
                 {desc}
               </p>
-              <div className="flex items-center gap-1.5 mt-auto text-[10px] font-bold tracking-[0.16em] uppercase text-[#1a3b28]">
+              <div className="flex items-center gap-1.5 mt-auto text-[10px] font-bold tracking-[0.16em] uppercase text-[#1c2117]">
                 <span>Explore</span>
                 <ArrowRight
                   size={12}

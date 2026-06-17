@@ -11,6 +11,8 @@ interface ProductFiltersProps {
   filterOpen: boolean;
   onFilterOpenChange: (open: boolean) => void;
   resultsCount: number;
+  sortByPrice: string;
+  onSortChange: (sort: "none" | "asc" | "desc") => void;
 }
 
 export default function ProductFilters({
@@ -24,6 +26,8 @@ export default function ProductFilters({
   filterOpen,
   onFilterOpenChange,
   resultsCount,
+  sortByPrice,
+  onSortChange,
 }: ProductFiltersProps) {
   return (
     <>
@@ -36,7 +40,7 @@ export default function ProductFilters({
               <button
                 onClick={() => onCategoryChange(cat)}
                 className={`text-[14px] font-semibold tracking-wide transition-colors ${
-                  activeCategory === cat ? "text-[#1a3b28]" : "text-[#6b7462] hover:text-[#1c2117]"
+                  activeCategory === cat ? "text-[#1c2117]" : "text-[#6b7462] hover:text-[#1c2117]"
                 }`}
               >
                 {cat}
@@ -56,7 +60,7 @@ export default function ProductFilters({
                   <button
                     onClick={() => onTypeChange(type)}
                     className={`text-[13px] tracking-wide transition-colors ${
-                      activeType === type ? "text-[#1a3b28] font-bold" : "text-[#6b7462] hover:text-[#1c2117]"
+                      activeType === type ? "text-[#1c2117] font-bold" : "text-[#6b7462] hover:text-[#1c2117]"
                     }`}
                   >
                     {type}
@@ -66,6 +70,19 @@ export default function ProductFilters({
             </ul>
           </>
         )}
+
+        <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-5 border-t border-[rgba(28,33,23,0.1)] pt-8">
+          Sort By
+        </h3>
+        <select
+          value={sortByPrice}
+          onChange={(e) => onSortChange(e.target.value as any)}
+          className="w-full bg-transparent border border-[rgba(28,33,23,0.15)] text-[13px] font-medium text-[#1c2117] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[#a37c56] appearance-none cursor-pointer"
+        >
+          <option value="none">Featured</option>
+          <option value="asc">Price: Low to High</option>
+          <option value="desc">Price: High to Low</option>
+        </select>
       </aside>
 
       {/* Mobile Filter Toggle */}
@@ -92,7 +109,7 @@ export default function ProductFilters({
                   <li key={cat}>
                     <button
                       onClick={() => onCategoryChangeMobile(cat)}
-                      className={`text-[14px] font-semibold tracking-wide ${activeCategory === cat ? "text-[#1a3b28]" : "text-[#6b7462]"}`}
+                      className={`text-[14px] font-semibold tracking-wide ${activeCategory === cat ? "text-[#1c2117]" : "text-[#6b7462]"}`}
                     >
                       {cat}
                     </button>
@@ -107,7 +124,7 @@ export default function ProductFilters({
                       <li key={type}>
                         <button
                           onClick={() => onTypeChange(type)}
-                          className={`text-[14px] font-semibold tracking-wide ${activeType === type ? "text-[#1a3b28]" : "text-[#6b7462]"}`}
+                          className={`text-[14px] font-semibold tracking-wide ${activeType === type ? "text-[#1c2117]" : "text-[#6b7462]"}`}
                         >
                           {type}
                         </button>
@@ -116,11 +133,22 @@ export default function ProductFilters({
                   </ul>
                 </>
               )}
+
+              <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-5 border-t border-[rgba(28,33,23,0.1)] pt-8">Sort By</h3>
+              <select
+                value={sortByPrice}
+                onChange={(e) => onSortChange(e.target.value as any)}
+                className="w-full bg-transparent border border-[rgba(28,33,23,0.15)] text-[14px] font-medium text-[#1c2117] px-3 py-3 rounded-sm focus:outline-none focus:border-[#a37c56] appearance-none cursor-pointer mb-6"
+              >
+                <option value="none">Featured</option>
+                <option value="asc">Price: Low to High</option>
+                <option value="desc">Price: High to Low</option>
+              </select>
             </div>
             <div className="p-6 border-t border-[rgba(28,33,23,0.1)] bg-white">
               <button
                 onClick={() => onFilterOpenChange(false)}
-                className="w-full bg-[#1a3b28] text-white text-[11px] font-bold tracking-[0.16em] uppercase py-3.5 hover:bg-[#2d5c3f] transition-all text-center block"
+                className="w-full bg-[#1c2117] text-white text-[11px] font-bold tracking-[0.16em] uppercase py-3.5 hover:bg-[#2a3023] transition-all text-center block"
               >
                 Apply
               </button>

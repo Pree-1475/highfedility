@@ -27,7 +27,7 @@ export default function VisitStore({ data }: VisitStoreProps) {
   const renderedTitle = titleText.split("\n").map((line: string, idx: number) => {
     const isHighlight = line.trim().toUpperCase() === "JOHOR BAHRU." || line.trim().toUpperCase() === "JOHOR BAHRU";
     if (isHighlight) {
-      return <span key={idx} className="text-[#1a3b28]">{line}<br /></span>;
+      return <span key={idx} className="text-[#1c2117]">{line}<br /></span>;
     }
     return <span key={idx}>{line}<br /></span>;
   });
@@ -50,7 +50,7 @@ export default function VisitStore({ data }: VisitStoreProps) {
             </h2>
 
             <div className="flex gap-4 mb-8">
-              <MapPin size={18} className="text-[#1a3b28] shrink-0 mt-0.5" />
+              <MapPin size={18} className="text-[#1c2117] shrink-0 mt-0.5" />
               <div>
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-1.5">
                   Address
@@ -62,7 +62,7 @@ export default function VisitStore({ data }: VisitStoreProps) {
             </div>
 
             <div className="flex gap-4 mb-8">
-              <Clock size={18} className="text-[#1a3b28] shrink-0 mt-0.5" />
+              <Clock size={18} className="text-[#1c2117] shrink-0 mt-0.5" />
               <div className="flex-1">
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-3">
                   Operating Hours
@@ -82,7 +82,7 @@ export default function VisitStore({ data }: VisitStoreProps) {
             </div>
 
             <div className="flex gap-4 mb-10">
-              <PhoneIcon size={18} className="text-[#1a3b28] shrink-0 mt-0.5" />
+              <PhoneIcon size={18} className="text-[#1c2117] shrink-0 mt-0.5" />
               <div>
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-1.5">
                   Phone
@@ -96,7 +96,7 @@ export default function VisitStore({ data }: VisitStoreProps) {
                 href={whatsappLink}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 bg-[#1a3b28] text-white text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#2d5c3f] transition-colors duration-200"
+                className="inline-flex items-center gap-2.5 bg-[#1c2117] text-white text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#2a3023] transition-colors duration-200"
               >
                 <MessageCircle size={14} />
                 WhatsApp Us
@@ -105,7 +105,7 @@ export default function VisitStore({ data }: VisitStoreProps) {
                 href={directionsLink}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2.5 border border-[rgba(28,33,23,0.2)] text-[#1c2117] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:border-[#1a3b28] transition-colors duration-200"
+                className="inline-flex items-center gap-2.5 border border-[rgba(28,33,23,0.2)] text-[#1c2117] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:border-[#1c2117] transition-colors duration-200"
               >
                 <MapPin size={14} />
                 Get Directions
@@ -126,11 +126,11 @@ export default function VisitStore({ data }: VisitStoreProps) {
               className="relative h-44 bg-[#ddd9cf] flex items-center justify-center overflow-hidden"
               style={{
                 backgroundImage:
-                  "linear-gradient(rgba(26,59,40,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(26,59,40,0.06) 1px,transparent 1px)",
+                  "linear-gradient(rgba(28,33,23,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(28,33,23,0.06) 1px,transparent 1px)",
                 backgroundSize: "28px 28px",
               }}
             >
-              <div className="absolute w-3 h-3 bg-[#1a3b28] rounded-full shadow-[0_0_0_6px_rgba(26,59,40,0.2)]" />
+              <div className="absolute w-3 h-3 bg-[#1c2117] rounded-full shadow-[0_0_0_6px_rgba(28,33,23,0.2)]" />
               <div className="relative text-center mt-10">
                 <p
                   style={DF}
@@ -143,7 +143,7 @@ export default function VisitStore({ data }: VisitStoreProps) {
                   href={directionsLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-bold tracking-[0.16em] uppercase text-[#1a3b28] border-b border-[#1a3b28] pb-px"
+                  className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-bold tracking-[0.16em] uppercase text-[#1c2117] border-b border-[#1c2117] pb-px"
                 >
                   Open in Google Maps <ArrowRight size={11} />
                 </a>
