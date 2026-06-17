@@ -5,8 +5,16 @@ from wagtail.models import Page, Orderable
 from wagtail.admin.panels import FieldPanel, InlinePanel, MultiFieldPanel
 from wagtail.contrib.settings.models import BaseSiteSetting, register_setting
 
-@register_setting
+@register_setting(icon='site')
 class BusinessSettings(BaseSiteSetting, ClusterableModel):
+    class Meta:
+        verbose_name = "Store Details"
+        
+    announcement_enabled = models.BooleanField(
+        default=True,
+        verbose_name="Announcement Enabled",
+        help_text="Show or hide the announcement bar at the very top of the website."
+    )
     announcement_text = models.CharField(
         max_length=255, 
         default="✦  Free Bat Knocking With Every Bat Purchase  ·  Visit Us In Johor Bahru  ✦"
@@ -34,6 +42,7 @@ class BusinessSettings(BaseSiteSetting, ClusterableModel):
     youtube_url = models.URLField(max_length=500, blank=True, default="https://youtube.com")
 
     panels = [
+        FieldPanel('announcement_enabled'),
         FieldPanel('announcement_text'),
         FieldPanel('custom_bat_orders_enabled'),
         MultiFieldPanel([

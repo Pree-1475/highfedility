@@ -57,6 +57,7 @@ class BusinessSettingsSerializer(serializers.ModelSerializer):
     class Meta:
         model = BusinessSettings
         fields = [
+            'announcement_enabled',
             'announcement_text',
             'whatsapp_number',
             'whatsapp_url',

@@ -4,7 +4,6 @@ from wagtail.admin.panels import FieldPanel
 from brands.models import Brand
 from store_collections.models import Category
 
-@register_snippet
 class Product(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='products')
     name = models.CharField(max_length=255)
