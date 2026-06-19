@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DF } from "../../../lib/constants";
 
 export default function CraftsmanshipProcess() {
@@ -8,21 +11,102 @@ export default function CraftsmanshipProcess() {
     { n: "04", title: "Finishing", desc: "Sanded, oiled, gripped, and machine-knocked—ready for the crease." },
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % steps.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [steps.length]);
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? steps.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % steps.length);
+  };
+
   return (
-    <section className="bg-[#f5f3ec] py-16 lg:py-24 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto text-center mb-10 lg:mb-16 px-6">
-        <h2 style={DF} className="text-[40px] sm:text-[48px] font-black tracking-tight text-[#1c2117] uppercase">The Process</h2>
-      </div>
-      <div className="max-w-[1440px] mx-auto w-full overflow-x-auto hide-scroll snap-x snap-mandatory px-6 lg:px-10 pb-6 lg:pb-0">
-        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 min-w-max sm:min-w-0">
-          {steps.map((s) => (
-            <div key={s.n} className="w-[85vw] sm:w-auto shrink-0 snap-center bg-white p-8 sm:p-8 rounded-sm shadow-sm sm:shadow-none">
-              <span style={DF} className="text-[40px] font-black text-[#c8c4b8] leading-none block mb-4">{s.n}</span>
-              <h3 style={DF} className="text-[24px] font-bold text-[#1c2117] uppercase mb-3 leading-tight">{s.title}</h3>
-              <p className="text-[13px] leading-relaxed text-[#6b7462]">{s.desc}</p>
-            </div>
-          ))}
+    <section className="bg-[#1c2117] py-20 lg:py-32 overflow-hidden text-[#f5f3ec]">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
+        <div className="text-center mb-16">
+          <h2 style={DF} className="text-[40px] sm:text-[54px] font-black tracking-tight uppercase mb-4">
+            The Process
+          </h2>
+          <p className="text-[14px] text-[#f5f3ec]/60 max-w-lg mx-auto">
+            From raw willow cleft to a match-ready masterpiece.
+          </p>
         </div>
+
+        <div className="relative w-full max-w-3xl mx-auto flex items-center justify-center">
+          {/* Desktop/Tablet side arrows */}
+          <button 
+            onClick={handlePrev}
+            className="hidden sm:block absolute -left-2 sm:-left-6 md:-left-10 z-20 p-2 text-[#f5f3ec]/40 hover:text-[#f5f3ec] transition-colors"
+          >
+            <ChevronLeft size={40} strokeWidth={1} />
+          </button>
+
+          <div className="relative w-full max-w-2xl mx-auto h-[280px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="absolute inset-0 bg-[#252a1f] border border-[#f5f3ec]/10 p-8 sm:p-10 flex flex-col justify-center items-center text-center rounded-2xl shadow-xl"
+              >
+                <span style={DF} className="text-[60px] sm:text-[80px] font-black text-[#f5f3ec]/5 leading-none absolute -top-2 sm:-top-4 -left-2 sm:-left-4 pointer-events-none select-none">
+                  {steps[currentIndex].n}
+                </span>
+                <h3 style={DF} className="text-[28px] sm:text-[36px] font-bold uppercase mb-4 relative z-10">
+                  {steps[currentIndex].title}
+                </h3>
+                <p className="text-[14px] sm:text-[15px] leading-relaxed text-[#f5f3ec]/70 relative z-10 max-w-sm">
+                  {steps[currentIndex].desc}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <button 
+            onClick={handleNext}
+            className="hidden sm:block absolute -right-2 sm:-right-6 md:-right-10 z-20 p-2 text-[#f5f3ec]/40 hover:text-[#f5f3ec] transition-colors"
+          >
+            <ChevronRight size={40} strokeWidth={1} />
+          </button>
+        </div>
+        
+        {/* Indicators & Mobile Nav */}
+        <div className="flex justify-center items-center gap-6 mt-10">
+          <button 
+            onClick={handlePrev}
+            className="sm:hidden p-2 text-[#f5f3ec]/40 hover:text-[#f5f3ec] transition-colors"
+          >
+            <ChevronLeft size={24} strokeWidth={1.5} />
+          </button>
+
+          <div className="flex gap-3">
+            {steps.map((_, i) => (
+              <button 
+                key={i} 
+                onClick={() => setCurrentIndex(i)}
+                className={`h-1 rounded-full transition-all duration-500 ${i === currentIndex ? "w-8 bg-[#f5f3ec]" : "w-2 bg-[#f5f3ec]/20 hover:bg-[#f5f3ec]/50"}`}
+              />
+            ))}
+          </div>
+
+          <button 
+            onClick={handleNext}
+            className="sm:hidden p-2 text-[#f5f3ec]/40 hover:text-[#f5f3ec] transition-colors"
+          >
+            <ChevronRight size={24} strokeWidth={1.5} />
+          </button>
+        </div>
+
       </div>
     </section>
   );

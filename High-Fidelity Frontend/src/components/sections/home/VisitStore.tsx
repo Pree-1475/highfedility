@@ -37,7 +37,7 @@ export default function VisitStore({ data }: VisitStoreProps) {
   const imageSrc = data?.visit_image || PH.store;
 
   return (
-    <section id="visit" className="bg-[#f5f3ec] py-20 px-10">
+    <section id="visit" className="bg-[#f5f3ec] py-12 md:py-16 lg:py-20 px-10">
       <div className="max-w-[1440px] mx-auto">
         <SectionLabel n="07" label="Visit Us" />
         <div className="grid lg:grid-cols-[1fr_1fr] gap-16 items-start">

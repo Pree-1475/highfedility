@@ -60,7 +60,7 @@ export default function CustomBats({ data }: CustomBatsProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#1c2117]/55" />
       </div>
 
-      <div className="relative flex flex-col justify-center px-12 lg:px-16 xl:px-20 py-20 overflow-hidden">
+      <div className="relative flex flex-col justify-center px-12 lg:px-16 xl:px-20 py-12 md:py-16 lg:py-20 overflow-hidden">
         <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#2a3023]/25 rounded-full pointer-events-none" />
 
         <SectionLabel n="05" label="Custom Bats" />

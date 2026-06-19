@@ -8,21 +8,29 @@ import { useBusinessSettings } from "../../contexts/BusinessSettingsContext";
 // Two bails resting on a stump line (Cricket-inspired hamburger menu)
 const BailsMenuIcon = ({ className }: { className?: string }) => (
   <svg
-    width="24"
+    width="28"
     height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    viewBox="0 0 26 24"
+    fill="currentColor"
     className={className}
   >
-    <line x1="4" y1="10" x2="11" y2="10" />
-    <circle cx="11" cy="10" r="1" fill="currentColor" stroke="none" />
-    <line x1="13" y1="10" x2="20" y2="10" />
-    <circle cx="13" cy="10" r="1" fill="currentColor" stroke="none" />
-    <line x1="4" y1="16" x2="20" y2="16" />
+    {/* Top Row Bails */}
+    <rect x="1" y="6.5" width="3" height="2" rx="0.5" />
+    <rect x="4" y="5" width="7" height="5" rx="1.5" />
+    <rect x="11" y="6.5" width="2" height="2" rx="0.5" />
+    
+    <rect x="13" y="6.5" width="2" height="2" rx="0.5" />
+    <rect x="15" y="5" width="7" height="5" rx="1.5" />
+    <rect x="22" y="6.5" width="3" height="2" rx="0.5" />
+
+    {/* Bottom Row Bails */}
+    <rect x="1" y="15.5" width="3" height="2" rx="0.5" />
+    <rect x="4" y="14" width="7" height="5" rx="1.5" />
+    <rect x="11" y="15.5" width="2" height="2" rx="0.5" />
+
+    <rect x="13" y="15.5" width="2" height="2" rx="0.5" />
+    <rect x="15" y="14" width="7" height="5" rx="1.5" />
+    <rect x="22" y="15.5" width="3" height="2" rx="0.5" />
   </svg>
 );
 
@@ -55,16 +63,20 @@ export function Navigation() {
 
   return (
     <nav
-      className={`sticky top-0 z-50 bg-white transition-all duration-200 ${
+      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "shadow-[0_2px_24px_rgba(0,0,0,0.07)]"
-          : "border-b border-black/[0.07]"
+          ? "bg-white shadow-[0_2px_24px_rgba(0,0,0,0.07)] border-b border-black/[0.07]"
+          : "bg-transparent border-transparent shadow-none"
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-10 flex items-center h-[72px]">
         {/* Logo */}
         <Link to="/" className="flex items-center shrink-0 h-full py-1">
-          <img src={logo} alt="MR.WILLOW" className="h-full w-auto object-contain scale-[1.2] origin-left" />
+          <img 
+            src={logo} 
+            alt="MR.WILLOW" 
+            className="h-full w-auto object-contain scale-[1.2] origin-left transition-all duration-300"
+          />
         </Link>
 
         {/* Desktop links */}
@@ -73,7 +85,7 @@ export function Navigation() {
             <Link
               key={link.name}
               to={link.path}
-              className={`text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors duration-150 ${
+              className={`text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors duration-300 ${
                 location.pathname === link.path
                   ? "text-[#a37c56]"
                   : "text-[#1c2117] hover:text-[#a37c56]"
@@ -97,11 +109,11 @@ export function Navigation() {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden ml-auto text-[#1c2117]"
+          className="lg:hidden ml-auto text-[#1c2117] transition-colors duration-300 flex items-center gap-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={22} /> : <BailsMenuIcon />}
+          {open ? <X size={28} strokeWidth={2.5} /> : <BailsMenuIcon />}
         </button>
       </div>
 

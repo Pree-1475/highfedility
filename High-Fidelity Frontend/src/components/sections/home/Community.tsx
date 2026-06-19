@@ -28,7 +28,7 @@ export default function Community() {
   }, []);
 
   return (
-    <section className="bg-[#f5f3ec] pt-24 pb-8 px-4 md:px-10 overflow-hidden border-t border-[rgba(28,33,23,0.06)]">
+    <section className="bg-[#f5f3ec] pt-12 md:pt-16 lg:pt-24 pb-8 px-4 md:px-10 overflow-hidden border-t border-[rgba(28,33,23,0.06)]">
       <div className="max-w-[1440px] mx-auto flex flex-col items-center">
 
         {/* Centered Header & Text */}

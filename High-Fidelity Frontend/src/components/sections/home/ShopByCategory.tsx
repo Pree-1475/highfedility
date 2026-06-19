@@ -5,7 +5,7 @@ import { SectionLabel } from "../../ui/SectionLabel";
 
 export default function ShopByCategory() {
   return (
-    <section className="bg-white pt-10 pb-20 lg:pt-12 lg:pb-28 px-6 lg:px-10">
+    <section className="bg-white py-12 md:py-16 lg:py-20 px-6 lg:px-10">
       <div className="max-w-[1440px] mx-auto">
         <div className="mb-10">
           <SectionLabel n="03" label="Shop By Category" />

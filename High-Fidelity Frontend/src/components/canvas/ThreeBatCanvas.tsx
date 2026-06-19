@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import batGlb from "../../assets/cricket_batsports.glb?url";
 
 export default function ThreeBatCanvas() {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -10,8 +12,9 @@ export default function ThreeBatCanvas() {
 
     const scene = new THREE.Scene();
 
+    const isMobileInit = window.innerWidth < 768;
     const camera = new THREE.PerspectiveCamera(
-      45,
+      isMobileInit ? 60 : 45,
       container.clientWidth / container.clientHeight,
       0.1,
       100
@@ -37,89 +40,61 @@ export default function ThreeBatCanvas() {
     const batGroup = new THREE.Group();
     scene.add(batGroup);
 
-    const batMaterial = new THREE.MeshStandardMaterial({
-      color: 0xf5deb3,
-      roughness: 0.85,
-      metalness: 0.05,
-    });
+    // Load GLB model
+    const loader = new GLTFLoader();
+    loader.load(
+      batGlb,
+      (gltf) => {
+        const model = gltf.scene;
 
-    const gripMaterial = new THREE.MeshStandardMaterial({
-      color: 0x1a1a1a,
-      roughness: 0.9,
-      metalness: 0.1,
-    });
+        // Compute bounding box to normalize size and center
+        const box = new THREE.Box3().setFromObject(model);
+        const size = box.getSize(new THREE.Vector3());
+        const center = box.getCenter(new THREE.Vector3());
 
-    // Handle
-    const handleGeo = new THREE.CylinderGeometry(0.35, 0.4, 4, 32);
-    const handle = new THREE.Mesh(handleGeo, gripMaterial);
-    handle.position.y = 5.5;
-    batGroup.add(handle);
+        const maxDim = Math.max(size.x, size.y, size.z);
+        // Make the bat slightly smaller on mobile screens
+        const isMobile = window.innerWidth < 768;
+        // The camera's FOV is 60 on mobile (limit ~17.3 units) and 45 on desktop (limit ~12.4 units).
+        const targetSize = isMobile ? 10.5 : 10.5;
+        const scale = targetSize / maxDim;
 
-    // Splice
-    const spliceGeo = new THREE.CylinderGeometry(0.4, 0.8, 1.5, 32);
-    const splice = new THREE.Mesh(spliceGeo, batMaterial);
-    splice.position.y = 2.75;
-    batGroup.add(splice);
+        // 1. Scale the model first
+        model.scale.set(scale, scale, scale);
 
-    // Blade
-    const bladeGeo = new THREE.BoxGeometry(2.8, 8, 1.4, 16, 16, 16);
-    const posAttribute = bladeGeo.attributes.position;
-    for (let i = 0; i < posAttribute.count; i++) {
-      const x = posAttribute.getX(i);
-      const y = posAttribute.getY(i);
-      let z = posAttribute.getZ(i);
+        // 2. Recompute bounding box after scale to get correct world-space center
+        const boxScaled = new THREE.Box3().setFromObject(model);
+        const scaledCenter = boxScaled.getCenter(new THREE.Vector3());
 
-      // Front face curve
-      if (z > 0) {
-        z += 0.05 * (1 - (x * x) / (1.4 * 1.4));
-        posAttribute.setZ(i, z);
+        // 3. Center the model based on the scaled center
+        model.position.x -= scaledCenter.x;
+        model.position.y -= scaledCenter.y;
+        model.position.z -= scaledCenter.z;
+
+        console.log("Bat centered at:", scaledCenter);
+
+        // Add to a centering group so batGroup can still be rotated properly
+        const centeringGroup = new THREE.Group();
+        centeringGroup.add(model);
+
+        // The GLB has the bat lying horizontally (handle pointing right along X axis).
+        // Rotate it -90 degrees around Z to stand upright (handle up).
+        centeringGroup.rotation.z = -Math.PI / 2;
+        // The face of the bat might be pointing sideways. If we want it to face the camera, 
+        // we can rotate it along its local Y axis. Let's tilt it slightly so the face is visible.
+        centeringGroup.rotation.x = -Math.PI / 8;
+
+        batGroup.add(centeringGroup);
+      },
+      undefined,
+      (error) => {
+        console.error("An error happened loading GLB:", error);
       }
-      // Back face spine
-      if (z < 0) {
-        let yFactor = 1;
-        if (y > 2) yFactor = 1 - (y - 2) / 2;
-        if (y < -3) yFactor = 1 - Math.abs(y + 3);
-        yFactor = Math.max(0.1, yFactor);
+    );
 
-        const xFactor = 1 - Math.abs(x) / 1.4;
-        posAttribute.setZ(i, z - xFactor * 1.0 * yFactor);
-      }
-    }
-    bladeGeo.computeVertexNormals();
-    const blade = new THREE.Mesh(bladeGeo, batMaterial);
-    blade.position.y = -2;
-    batGroup.add(blade);
-
-    // Decal
-    const canvas = document.createElement("canvas");
-    canvas.width = 256;
-    canvas.height = 1024;
-    const ctx = canvas.getContext("2d");
-    if (ctx) {
-      ctx.clearRect(0, 0, 256, 1024);
-      ctx.fillStyle = "#111111";
-      ctx.font = '900 120px "Arial", sans-serif';
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.save();
-      ctx.translate(128, 512);
-      ctx.rotate(-Math.PI / 2);
-      ctx.fillText("MR WILLOW", 0, 0);
-      ctx.restore();
-    }
-
-    const decalTexture = new THREE.CanvasTexture(canvas);
-    decalTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
-    const decalMat = new THREE.MeshStandardMaterial({
-      map: decalTexture,
-      transparent: true,
-      roughness: 0.8,
-      metalness: 0.1,
-    });
-    const decalGeo = new THREE.PlaneGeometry(2.7, 7.8);
-    const decalPlane = new THREE.Mesh(decalGeo, decalMat);
-    decalPlane.position.set(0, -2, 0.73);
-    batGroup.add(decalPlane);
+    // Shift the entire bat group to the right on desktop so it doesn't overlap left headings
+    // On mobile, the layout stacks, so we keep it centered (x = 0).
+    batGroup.position.x = window.innerWidth < 1024 ? 0 : 2;
 
     batGroup.rotation.z = Math.PI / 15;
     batGroup.rotation.x = Math.PI / 8;
@@ -172,6 +147,7 @@ export default function ThreeBatCanvas() {
 
     const onResize = () => {
       camera.aspect = container.clientWidth / container.clientHeight;
+      camera.fov = window.innerWidth < 768 ? 60 : 45;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
     };
@@ -184,12 +160,15 @@ export default function ThreeBatCanvas() {
       time += 0.05;
 
       if (!isDragging) {
-        targetRotationY += 0.005;
+        // Reduced rotation speed
+        targetRotationY += 0.002;
       }
 
       batGroup.rotation.y += (targetRotationY - batGroup.rotation.y) * 0.05;
       batGroup.rotation.x += (targetRotationX - batGroup.rotation.x) * 0.05;
-      batGroup.position.y = Math.sin(time) * 0.2;
+
+      // Subtle levitation
+      batGroup.position.y = Math.sin(time * 0.5) * 0.015;
 
       renderer.render(scene, camera);
     };

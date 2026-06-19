@@ -148,14 +148,13 @@ Looking forward to hearing back!`;
   };
 
   return (
-    <section id="consult" className="bg-[#f5f3ec] py-16 lg:py-20 px-4 sm:px-6 lg:px-10 border-t border-[rgba(28,33,23,0.06)] overflow-hidden">
+    <section id="consult" className="bg-[#f5f3ec] pt-[80px] pb-16 md:pt-[140px] lg:pb-20 px-4 sm:px-6 lg:px-10 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
-        <div className="text-center mb-16 max-w-[800px] mx-auto">
-          <SectionLabel n="02" label="Bat Configurator" />
-          <h2 style={DF} className="text-[44px] sm:text-[54px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase mb-4">
+        <div className="text-center mb-12 max-w-[800px] mx-auto">
+          <h1 style={DF} className="text-[52px] md:text-[80px] font-black leading-[0.9] tracking-tight text-[#1c2117] uppercase mb-6">
             Bat Builder
-          </h2>
-          <p className="text-[15px] leading-relaxed text-[#6b7462]">
+          </h1>
+          <p className="text-[14px] md:text-[15px] leading-relaxed text-[#6b7462]">
             Tailor every dimension of your willow to match your unique playing technique. 
             Once you have built your setup, send a direct enquiry to our workshop team.
           </p>

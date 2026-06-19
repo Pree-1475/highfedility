@@ -24,7 +24,7 @@ export default function ContactDetails() {
     <div>
       <h1
         style={DF}
-        className="text-[64px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase mb-10"
+        className="text-[64px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase mb-6"
       >
         Reach
         <br />
@@ -32,6 +32,10 @@ export default function ContactDetails() {
         <br />
         <span className="text-[#1c2117]">Us.</span>
       </h1>
+
+      <p className="text-[14px] md:text-[15px] text-[#6b7462] leading-relaxed max-w-sm mb-10">
+        Visit our workshop in Johor Bahru for an immersive experience, or send us an enquiry directly.
+      </p>
 
       {/* Address */}
       <div className="flex gap-4 mb-8">

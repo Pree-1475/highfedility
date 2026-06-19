@@ -98,7 +98,7 @@ export default function Hero({ data }: HeroProps) {
     <section
       id="hero"
       ref={ref}
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fdfbf7] noise-overlay"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fdfbf7] noise-overlay -mt-[72px] pt-[72px]"
     >
       {/* Subtle gradient background - Cream to warm off-white */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#fdfbf7] via-[#8b7355]/5 to-[#fdfbf7]" />
@@ -123,8 +123,8 @@ export default function Hero({ data }: HeroProps) {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-12 w-full">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-8 pb-0 w-full">
+        <div className="grid lg:grid-cols-2 gap-0 lg:gap-8 items-center">
           
           {/* ═══════════════════════════════════════
               LEFT COLUMN — Typography & UI
@@ -150,7 +150,7 @@ export default function Hero({ data }: HeroProps) {
             <div className="space-y-1 overflow-hidden py-2">
               <motion.h1
                 style={{ x: textX1 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] xl:text-[96px] font-black tracking-tighter text-[#1c2117] leading-[0.9] uppercase"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-[#1c2117] leading-[0.9] uppercase"
               >
                 <motion.span
                   variants={fadeUpVariants}
@@ -164,7 +164,7 @@ export default function Hero({ data }: HeroProps) {
               </motion.h1>
               <motion.h1
                 style={{ x: textX2 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-[80px] xl:text-[96px] font-black tracking-tighter text-[#1c2117] leading-[0.9] uppercase"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-[#1c2117] leading-[0.9] uppercase"
               >
                 <motion.span
                   variants={fadeUpVariants}
@@ -267,7 +267,7 @@ export default function Hero({ data }: HeroProps) {
           {/* ═══════════════════════════════════════
               RIGHT COLUMN — Product Showcase
              ═══════════════════════════════════════ */}
-          <motion.div style={{ y, scale }} className="relative flex justify-center w-full h-[65vw] sm:h-[50vw] lg:h-[600px] mt-8 lg:mt-0 pointer-events-auto">
+          <motion.div style={{ y, scale }} className="relative flex justify-center w-full h-[180vw] sm:h-[50vw] lg:h-[600px] pointer-events-auto -mt-12 -mb-16 lg:mt-0 lg:mb-0">
             <motion.div variants={scaleInVariants} initial="hidden" animate="visible" className="relative w-full h-full">
               
               {/* Ambient Glow */}

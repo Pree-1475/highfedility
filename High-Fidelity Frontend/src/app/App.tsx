@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router";
 import { Layout } from "../components/layout/Layout";
 import ScrollToTop from "../components/layout/ScrollToTop";
+import GlobalLoader from "../components/ui/GlobalLoader";
 import Home from "../pages/Home";
 import Collections from "../pages/Collections";
 import Services from "../pages/Services";
@@ -13,6 +14,7 @@ import { BusinessSettingsProvider } from "../contexts/BusinessSettingsContext";
 export default function App() {
   return (
     <BusinessSettingsProvider>
+      <GlobalLoader />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
