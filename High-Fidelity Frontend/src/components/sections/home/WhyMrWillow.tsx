@@ -43,15 +43,15 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
 
 
   return (
-    <section className="bg-[#f5f3ec] pt-20 pb-16 lg:pb-24 px-6 lg:px-10 relative w-full">
+    <section className="bg-[#ffffff] pt-20 pb-16 lg:pb-24 px-6 lg:px-10 relative w-full">
       {/* Header */}
       <div className="max-w-[1400px] mx-auto mb-16 text-center lg:text-left">
         <SectionLabel n="04" label="Why MR.WILLOW" />
         <h2
           style={DF}
-          className="text-[44px] md:text-[56px] font-black leading-[0.9] tracking-tight text-[#1c2117] uppercase mt-2"
+          className="text-[44px] md:text-[56px] font-black leading-[0.9] tracking-tight text-[#11311e] uppercase mt-2"
         >
-          Why Players Choose <span className="text-[#1c2117]">MR.WILLOW</span>
+          Why Players Choose <span className="text-[#11311e]">MR.WILLOW</span>
         </h2>
         <p className="mt-4 text-[15px] text-[#6b7462] max-w-xl mx-auto lg:mx-0">
           We're Johor Bahru's cricket hub — where craftsmanship meets the game.
@@ -69,7 +69,7 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
                 zIndex: index + 10,
                 top: `calc(100px + ${index * 72}px)`,
                 marginBottom: `calc(40px + ${(cards.length - 1 - index) * 72}px)`,
-                color: "#1c2117",
+                color: "#11311e",
                 transformOrigin: "top center",
               }}
             >
@@ -77,17 +77,17 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
                 {/* Left Column - Copy */}
                 <div className="flex flex-col justify-start h-[260px] md:h-[220px] lg:h-auto lg:h-full lg:justify-center">
                   <div className="flex items-center justify-between mb-4 lg:mb-8">
-                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#1c2117] bg-[#1c2117]/5 px-3 py-1.5 rounded-full w-max">
+                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#11311e] bg-[#11311e]/5 px-3 py-1.5 rounded-full w-max">
                       {label}
                     </span>
-                    <span style={DF} className="text-[36px] font-black text-[#1c2117] leading-none pt-1">
+                    <span style={DF} className="text-[36px] font-black text-[#11311e] leading-none pt-1">
                       {n}
                     </span>
                   </div>
                   
                   <h3
                     style={DF}
-                    className="text-[32px] md:text-[44px] font-black text-[#1c2117] uppercase tracking-tight leading-none mb-4"
+                    className="text-[32px] md:text-[44px] font-black text-[#11311e] uppercase tracking-tight leading-none mb-4"
                   >
                     {title}
                   </h3>

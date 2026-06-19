@@ -87,8 +87,8 @@ export function Navigation() {
               to={link.path}
               className={`text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors duration-300 ${
                 location.pathname === link.path
-                  ? "text-[#a37c56]"
-                  : "text-[#1c2117] hover:text-[#a37c56]"
+                  ? "text-[#22c55e]"
+                  : "text-[#11311e] hover:text-[#22c55e]"
               }`}
             >
               {link.name}
@@ -101,7 +101,7 @@ export function Navigation() {
           href={whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="hidden lg:flex items-center gap-2 bg-[#a37c56] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 hover:bg-[#8a654b] transition-colors duration-200 shrink-0"
+          className="hidden lg:flex items-center gap-2 bg-[#22c55e] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 hover:bg-[#16a34a] transition-colors duration-200 shrink-0"
         >
           <MessageCircle size={13} />
           WhatsApp Us
@@ -109,7 +109,7 @@ export function Navigation() {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden ml-auto text-[#1c2117] transition-colors duration-300 flex items-center gap-2"
+          className="lg:hidden ml-auto text-[#11311e] transition-colors duration-300 flex items-center gap-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -126,8 +126,8 @@ export function Navigation() {
               to={link.path}
               className={`text-[12px] font-semibold tracking-[0.14em] uppercase ${
                 location.pathname === link.path
-                  ? "text-[#a37c56]"
-                  : "text-[#1c2117]"
+                  ? "text-[#22c55e]"
+                  : "text-[#11311e]"
               }`}
             >
               {link.name}
@@ -137,7 +137,7 @@ export function Navigation() {
             href={whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 bg-[#a37c56] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 w-fit mt-2"
+            className="flex items-center gap-2 bg-[#22c55e] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 w-fit mt-2"
           >
             <MessageCircle size={13} />
             WhatsApp Us

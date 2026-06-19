@@ -22,7 +22,7 @@ export default function GlobalLoader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, filter: "blur(10px)" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#1c2117] text-[#f5f3ec]"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#11311e] text-[#ffffff]"
         >
           {/* Rotating Cricket Ball */}
           <motion.div
@@ -55,13 +55,13 @@ export default function GlobalLoader() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-4 flex items-center gap-2"
           >
-            <span className="text-[10px] uppercase tracking-[0.3em] text-[#f5f3ec]/50">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-[#ffffff]/50">
               Preparing the pitch
             </span>
             <motion.span
               animate={{ opacity: [0, 1, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="text-[10px] uppercase tracking-[0.3em] text-[#f5f3ec]/50"
+              className="text-[10px] uppercase tracking-[0.3em] text-[#ffffff]/50"
             >
               ...
             </motion.span>

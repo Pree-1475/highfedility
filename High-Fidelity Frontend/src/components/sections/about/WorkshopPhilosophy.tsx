@@ -10,7 +10,7 @@ export default function WorkshopPhilosophy() {
         </div>
         <div className="order-1 lg:order-2">
           <SectionLabel n="02" label="Our Philosophy" />
-          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase mb-6">
+          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase mb-6">
             Respect <br />The Craft.
           </h2>
           <p className="text-[15px] leading-relaxed text-[#6b7462] mb-6">

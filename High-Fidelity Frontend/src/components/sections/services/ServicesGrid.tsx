@@ -56,7 +56,7 @@ export default function ServicesGrid({ data }: ServicesGridProps) {
       <div className="max-w-[1440px] mx-auto">
         <div className="mb-12">
           <SectionLabel n="03" label="Workshop Services" />
-          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase">
+          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase">
             Repair, Restore & <br />Extend Lifespan
           </h2>
         </div>
@@ -68,9 +68,9 @@ export default function ServicesGrid({ data }: ServicesGridProps) {
           className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-px overflow-x-auto snap-x snap-mandatory hide-scroll pb-4 sm:pb-0 sm:bg-[rgba(28,33,23,0.1)] -mx-10 px-10 sm:mx-0 sm:px-0"
         >
           {services.map((s, i) => (
-            <div key={i} className="shrink-0 w-[85vw] sm:w-auto snap-center bg-white p-10 hover:bg-[#f5f3ec] transition-colors rounded-xl sm:rounded-none border border-[rgba(28,33,23,0.06)] sm:border-0 relative">
+            <div key={i} className="shrink-0 w-[85vw] sm:w-auto snap-center bg-white p-10 hover:bg-[#ffffff] transition-colors rounded-xl sm:rounded-none border border-[rgba(28,33,23,0.06)] sm:border-0 relative">
               <span style={DF} className="text-[32px] font-black text-[#c8c4b8] leading-none block mb-4">0{i + 1}</span>
-              <h3 style={DF} className="text-[24px] font-bold text-[#1c2117] uppercase mb-3 leading-tight">{s.title}</h3>
+              <h3 style={DF} className="text-[24px] font-bold text-[#11311e] uppercase mb-3 leading-tight">{s.title}</h3>
               <p className="text-[13px] leading-relaxed text-[#6b7462]">{s.desc}</p>
             </div>
           ))}
@@ -82,7 +82,7 @@ export default function ServicesGrid({ data }: ServicesGridProps) {
             <div 
               key={i}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === activeIndex ? "w-6 bg-[#1c2117]" : "w-1.5 bg-[#1c2117]/20"
+                i === activeIndex ? "w-6 bg-[#11311e]" : "w-1.5 bg-[#11311e]/20"
               }`}
             />
           ))}

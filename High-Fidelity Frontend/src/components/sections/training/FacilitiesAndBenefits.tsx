@@ -10,7 +10,7 @@ export default function FacilitiesAndBenefits() {
         </div>
         <div>
           <SectionLabel n="03" label="Why Train With Us" />
-          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase mb-8">
+          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase mb-8">
             Expert Coaching, <br />Premium Facilities.
           </h2>
           <ul className="flex flex-col gap-6">
@@ -21,7 +21,7 @@ export default function FacilitiesAndBenefits() {
               { t: "Access to Gear", d: "Try out premium equipment from our showroom during your net sessions." },
             ].map((item, i) => (
               <li key={i}>
-                <h4 className="text-[14px] font-bold tracking-[0.1em] uppercase text-[#1c2117] mb-1">{item.t}</h4>
+                <h4 className="text-[14px] font-bold tracking-[0.1em] uppercase text-[#11311e] mb-1">{item.t}</h4>
                 <p className="text-[13px] leading-relaxed text-[#6b7462]">{item.d}</p>
               </li>
             ))}

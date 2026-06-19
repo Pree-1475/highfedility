@@ -148,10 +148,10 @@ Looking forward to hearing back!`;
   };
 
   return (
-    <section id="consult" className="bg-[#f5f3ec] pt-[80px] pb-16 md:pt-[140px] lg:pb-20 px-4 sm:px-6 lg:px-10 overflow-hidden">
+    <section id="consult" className="bg-[#ffffff] pt-[80px] pb-16 md:pt-[140px] lg:pb-20 px-4 sm:px-6 lg:px-10 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         <div className="text-center mb-12 max-w-[800px] mx-auto">
-          <h1 style={DF} className="text-[52px] md:text-[80px] font-black leading-[0.9] tracking-tight text-[#1c2117] uppercase mb-6">
+          <h1 style={DF} className="text-[52px] md:text-[80px] font-black leading-[0.9] tracking-tight text-[#11311e] uppercase mb-6">
             Bat Builder
           </h1>
           <p className="text-[14px] md:text-[15px] leading-relaxed text-[#6b7462]">
@@ -173,10 +173,10 @@ Looking forward to hearing back!`;
             {/* Steps Progress bar */}
             <div className="mb-10">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-[10px] font-black tracking-[0.2em] text-[#1c2117] uppercase">
+                <span className="text-[10px] font-black tracking-[0.2em] text-[#11311e] uppercase">
                   Step {activeStep} of {totalSteps}
                 </span>
-                <span className="text-[12px] font-bold text-[#1c2117]">
+                <span className="text-[12px] font-bold text-[#11311e]">
                   {activeStep === 1 && "Select Willow Type"}
                   {activeStep === 2 && "Select Bat Shape Profile"}
                   {activeStep === 3 && "Choose Size & Dimensions"}
@@ -188,7 +188,7 @@ Looking forward to hearing back!`;
               </div>
               <div className="w-full bg-[#f0ede4] h-1 rounded-full overflow-hidden">
                 <div 
-                  className="bg-[#1c2117] h-full transition-all duration-300 ease-out" 
+                  className="bg-[#11311e] h-full transition-all duration-300 ease-out" 
                   style={{ width: `${(activeStep / totalSteps) * 100}%` }}
                 />
               </div>
@@ -201,8 +201,8 @@ Looking forward to hearing back!`;
                     onClick={() => setActiveStep(stepNum)}
                     className={`text-[11px] font-bold tracking-[0.1em] uppercase py-2 px-3 border-b-2 transition-all shrink-0 snap-center ${
                       activeStep === stepNum 
-                        ? "border-[#1c2117] text-[#1c2117]" 
-                        : "border-transparent text-[#c8c4b8] hover:text-[#1c2117]"
+                        ? "border-[#11311e] text-[#11311e]" 
+                        : "border-transparent text-[#c8c4b8] hover:text-[#11311e]"
                     }`}
                   >
                     Step {stepNum}
@@ -214,7 +214,7 @@ Looking forward to hearing back!`;
             {/* STEP 1: WILLOW TYPE */}
             {activeStep === 1 && (
               <div className="animate-fadeIn">
-                <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Willow Type</h3>
+                <h3 style={DF} className="text-[20px] font-bold text-[#11311e] uppercase mb-2">Willow Type</h3>
                 <p className="text-[13px] text-[#6b7462] mb-8">
                   Choose between the premium punch of English Willow or the durable value of Kashmir Willow.
                 </p>
@@ -228,16 +228,16 @@ Looking forward to hearing back!`;
                         onClick={() => setWillowType(wType)}
                         className={`border cursor-pointer p-6 rounded-sm transition-all flex flex-col justify-center items-center gap-3 text-center ${
                           isSelected 
-                            ? "border-[#1c2117] bg-[#fdfdfc] shadow-sm" 
-                            : "border-[rgba(28,33,23,0.08)] bg-white hover:border-[#1c2117]/35"
+                            ? "border-[#11311e] bg-[#fdfdfc] shadow-sm" 
+                            : "border-[rgba(28,33,23,0.08)] bg-white hover:border-[#11311e]/35"
                         }`}
                       >
                         <div className={`w-4 h-4 border rounded-full flex items-center justify-center transition-colors ${
-                          isSelected ? "border-[#1c2117] bg-[#1c2117]" : "border-[#c8c4b8]"
+                          isSelected ? "border-[#11311e] bg-[#11311e]" : "border-[#c8c4b8]"
                         }`}>
                           {isSelected && <Check size={10} className="text-white" />}
                         </div>
-                        <span className="text-[14px] font-bold uppercase tracking-[0.05em] text-[#1c2117]">{wType}</span>
+                        <span className="text-[14px] font-bold uppercase tracking-[0.05em] text-[#11311e]">{wType}</span>
                         <p className="text-[11px] leading-relaxed text-[#6b7462]">
                           {wType === "English Willow" ? "Premium performance, lighter pickup, larger sweet spot." : "Durable, heavier pickup, excellent value for regular practice."}
                         </p>
@@ -251,7 +251,7 @@ Looking forward to hearing back!`;
             {/* STEP 2: BAT SHAPE */}
             {activeStep === 2 && (
               <div className="animate-fadeIn">
-                <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Bat Shape Profile</h3>
+                <h3 style={DF} className="text-[20px] font-bold text-[#11311e] uppercase mb-2">Bat Shape Profile</h3>
                 <p className="text-[13px] text-[#6b7462] mb-8">
                   The back profile controls the weight distribution, pick up feel, and thickness of the edges.
                 </p>
@@ -266,8 +266,8 @@ Looking forward to hearing back!`;
                         onClick={() => setShape(opt.name)}
                         className={`border cursor-pointer p-6 rounded-sm transition-all text-center flex flex-col justify-between items-center ${
                           isSelected 
-                            ? "border-[#1c2117] bg-[#fdfdfc] shadow-sm" 
-                            : "border-[rgba(28,33,23,0.08)] bg-white hover:border-[#1c2117]/35"
+                            ? "border-[#11311e] bg-[#fdfdfc] shadow-sm" 
+                            : "border-[rgba(28,33,23,0.08)] bg-white hover:border-[#11311e]/35"
                         }`}
                       >
                         {/* Shape cross-section illustration */}
@@ -275,45 +275,45 @@ Looking forward to hearing back!`;
                           {opt.name === "Full Profile" && (
                             <svg width="110" height="90" viewBox="0 0 110 90">
                               {/* Bat Face (flattish base) */}
-                              <path d="M 15,75 Q 55,80 95,75" stroke="#1c2117" strokeWidth="2.5" fill="none" />
+                              <path d="M 15,75 Q 55,80 95,75" stroke="#11311e" strokeWidth="2.5" fill="none" />
                               {/* Curved profile contours */}
-                              <path d="M 15,75 Q 2,40 35,22 Q 55,20 75,22 Q 108,40 95,75" stroke="#1c2117" strokeWidth="2.5" fill="#f5f3ec" />
+                              <path d="M 15,75 Q 2,40 35,22 Q 55,20 75,22 Q 108,40 95,75" stroke="#11311e" strokeWidth="2.5" fill="#ffffff" />
                               {/* Spine line */}
-                              <line x1="55" y1="20" x2="55" y2="79" stroke="#1c2117" strokeWidth="1" strokeDasharray="3 3" />
-                              <text x="55" y="55" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1c2117" className="tracking-widest uppercase">FULL</text>
+                              <line x1="55" y1="20" x2="55" y2="79" stroke="#11311e" strokeWidth="1" strokeDasharray="3 3" />
+                              <text x="55" y="55" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#11311e" className="tracking-widest uppercase">FULL</text>
                             </svg>
                           )}
                           {opt.name === "Semi Concaved" && (
                             <svg width="110" height="90" viewBox="0 0 110 90">
                               {/* Bat Face */}
-                              <path d="M 15,75 Q 55,80 95,75" stroke="#1c2117" strokeWidth="2.5" fill="none" />
+                              <path d="M 15,75 Q 55,80 95,75" stroke="#11311e" strokeWidth="2.5" fill="none" />
                               {/* Contours showing light concaving */}
-                              <path d="M 15,75 Q 3,42 32,24 Q 45,35 55,20 Q 65,35 78,24 Q 107,42 95,75" stroke="#1c2117" strokeWidth="2.5" fill="#f5f3ec" />
+                              <path d="M 15,75 Q 3,42 32,24 Q 45,35 55,20 Q 65,35 78,24 Q 107,42 95,75" stroke="#11311e" strokeWidth="2.5" fill="#ffffff" />
                               {/* Spine line */}
-                              <line x1="55" y1="20" x2="55" y2="79" stroke="#1c2117" strokeWidth="1" strokeDasharray="3 3" />
-                              <text x="55" y="55" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1c2117" className="tracking-widest uppercase">SEMI</text>
+                              <line x1="55" y1="20" x2="55" y2="79" stroke="#11311e" strokeWidth="1" strokeDasharray="3 3" />
+                              <text x="55" y="55" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#11311e" className="tracking-widest uppercase">SEMI</text>
                             </svg>
                           )}
                           {opt.name === "Concaved" && (
                             <svg width="110" height="90" viewBox="0 0 110 90">
                               {/* Bat Face */}
-                              <path d="M 15,75 Q 55,80 95,75" stroke="#1c2117" strokeWidth="2.5" fill="none" />
+                              <path d="M 15,75 Q 55,80 95,75" stroke="#11311e" strokeWidth="2.5" fill="none" />
                               {/* Contours showing deep concaving */}
-                              <path d="M 15,75 Q 5,45 28,26 Q 44,45 55,18 Q 66,45 82,26 Q 105,45 95,75" stroke="#1c2117" strokeWidth="2.5" fill="#f5f3ec" />
+                              <path d="M 15,75 Q 5,45 28,26 Q 44,45 55,18 Q 66,45 82,26 Q 105,45 95,75" stroke="#11311e" strokeWidth="2.5" fill="#ffffff" />
                               {/* Spine line */}
-                              <line x1="55" y1="18" x2="55" y2="79" stroke="#1c2117" strokeWidth="1" strokeDasharray="3 3" />
-                              <text x="55" y="57" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1c2117" className="tracking-widest uppercase">CONCAVED</text>
+                              <line x1="55" y1="18" x2="55" y2="79" stroke="#11311e" strokeWidth="1" strokeDasharray="3 3" />
+                              <text x="55" y="57" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#11311e" className="tracking-widest uppercase">CONCAVED</text>
                             </svg>
                           )}
                         </div>
 
                         <div className="flex items-center gap-2 mb-2">
                           <div className={`w-3.5 h-3.5 border rounded-full flex items-center justify-center transition-colors ${
-                            isSelected ? "border-[#1c2117] bg-[#1c2117]" : "border-[#c8c4b8]"
+                            isSelected ? "border-[#11311e] bg-[#11311e]" : "border-[#c8c4b8]"
                           }`}>
                             {isSelected && <Check size={8} className="text-white" />}
                           </div>
-                          <span className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#1c2117]">{opt.name}</span>
+                          <span className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#11311e]">{opt.name}</span>
                         </div>
                         <p className="text-[11px] leading-relaxed text-[#6b7462] mt-2">{opt.desc}</p>
                       </div>
@@ -326,7 +326,7 @@ Looking forward to hearing back!`;
             {/* STEP 3: SIZE */}
             {activeStep === 3 && (
               <div className="animate-fadeIn">
-                <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Bat Size Selection</h3>
+                <h3 style={DF} className="text-[20px] font-bold text-[#11311e] uppercase mb-2">Bat Size Selection</h3>
                 <p className="text-[13px] text-[#6b7462] mb-6">
                   Select your height and blade length configuration. Grouped into Adult and Junior measurements.
                 </p>
@@ -337,8 +337,8 @@ Looking forward to hearing back!`;
                     onClick={() => setSizeGroup("adult")}
                     className={`py-3 px-6 text-[11px] font-black tracking-[0.15em] uppercase border-b-2 transition-all ${
                       sizeGroup === "adult" 
-                        ? "border-[#1c2117] text-[#1c2117]" 
-                        : "border-transparent text-[#c8c4b8] hover:text-[#1c2117]"
+                        ? "border-[#11311e] text-[#11311e]" 
+                        : "border-transparent text-[#c8c4b8] hover:text-[#11311e]"
                     }`}
                   >
                     Adult Sizes
@@ -347,8 +347,8 @@ Looking forward to hearing back!`;
                     onClick={() => setSizeGroup("junior")}
                     className={`py-3 px-6 text-[11px] font-black tracking-[0.15em] uppercase border-b-2 transition-all ${
                       sizeGroup === "junior" 
-                        ? "border-[#1c2117] text-[#1c2117]" 
-                        : "border-transparent text-[#c8c4b8] hover:text-[#1c2117]"
+                        ? "border-[#11311e] text-[#11311e]" 
+                        : "border-transparent text-[#c8c4b8] hover:text-[#11311e]"
                     }`}
                   >
                     Junior Sizes
@@ -364,12 +364,12 @@ Looking forward to hearing back!`;
                         onClick={() => setSize(sz)}
                         className={`border cursor-pointer p-4 transition-all flex justify-between items-center rounded-sm ${
                           isSelected 
-                            ? "border-[#1c2117] bg-[#fdfdfc] font-bold text-[#1c2117]" 
-                            : "border-[rgba(28,33,23,0.08)] bg-white text-[#1c2117] hover:border-[#1c2117]/35"
+                            ? "border-[#11311e] bg-[#fdfdfc] font-bold text-[#11311e]" 
+                            : "border-[rgba(28,33,23,0.08)] bg-white text-[#11311e] hover:border-[#11311e]/35"
                         }`}
                       >
                         <span className="text-[12px] uppercase tracking-[0.05em]">{sz}</span>
-                        {isSelected && <Check size={14} className="text-[#1c2117]" />}
+                        {isSelected && <Check size={14} className="text-[#11311e]" />}
                       </div>
                     );
                   })}
@@ -380,7 +380,7 @@ Looking forward to hearing back!`;
             {/* STEP 4: SWEET SPOT */}
             {activeStep === 4 && (
               <div className="animate-fadeIn">
-                <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Sweet Spot Placement</h3>
+                <h3 style={DF} className="text-[20px] font-bold text-[#11311e] uppercase mb-2">Sweet Spot Placement</h3>
                 <p className="text-[13px] text-[#6b7462] mb-8">
                   Click on the sections of the bat below or select from the list to define where you want the maximum wood thickness.
                 </p>
@@ -390,16 +390,16 @@ Looking forward to hearing back!`;
                   <div className="flex justify-center bg-[#fbfaf8] py-8 border border-[rgba(28,33,23,0.06)] rounded-sm">
                     <svg width="220" height="340" viewBox="0 0 220 340" className="select-none">
                       {/* Handle */}
-                      <rect x="104" y="20" width="12" height="110" rx="4" fill="#cfc8bc" stroke="#1c2117" strokeWidth="2.5" />
-                      <line x1="104" y1="45" x2="116" y2="45" stroke="#1c2117" strokeWidth="1.5" />
-                      <line x1="104" y1="70" x2="116" y2="70" stroke="#1c2117" strokeWidth="1.5" />
-                      <line x1="104" y1="95" x2="116" y2="95" stroke="#1c2117" strokeWidth="1.5" />
+                      <rect x="104" y="20" width="12" height="110" rx="4" fill="#cfc8bc" stroke="#11311e" strokeWidth="2.5" />
+                      <line x1="104" y1="45" x2="116" y2="45" stroke="#11311e" strokeWidth="1.5" />
+                      <line x1="104" y1="70" x2="116" y2="70" stroke="#11311e" strokeWidth="1.5" />
+                      <line x1="104" y1="95" x2="116" y2="95" stroke="#11311e" strokeWidth="1.5" />
                       
                       {/* Handle Wrap detail */}
-                      <path d="M 104,130 L 116,130" stroke="#1c2117" strokeWidth="3" />
+                      <path d="M 104,130 L 116,130" stroke="#11311e" strokeWidth="3" />
 
                       {/* Bat Blade Outline */}
-                      <path d="M 104,130 Q 94,142 92,160 L 92,305 Q 92,320 110,320 Q 128,320 128,305 L 128,160 Q 126,142 116,130 Z" fill="#eae6db" stroke="#1c2117" strokeWidth="2.5" />
+                      <path d="M 104,130 Q 94,142 92,160 L 92,305 Q 92,320 110,320 Q 128,320 128,305 L 128,160 Q 126,142 116,130 Z" fill="#eae6db" stroke="#11311e" strokeWidth="2.5" />
                       
                       {/* Interactive Zones over the Blade */}
                       {/* Zone High */}
@@ -407,8 +407,8 @@ Looking forward to hearing back!`;
                         d="M 92,160 L 92,190 L 128,190 L 128,160 Q 126,145 116,132 L 104,132 Q 94,145 92,160"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "High" 
-                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
-                            : "fill-transparent hover:fill-[#1c2117]/5"
+                            ? "fill-[#11311e]/25 stroke-[#11311e] stroke-2" 
+                            : "fill-transparent hover:fill-[#11311e]/5"
                         }`}
                         onClick={() => setSweetSpot("High")}
                       />
@@ -418,8 +418,8 @@ Looking forward to hearing back!`;
                         x="92" y="190" width="36" height="30"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "Mid High" 
-                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
-                            : "fill-transparent hover:fill-[#1c2117]/5"
+                            ? "fill-[#11311e]/25 stroke-[#11311e] stroke-2" 
+                            : "fill-transparent hover:fill-[#11311e]/5"
                         }`}
                         onClick={() => setSweetSpot("Mid High")}
                       />
@@ -429,8 +429,8 @@ Looking forward to hearing back!`;
                         x="92" y="220" width="36" height="30"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "Mid" 
-                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
-                            : "fill-transparent hover:fill-[#1c2117]/5"
+                            ? "fill-[#11311e]/25 stroke-[#11311e] stroke-2" 
+                            : "fill-transparent hover:fill-[#11311e]/5"
                         }`}
                         onClick={() => setSweetSpot("Mid")}
                       />
@@ -440,8 +440,8 @@ Looking forward to hearing back!`;
                         x="92" y="250" width="36" height="30"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "Mid Low" 
-                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
-                            : "fill-transparent hover:fill-[#1c2117]/5"
+                            ? "fill-[#11311e]/25 stroke-[#11311e] stroke-2" 
+                            : "fill-transparent hover:fill-[#11311e]/5"
                         }`}
                         onClick={() => setSweetSpot("Mid Low")}
                       />
@@ -451,8 +451,8 @@ Looking forward to hearing back!`;
                         d="M 92,280 L 92,305 Q 92,320 110,320 Q 128,320 128,305 L 128,280 Z"
                         className={`cursor-pointer transition-all duration-200 ${
                           sweetSpot === "Low" 
-                            ? "fill-[#1c2117]/25 stroke-[#1c2117] stroke-2" 
-                            : "fill-transparent hover:fill-[#1c2117]/5"
+                            ? "fill-[#11311e]/25 stroke-[#11311e] stroke-2" 
+                            : "fill-transparent hover:fill-[#11311e]/5"
                         }`}
                         onClick={() => setSweetSpot("Low")}
                       />
@@ -462,9 +462,9 @@ Looking forward to hearing back!`;
                         if (s.name !== sweetSpot) return null;
                         return (
                           <g key={s.name}>
-                            <rect x="5" y={s.offsetPercent + 90} width="78" height="24" rx="3" fill="#1c2117" />
+                            <rect x="5" y={s.offsetPercent + 90} width="78" height="24" rx="3" fill="#11311e" />
                             <text x="44" y={s.offsetPercent + 105} textAnchor="middle" fontSize="9" fontWeight="bold" fill="#ffffff" className="tracking-wider uppercase">{s.name}</text>
-                            <line x1="83" y1={s.offsetPercent + 102} x2="92" y2={s.offsetPercent + 102} stroke="#1c2117" strokeWidth="1.5" />
+                            <line x1="83" y1={s.offsetPercent + 102} x2="92" y2={s.offsetPercent + 102} stroke="#11311e" strokeWidth="1.5" />
                           </g>
                         );
                       })}
@@ -481,13 +481,13 @@ Looking forward to hearing back!`;
                           onClick={() => setSweetSpot(s.name)}
                           className={`border cursor-pointer p-4 rounded-sm transition-all flex flex-col ${
                             isSelected 
-                              ? "border-[#1c2117] bg-[#fdfdfc] shadow-sm" 
-                              : "border-[rgba(28,33,23,0.06)] bg-white hover:border-[#1c2117]/25"
+                              ? "border-[#11311e] bg-[#fdfdfc] shadow-sm" 
+                              : "border-[rgba(28,33,23,0.06)] bg-white hover:border-[#11311e]/25"
                           }`}
                         >
                           <div className="flex items-center justify-between mb-1">
-                            <span className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#1c2117]">{s.label}</span>
-                            {isSelected && <Check size={14} className="text-[#1c2117]" />}
+                            <span className="text-[12px] font-bold uppercase tracking-[0.05em] text-[#11311e]">{s.label}</span>
+                            {isSelected && <Check size={14} className="text-[#11311e]" />}
                           </div>
                           <p className="text-[11px] leading-relaxed text-[#6b7462]">{s.desc}</p>
                         </div>
@@ -501,19 +501,19 @@ Looking forward to hearing back!`;
             {/* STEP 5: WEIGHT */}
             {activeStep === 5 && (
               <div className="animate-fadeIn">
-                <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Bat Weight Selection</h3>
+                <h3 style={DF} className="text-[20px] font-bold text-[#11311e] uppercase mb-2">Bat Weight Selection</h3>
                 <p className="text-[13px] text-[#6b7462] mb-6">
                   Select your exact target weight. Lighter weights offer maximum hand speed; heavier bats give additional drive power.
                 </p>
 
                 <div className="max-w-[400px] mb-8">
-                  <label className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#1c2117] mb-2">
+                  <label className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#11311e] mb-2">
                     Weight Option
                   </label>
                   <select
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
-                    className="w-full bg-[#fbfaf8] border border-[rgba(28,33,23,0.15)] rounded-sm py-3 px-4 text-[13px] text-[#1c2117] outline-none focus:border-[#1c2117] focus:ring-1 focus:ring-[#1c2117] transition-colors"
+                    className="w-full bg-[#fbfaf8] border border-[rgba(28,33,23,0.15)] rounded-sm py-3 px-4 text-[13px] text-[#11311e] outline-none focus:border-[#11311e] focus:ring-1 focus:ring-[#11311e] transition-colors"
                   >
                     <optgroup label="2 Pound Range (Most Common)">
                       {WEIGHTS_2LB.map((w) => (
@@ -538,14 +538,14 @@ Looking forward to hearing back!`;
             {/* STEP 6: HANDLE OPTIONS */}
             {activeStep === 6 && (
               <div className="animate-fadeIn">
-                <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Handle Customization</h3>
+                <h3 style={DF} className="text-[20px] font-bold text-[#11311e] uppercase mb-2">Handle Customization</h3>
                 <p className="text-[13px] text-[#6b7462] mb-8">
                   Configure the grip shape and diameter. The handle is critical in defining how the bat picks up and reacts to your shots.
                 </p>
 
                 {/* Handle Shape */}
                 <div className="mb-8">
-                  <span className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#1c2117] mb-3">
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#11311e] mb-3">
                     Handle Shape
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -557,8 +557,8 @@ Looking forward to hearing back!`;
                           onClick={() => setHandleShape(hShape)}
                           className={`border cursor-pointer p-4 text-center rounded-sm transition-all ${
                             isSelected 
-                              ? "border-[#1c2117] bg-[#fdfdfc] font-bold text-[#1c2117]" 
-                              : "border-[rgba(28,33,23,0.08)] bg-white text-[#1c2117] hover:border-[#1c2117]/35"
+                              ? "border-[#11311e] bg-[#fdfdfc] font-bold text-[#11311e]" 
+                              : "border-[rgba(28,33,23,0.08)] bg-white text-[#11311e] hover:border-[#11311e]/35"
                           }`}
                         >
                           <span className="text-[12px] uppercase tracking-[0.05em] block mb-1">{hShape}</span>
@@ -575,7 +575,7 @@ Looking forward to hearing back!`;
 
                 {/* Handle Thickness */}
                 <div className="mb-8">
-                  <span className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#1c2117] mb-3">
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#11311e] mb-3">
                     Handle Thickness
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -587,8 +587,8 @@ Looking forward to hearing back!`;
                           onClick={() => setHandleThickness(hThick)}
                           className={`border cursor-pointer p-4 text-center rounded-sm transition-all ${
                             isSelected 
-                              ? "border-[#1c2117] bg-[#fdfdfc] font-bold text-[#1c2117]" 
-                              : "border-[rgba(28,33,23,0.08)] bg-white text-[#1c2117] hover:border-[#1c2117]/35"
+                              ? "border-[#11311e] bg-[#fdfdfc] font-bold text-[#11311e]" 
+                              : "border-[rgba(28,33,23,0.08)] bg-white text-[#11311e] hover:border-[#11311e]/35"
                           }`}
                         >
                           <span className="text-[12px] uppercase tracking-[0.05em] block mb-1">{hThick}</span>
@@ -608,14 +608,14 @@ Looking forward to hearing back!`;
             {/* STEP 7: PLAYER LEVEL & NOTES */}
             {activeStep === 7 && (
               <div className="animate-fadeIn">
-                <h3 style={DF} className="text-[20px] font-bold text-[#1c2117] uppercase mb-2">Player Details & Notes</h3>
+                <h3 style={DF} className="text-[20px] font-bold text-[#11311e] uppercase mb-2">Player Details & Notes</h3>
                 <p className="text-[13px] text-[#6b7462] mb-6">
                   Provide your playing level and any additional notes (e.g. style of play, specific edge dimensions or willow grades) so we can review your build.
                 </p>
 
                 {/* Player Level */}
                 <div className="mb-6">
-                  <span className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#1c2117] mb-3">
+                  <span className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#11311e] mb-3">
                     Your Playing Level
                   </span>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -627,8 +627,8 @@ Looking forward to hearing back!`;
                           onClick={() => setPlayerLevel(lvl)}
                           className={`border cursor-pointer p-3 text-center rounded-sm transition-all ${
                             isSelected 
-                              ? "border-[#1c2117] bg-[#fdfdfc] font-bold text-[#1c2117]" 
-                              : "border-[rgba(28,33,23,0.08)] bg-white text-[#1c2117] hover:border-[#1c2117]/35"
+                              ? "border-[#11311e] bg-[#fdfdfc] font-bold text-[#11311e]" 
+                              : "border-[rgba(28,33,23,0.08)] bg-white text-[#11311e] hover:border-[#11311e]/35"
                           }`}
                         >
                           <span className="text-[11px] uppercase tracking-[0.05em]">{lvl}</span>
@@ -640,14 +640,14 @@ Looking forward to hearing back!`;
 
                 {/* Notes */}
                 <div className="mb-8">
-                  <label className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#1c2117] mb-2">
+                  <label className="block text-[10px] font-bold uppercase tracking-[0.1em] text-[#11311e] mb-2">
                     Additional Instructions / Notes (Optional)
                   </label>
                   <textarea
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     placeholder="E.g. I prefer heavy back-foot driving, looking for a Grade 1+ English Willow with an orange grip if possible."
-                    className="w-full bg-[#fbfaf8] border border-[rgba(28,33,23,0.15)] rounded-sm p-4 text-[13px] text-[#1c2117] outline-none focus:border-[#1c2117] focus:ring-1 focus:ring-[#1c2117] transition-colors h-32 resize-none"
+                    className="w-full bg-[#fbfaf8] border border-[rgba(28,33,23,0.15)] rounded-sm p-4 text-[13px] text-[#11311e] outline-none focus:border-[#11311e] focus:ring-1 focus:ring-[#11311e] transition-colors h-32 resize-none"
                   />
                 </div>
               </div>
@@ -657,7 +657,7 @@ Looking forward to hearing back!`;
             <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-6 sm:gap-0 pt-6 border-t border-[#f0ede4] mt-8 w-full">
               <button
                 onClick={handleReset}
-                className="inline-flex items-center gap-1.5 text-[10px] font-black tracking-[0.15em] uppercase text-[#c8c4b8] hover:text-[#1c2117] transition-colors"
+                className="inline-flex items-center gap-1.5 text-[10px] font-black tracking-[0.15em] uppercase text-[#c8c4b8] hover:text-[#11311e] transition-colors"
               >
                 <RotateCcw size={12} /> Reset Form
               </button>
@@ -666,7 +666,7 @@ Looking forward to hearing back!`;
                 {activeStep > 1 && (
                   <button
                     onClick={() => setActiveStep(activeStep - 1)}
-                    className="border border-[rgba(28,33,23,0.15)] text-[#1c2117] text-[10px] font-black tracking-[0.15em] uppercase px-5 py-3.5 hover:border-[#1c2117]/40 transition-colors"
+                    className="border border-[rgba(28,33,23,0.15)] text-[#11311e] text-[10px] font-black tracking-[0.15em] uppercase px-5 py-3.5 hover:border-[#11311e]/40 transition-colors"
                   >
                     Back
                   </button>
@@ -674,7 +674,7 @@ Looking forward to hearing back!`;
                 {activeStep < totalSteps ? (
                   <button
                     onClick={() => setActiveStep(activeStep + 1)}
-                    className="inline-flex items-center gap-1.5 bg-[#1c2117] text-white text-[10px] font-black tracking-[0.15em] uppercase px-6 py-3.5 hover:bg-[#343b2d] transition-colors"
+                    className="inline-flex items-center gap-1.5 bg-[#11311e] text-white text-[10px] font-black tracking-[0.15em] uppercase px-6 py-3.5 hover:bg-[#343b2d] transition-colors"
                   >
                     Next Step <ArrowRight size={12} />
                   </button>
@@ -684,7 +684,7 @@ Looking forward to hearing back!`;
                     onClick={handleSubmitEnquiry}
                     className={`inline-flex items-center gap-2.5 text-white text-[11px] font-black tracking-[0.15em] uppercase px-7 py-4 transition-colors ${
                       ordersEnabled 
-                        ? "bg-[#1c2117] hover:bg-[#275c3f] cursor-pointer" 
+                        ? "bg-[#11311e] hover:bg-[#275c3f] cursor-pointer" 
                         : "bg-[#c8c4b8] cursor-not-allowed opacity-50"
                     }`}
                   >
@@ -697,7 +697,7 @@ Looking forward to hearing back!`;
           </div>
 
           {/* RIGHT: CONFIGURATION PREVIEW CARD */}
-          <div className="sticky top-8 bg-[#1c2117] text-white border border-[rgba(163,124,86,0.3)] p-8 rounded-sm shadow-md">
+          <div className="sticky top-8 bg-[#11311e] text-white border border-[rgba(163,124,86,0.3)] p-8 rounded-sm shadow-md">
             <h3 style={DF} className="text-[22px] font-black tracking-wide uppercase mb-6 text-white border-b border-white/10 pb-4">
               Your Custom Bat Spec
             </h3>
@@ -738,15 +738,15 @@ Looking forward to hearing back!`;
               </div>
               <div className="text-[13px]">
                 <span className="text-white/55 tracking-wider uppercase text-[10px] font-semibold block mb-2">Instructions Summary</span>
-                <p className="text-[11px] leading-relaxed text-white/70 bg-[#1a1816] p-3 rounded-sm italic border border-white/5 max-h-24 overflow-y-auto">
+                <p className="text-[11px] leading-relaxed text-white/70 bg-[#0d2617] p-3 rounded-sm italic border border-white/5 max-h-24 overflow-y-auto">
                   {notes.trim() || "No additional custom instructions specified."}
                 </p>
               </div>
             </div>
 
             {/* Dynamic visual preview panel (3D / vector bat contour) */}
-            <div className="bg-[#1a1816] border border-white/10 rounded-sm p-6 text-center">
-              <span className="text-[9px] tracking-[0.2em] text-[#7ec89a] font-bold uppercase block mb-4">
+            <div className="bg-[#0d2617] border border-white/10 rounded-sm p-6 text-center">
+              <span className="text-[9px] tracking-[0.2em] text-[#a7e5b9] font-bold uppercase block mb-4">
                 Dynamic Spec Rendering
               </span>
               
@@ -761,11 +761,11 @@ Looking forward to hearing back!`;
                   />
                   {/* Handle Rings to indicate shape */}
                   {handleShape === "Oval" ? (
-                    <ellipse cx="60" cy="40" rx="4" ry="2" fill="none" stroke="#7ec89a" strokeWidth="1" />
+                    <ellipse cx="60" cy="40" rx="4" ry="2" fill="none" stroke="#a7e5b9" strokeWidth="1" />
                   ) : handleShape === "Semi Oval" ? (
-                    <path d="M 57,40 Q 60,37 63,40" fill="none" stroke="#7ec89a" strokeWidth="1" />
+                    <path d="M 57,40 Q 60,37 63,40" fill="none" stroke="#a7e5b9" strokeWidth="1" />
                   ) : (
-                    <circle cx="60" cy="40" r="3" fill="none" stroke="#7ec89a" strokeWidth="1" />
+                    <circle cx="60" cy="40" r="3" fill="none" stroke="#a7e5b9" strokeWidth="1" />
                   )}
 
                   {/* Shoulder */}
@@ -773,22 +773,22 @@ Looking forward to hearing back!`;
 
                   {/* Spine contour lines indicating concave depth */}
                   {shape === "Full Profile" && (
-                    <path d="M 60,70 L 60,175 M 45,95 L 45,170 M 75,95 L 75,170" stroke="#f5f3ec" strokeWidth="0.75" opacity="0.3" fill="none" />
+                    <path d="M 60,70 L 60,175 M 45,95 L 45,170 M 75,95 L 75,170" stroke="#ffffff" strokeWidth="0.75" opacity="0.3" fill="none" />
                   )}
                   {shape === "Semi Concaved" && (
-                    <path d="M 60,70 L 60,175 M 48,95 Q 52,130 48,170 M 72,95 Q 68,130 72,170" stroke="#1c2117" strokeWidth="0.75" opacity="0.4" fill="none" />
+                    <path d="M 60,70 L 60,175 M 48,95 Q 52,130 48,170 M 72,95 Q 68,130 72,170" stroke="#11311e" strokeWidth="0.75" opacity="0.4" fill="none" />
                   )}
                   {shape === "Concaved" && (
-                    <path d="M 60,70 L 60,175 M 50,95 Q 56,130 50,170 M 70,95 Q 64,130 70,170" stroke="#1c2117" strokeWidth="1.25" opacity="0.65" fill="none" />
+                    <path d="M 60,70 L 60,175 M 50,95 Q 56,130 50,170 M 70,95 Q 64,130 70,170" stroke="#11311e" strokeWidth="1.25" opacity="0.65" fill="none" />
                   )}
 
                   {/* Sweet spot highlight circle */}
                   <g>
-                    {sweetSpot === "High" && <circle cx="60" cy="95" r="14" fill="#7ec89a" fillOpacity="0.45" className="animate-pulse" />}
-                    {sweetSpot === "Mid High" && <circle cx="60" cy="115" r="14" fill="#7ec89a" fillOpacity="0.45" className="animate-pulse" />}
-                    {sweetSpot === "Mid" && <circle cx="60" cy="130" r="14" fill="#7ec89a" fillOpacity="0.45" className="animate-pulse" />}
-                    {sweetSpot === "Mid Low" && <circle cx="60" cy="145" r="14" fill="#7ec89a" fillOpacity="0.45" className="animate-pulse" />}
-                    {sweetSpot === "Low" && <circle cx="60" cy="160" r="14" fill="#7ec89a" fillOpacity="0.45" className="animate-pulse" />}
+                    {sweetSpot === "High" && <circle cx="60" cy="95" r="14" fill="#a7e5b9" fillOpacity="0.45" className="animate-pulse" />}
+                    {sweetSpot === "Mid High" && <circle cx="60" cy="115" r="14" fill="#a7e5b9" fillOpacity="0.45" className="animate-pulse" />}
+                    {sweetSpot === "Mid" && <circle cx="60" cy="130" r="14" fill="#a7e5b9" fillOpacity="0.45" className="animate-pulse" />}
+                    {sweetSpot === "Mid Low" && <circle cx="60" cy="145" r="14" fill="#a7e5b9" fillOpacity="0.45" className="animate-pulse" />}
+                    {sweetSpot === "Low" && <circle cx="60" cy="160" r="14" fill="#a7e5b9" fillOpacity="0.45" className="animate-pulse" />}
                   </g>
                 </svg>
               </div>

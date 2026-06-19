@@ -234,7 +234,7 @@ export default function Collections() {
   };
 
   return (
-    <div className="bg-[#f5f3ec] min-h-screen pb-20">
+    <div className="bg-[#ffffff] min-h-screen pb-20">
       <CollectionsHero />
 
       <div className="w-full max-w-[1920px] mx-auto px-4 lg:px-6 mt-12 grid lg:grid-cols-[180px_1fr] gap-6 items-start">

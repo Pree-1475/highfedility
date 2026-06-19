@@ -44,12 +44,12 @@ export default function Services() {
   }, [data]);
 
   return (
-    <div className="min-h-screen bg-[#f5f3ec]">
+    <div className="min-h-screen bg-[#ffffff]">
       {/* Minimalist Editorial Hero */}
       <div className="pt-[70px] md:pt-[80px] pb-12 lg:pb-20 px-6 lg:px-10 max-w-[1440px] mx-auto">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-end">
           <div className="flex flex-col pb-4 lg:pb-8">
-            <h1 style={DF} className="text-[52px] md:text-[80px] lg:text-[100px] xl:text-[120px] leading-[0.85] tracking-tight font-black text-[#1c2117] uppercase mb-6">
+            <h1 style={DF} className="text-[52px] md:text-[80px] lg:text-[100px] xl:text-[120px] leading-[0.85] tracking-tight font-black text-[#11311e] uppercase mb-6">
               Workshop<br />Services
             </h1>
             <p className="text-[13px] md:text-[15px] leading-relaxed text-[#6b7462] max-w-md">

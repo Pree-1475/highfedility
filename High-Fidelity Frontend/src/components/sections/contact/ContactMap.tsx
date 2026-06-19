@@ -16,11 +16,11 @@ export default function ContactMap() {
           backgroundSize: "28px 28px",
         }}
       >
-        <div className="absolute w-4 h-4 bg-[#1c2117] rounded-full shadow-[0_0_0_8px_rgba(28,33,23,0.2)]" />
+        <div className="absolute w-4 h-4 bg-[#11311e] rounded-full shadow-[0_0_0_8px_rgba(28,33,23,0.2)]" />
         <div className="relative text-center mt-14 bg-white/90 backdrop-blur px-6 py-4 shadow-xl">
           <p
             style={DF}
-            className="text-[20px] font-bold text-[#1c2117] uppercase tracking-wide"
+            className="text-[20px] font-bold text-[#11311e] uppercase tracking-wide"
           >
             MR.WILLOW Cricket Store
           </p>
@@ -29,7 +29,7 @@ export default function ContactMap() {
             href={mapsLink}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-bold tracking-[0.16em] uppercase text-[#1c2117] border-b border-[#1c2117] pb-px hover:gap-2 transition-all"
+            className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-bold tracking-[0.16em] uppercase text-[#11311e] border-b border-[#11311e] pb-px hover:gap-2 transition-all"
           >
             Get Directions <ArrowRight size={11} />
           </a>

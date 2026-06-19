@@ -28,29 +28,29 @@ export default function Community() {
   }, []);
 
   return (
-    <section className="bg-[#f5f3ec] pt-12 md:pt-16 lg:pt-24 pb-8 px-4 md:px-10 overflow-hidden border-t border-[rgba(28,33,23,0.06)]">
+    <section className="bg-[#ffffff] pt-12 md:pt-16 lg:pt-24 pb-8 px-4 md:px-10 overflow-hidden border-t border-[rgba(28,33,23,0.06)]">
       <div className="max-w-[1440px] mx-auto flex flex-col items-center">
 
         {/* Centered Header & Text */}
         <div className="text-center max-w-2xl mx-auto mb-10 px-2">
           <h2
             style={DF}
-            className="text-[44px] md:text-[56px] font-black leading-[0.9] tracking-tight text-[#1c2117] uppercase mb-6"
+            className="text-[44px] md:text-[56px] font-black leading-[0.9] tracking-tight text-[#11311e] uppercase mb-6"
           >
             Life at MR.WILLOW
           </h2>
-          <p className="text-[#a37c56] font-medium text-[16px] md:text-[18px] leading-relaxed">
+          <p className="text-[#22c55e] font-medium text-[16px] md:text-[18px] leading-relaxed">
             MR.WILLOW wouldn't be what it is today without you all! Follow along on our socials to stay up to date with all the community events, workshop insights, and behind-the-scenes cricket moments.
           </p>
         </div>
 
         {/* Centered Social Links in rounded boxes */}
-        <div className="flex items-center justify-center gap-4 mb-20">
+        <div className="flex items-center justify-center gap-4 mb-10">
           <a
             href={settings?.instagram_url || "https://instagram.com"}
             target="_blank"
             rel="noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white text-[#a37c56] shadow-sm hover:scale-105 hover:shadow-md hover:text-[#1c2117] transition-all duration-300"
+            className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white text-[#22c55e] shadow-sm hover:scale-105 hover:shadow-md hover:text-[#11311e] transition-all duration-300"
             aria-label="Instagram"
           >
             <Instagram size={24} strokeWidth={2} />
@@ -59,7 +59,7 @@ export default function Community() {
             href={settings?.tiktok_url || "https://tiktok.com"}
             target="_blank"
             rel="noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white text-[#a37c56] shadow-sm hover:scale-105 hover:shadow-md hover:text-[#1c2117] transition-all duration-300"
+            className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white text-[#22c55e] shadow-sm hover:scale-105 hover:shadow-md hover:text-[#11311e] transition-all duration-300"
             aria-label="TikTok"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -70,7 +70,7 @@ export default function Community() {
             href={settings?.youtube_url || "https://youtube.com"}
             target="_blank"
             rel="noreferrer"
-            className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white text-[#a37c56] shadow-sm hover:scale-105 hover:shadow-md hover:text-[#1c2117] transition-all duration-300"
+            className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white text-[#22c55e] shadow-sm hover:scale-105 hover:shadow-md hover:text-[#11311e] transition-all duration-300"
             aria-label="YouTube"
           >
             <Youtube size={26} strokeWidth={2} />
@@ -107,7 +107,7 @@ export default function Community() {
                     />
                   )}
                   {/* Subtle MR WILLOW overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1c2117]/60 via-transparent to-transparent opacity-60 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#11311e]/60 via-transparent to-transparent opacity-60 pointer-events-none" />
                 </div>
               </div>
             ))}

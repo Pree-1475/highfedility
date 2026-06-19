@@ -12,7 +12,7 @@ export default function CustomBats({ data }: CustomBatsProps) {
   const renderedTitle = data?.custom_bats_title
     ? data.custom_bats_title.split("\n").map((line: string, idx: number) => {
       if (line.trim().toUpperCase() === "GAME.") {
-        return <span key={idx} className="text-[#7ec89a]">GAME.<br /></span>;
+        return <span key={idx} className="text-[#a7e5b9]">GAME.<br /></span>;
       }
       return <span key={idx}>{line}<br /></span>;
     })
@@ -22,7 +22,7 @@ export default function CustomBats({ data }: CustomBatsProps) {
         <br />
         To Your
         <br />
-        <span className="text-[#7ec89a]">Game.</span>
+        <span className="text-[#a7e5b9]">Game.</span>
       </>
     );
 
@@ -50,14 +50,14 @@ export default function CustomBats({ data }: CustomBatsProps) {
     ];
 
   return (
-    <section className="bg-[#1c2117] grid lg:grid-cols-2 min-h-[640px]">
-      <div className="relative overflow-hidden bg-[#1a1816] min-h-[400px] lg:min-h-auto">
+    <section className="bg-[#11311e] grid lg:grid-cols-2 min-h-[640px]">
+      <div className="hidden lg:block relative overflow-hidden bg-[#0d2617] lg:min-h-auto">
         <img
           src={imageSrc}
           alt="Custom cricket bat crafting process"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#1c2117]/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#11311e]/55" />
       </div>
 
       <div className="relative flex flex-col justify-center px-12 lg:px-16 xl:px-20 py-12 md:py-16 lg:py-20 overflow-hidden">
@@ -78,14 +78,14 @@ export default function CustomBats({ data }: CustomBatsProps) {
           {isPrimaryInternal ? (
             <Link
               to={primaryLink}
-              className="inline-flex items-center gap-2.5 bg-white text-[#1c2117] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#f5f3ec] transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 bg-white text-[#11311e] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#ffffff] transition-colors duration-200"
             >
               {primaryText} <ArrowRight size={14} />
             </Link>
           ) : (
             <a
               href={primaryLink}
-              className="inline-flex items-center gap-2.5 bg-white text-[#1c2117] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#f5f3ec] transition-colors duration-200"
+              className="inline-flex items-center gap-2.5 bg-white text-[#11311e] text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#ffffff] transition-colors duration-200"
             >
               {primaryText} <ArrowRight size={14} />
             </a>

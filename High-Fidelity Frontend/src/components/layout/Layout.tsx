@@ -9,7 +9,7 @@ export function Layout() {
     <div className="min-h-screen flex flex-col">
       <AnnouncementBar />
       <Navigation />
-      <main className="flex-grow pb-[76px] lg:pb-0">
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />

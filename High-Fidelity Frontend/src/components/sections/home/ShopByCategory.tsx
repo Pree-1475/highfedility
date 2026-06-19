@@ -11,7 +11,7 @@ export default function ShopByCategory() {
           <SectionLabel n="03" label="Shop By Category" />
           <h2
             style={DF}
-            className="text-[44px] md:text-[52px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase"
+            className="text-[44px] md:text-[52px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase"
           >
             Explore Our
             <br />

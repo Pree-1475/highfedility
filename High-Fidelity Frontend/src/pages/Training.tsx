@@ -5,7 +5,7 @@ import { DF, PH } from "../lib/constants";
 
 export default function Training() {
   return (
-    <div className="min-h-screen bg-[#f5f3ec]">
+    <div className="min-h-screen bg-[#ffffff]">
       {/* The Simple Banner Header */}
       <div className="w-full h-[40vh] relative overflow-hidden rounded-b-[2rem] mb-12 lg:mb-20">
         <img src={PH.act2} alt="Training" className="absolute inset-0 w-full h-full object-cover" />

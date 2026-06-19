@@ -55,12 +55,12 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
   };
 
   return (
-    <section className="bg-[#f5f3ec] py-12 md:py-16 lg:py-24 px-6 md:px-10 overflow-hidden relative">
+    <section className="bg-[#ffffff] py-12 md:py-16 lg:py-24 px-6 md:px-10 overflow-hidden relative">
       <div className="max-w-[1440px] mx-auto">
         <SectionLabel n="01" label="Overview" />
         <h2
           style={DF}
-          className="text-[44px] md:text-[52px] font-black uppercase tracking-tight text-[#1c2117] mb-12"
+          className="text-[44px] md:text-[52px] font-black uppercase tracking-tight text-[#11311e] mb-12"
         >
           EVERYTHING YOU NEED
         </h2>
@@ -79,7 +79,7 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
             >
               {/* Premium Editorial Photo - Square/Shorter Aspect */}
               <div className="aspect-square w-full overflow-hidden rounded-xl relative mb-5">
-                <div className="absolute inset-0 bg-[#1c2117]/5 z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
+                <div className="absolute inset-0 bg-[#11311e]/5 z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
                 <img 
                   src={image} 
                   alt={title} 
@@ -91,14 +91,14 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
               <div className="flex flex-col flex-grow px-1">
                 <h3
                   style={DF}
-                  className="text-[18px] md:text-[22px] font-bold tracking-wide text-[#1c2117] mb-2 uppercase leading-tight"
+                  className="text-[18px] md:text-[22px] font-bold tracking-wide text-[#11311e] mb-2 uppercase leading-tight"
                 >
                   {title}
                 </h3>
                 <p className="text-[13px] leading-relaxed text-[#6b7462] flex-grow mb-5">
                   {desc}
                 </p>
-                <div className="flex items-center gap-1.5 mt-auto text-[10px] font-bold tracking-[0.16em] uppercase text-[#1c2117]">
+                <div className="flex items-center gap-1.5 mt-auto text-[10px] font-bold tracking-[0.16em] uppercase text-[#11311e]">
                   <span>Explore</span>
                   <ArrowRight
                     size={12}
@@ -116,7 +116,7 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
             <div 
               key={i}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === activeIndex ? "w-6 bg-[#1c2117]" : "w-1.5 bg-[#1c2117]/20"
+                i === activeIndex ? "w-6 bg-[#11311e]" : "w-1.5 bg-[#11311e]/20"
               }`}
             />
           ))}

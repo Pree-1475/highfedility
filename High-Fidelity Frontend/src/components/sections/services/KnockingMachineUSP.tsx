@@ -18,7 +18,7 @@ export default function KnockingMachineUSP({ data }: KnockingMachineUSPProps) {
       <span key={idx}>
         {parts.map((part, pIdx) => {
           if (part === "Match Play.") {
-            return <span key={pIdx} className="text-[#1c2117]">Match Play.</span>;
+            return <span key={pIdx} className="text-[#11311e]">Match Play.</span>;
           }
           return part;
         })}
@@ -38,18 +38,18 @@ export default function KnockingMachineUSP({ data }: KnockingMachineUSPProps) {
   ];
 
   return (
-    <section className="bg-[#f5f3ec] py-24 px-10">
+    <section className="bg-[#ffffff] py-24 px-10">
       <div className="max-w-[1440px] mx-auto grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
         <div className="relative aspect-square overflow-hidden bg-[#ddd9cf]">
           <img src={imageSrc} alt="Bat Knocking Machine" className="w-full h-full object-cover" />
           <div className="absolute bottom-6 left-6 right-6 bg-white p-6 shadow-lg">
             <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-1">{badge}</p>
-            <p style={DF} className="text-[24px] font-black uppercase text-[#1c2117] leading-none">{badgeText}</p>
+            <p style={DF} className="text-[24px] font-black uppercase text-[#11311e] leading-none">{badgeText}</p>
           </div>
         </div>
         <div>
           <SectionLabel n="02" label="Our Speciality" />
-          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase mb-6">
+          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase mb-6">
             {renderedTitle}
           </h2>
           <p className="text-[15px] leading-relaxed text-[#6b7462] mb-6">
@@ -61,8 +61,8 @@ export default function KnockingMachineUSP({ data }: KnockingMachineUSPProps) {
           <ul className="flex flex-col gap-4">
             {bullets.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="text-[#1c2117] mt-1">✦</span>
-                <span className="text-[14px] font-semibold text-[#1c2117]">{item}</span>
+                <span className="text-[#11311e] mt-1">✦</span>
+                <span className="text-[14px] font-semibold text-[#11311e]">{item}</span>
               </li>
             ))}
           </ul>

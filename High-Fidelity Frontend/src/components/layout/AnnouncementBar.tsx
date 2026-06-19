@@ -8,7 +8,7 @@ export function AnnouncementBar() {
   if (!enabled) return null;
 
   return (
-    <div className="bg-[#1c2117] text-white text-center py-2.5">
+    <div className="bg-[#11311e] text-white text-center py-2.5">
       <p className="text-[11px] font-semibold tracking-[0.2em] uppercase">
         {text}
       </p>

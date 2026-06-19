@@ -24,13 +24,13 @@ export default function ContactDetails() {
     <div>
       <h1
         style={DF}
-        className="text-[64px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase mb-6"
+        className="text-[64px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase mb-6"
       >
         Reach
         <br />
         Out To
         <br />
-        <span className="text-[#1c2117]">Us.</span>
+        <span className="text-[#11311e]">Us.</span>
       </h1>
 
       <p className="text-[14px] md:text-[15px] text-[#6b7462] leading-relaxed max-w-sm mb-10">
@@ -39,12 +39,12 @@ export default function ContactDetails() {
 
       {/* Address */}
       <div className="flex gap-4 mb-8">
-        <MapPin size={18} className="text-[#1c2117] shrink-0 mt-0.5" />
+        <MapPin size={18} className="text-[#11311e] shrink-0 mt-0.5" />
         <div>
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-1.5">
             Address
           </p>
-          <p style={{ whiteSpace: 'pre-line' }} className="text-[15px] text-[#1c2117] leading-relaxed font-medium">
+          <p style={{ whiteSpace: 'pre-line' }} className="text-[15px] text-[#11311e] leading-relaxed font-medium">
             {address}
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function ContactDetails() {
 
       {/* Hours */}
       <div className="flex gap-4 mb-8">
-        <Clock size={18} className="text-[#1c2117] shrink-0 mt-0.5" />
+        <Clock size={18} className="text-[#11311e] shrink-0 mt-0.5" />
         <div className="flex-1 max-w-[320px]">
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-3">
             Operating Hours
@@ -63,8 +63,8 @@ export default function ContactDetails() {
                 key={day}
                 className="flex justify-between gap-8 border-b border-[rgba(28,33,23,0.08)] pb-2.5"
               >
-                <span className="text-[13px] text-[#1c2117]">{day}</span>
-                <span className="text-[13px] font-semibold text-[#1c2117]">{time}</span>
+                <span className="text-[13px] text-[#11311e]">{day}</span>
+                <span className="text-[13px] font-semibold text-[#11311e]">{time}</span>
               </div>
             ))}
           </div>
@@ -73,13 +73,13 @@ export default function ContactDetails() {
 
       {/* Phone & Email */}
       <div className="flex gap-4 mb-12">
-        <Phone size={18} className="text-[#1c2117] shrink-0 mt-0.5" />
+        <Phone size={18} className="text-[#11311e] shrink-0 mt-0.5" />
         <div>
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-1.5">
             Contact Details
           </p>
-          <p className="text-[15px] text-[#1c2117] font-medium">{phone}</p>
-          <p className="text-[15px] text-[#1c2117] font-medium mt-1">{email}</p>
+          <p className="text-[15px] text-[#11311e] font-medium">{phone}</p>
+          <p className="text-[15px] text-[#11311e] font-medium mt-1">{email}</p>
         </div>
       </div>
 
@@ -89,7 +89,7 @@ export default function ContactDetails() {
           href={whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2.5 bg-[#1c2117] text-white text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#2a3023] transition-colors duration-200"
+          className="inline-flex items-center gap-2.5 bg-[#11311e] text-white text-[11px] font-bold tracking-[0.13em] uppercase px-7 py-4 hover:bg-[#2a3023] transition-colors duration-200"
         >
           <MessageCircle size={14} />
           WhatsApp Us

@@ -169,7 +169,7 @@ export default function FeaturedProducts() {
             <SectionLabel n="02" label="Featured Products" />
             <h2
               style={DF}
-              className="text-[44px] md:text-[52px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase"
+              className="text-[44px] md:text-[52px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase"
             >
               Premium
               <br />
@@ -179,20 +179,20 @@ export default function FeaturedProducts() {
 
           {/* Navigation Controls */}
           <div className="flex items-center gap-4 md:gap-6 flex-wrap md:flex-nowrap">
-            <span style={DF} className="text-[18px] font-bold text-[#1c2117]/40 tracking-wider">
-              0{realIndex + 1} <span className="text-[#1c2117]/20">/</span> 0{products.length}
+            <span style={DF} className="text-[18px] font-bold text-[#11311e]/40 tracking-wider">
+              0{realIndex + 1} <span className="text-[#11311e]/20">/</span> 0{products.length}
             </span>
             <div className="flex gap-2">
               <button
                 onClick={prevSlide}
-                className="w-12 h-12 rounded-full border border-[#1c2117]/20 flex items-center justify-center text-[#1c2117] hover:bg-[#1c2117] hover:text-white hover:scale-105 transition-all duration-300"
+                className="w-12 h-12 rounded-full border border-[#11311e]/20 flex items-center justify-center text-[#11311e] hover:bg-[#11311e] hover:text-white hover:scale-105 transition-all duration-300"
                 aria-label="Previous slide"
               >
                 <ArrowLeft size={18} strokeWidth={2} />
               </button>
               <button
                 onClick={nextSlide}
-                className="w-12 h-12 rounded-full border border-[#1c2117]/20 flex items-center justify-center text-[#1c2117] hover:bg-[#1c2117] hover:text-white hover:scale-105 transition-all duration-300"
+                className="w-12 h-12 rounded-full border border-[#11311e]/20 flex items-center justify-center text-[#11311e] hover:bg-[#11311e] hover:text-white hover:scale-105 transition-all duration-300"
                 aria-label="Next slide"
               >
                 <ArrowRight size={18} strokeWidth={2} />
@@ -200,7 +200,7 @@ export default function FeaturedProducts() {
             </div>
             <Link
               to="/collections"
-              className="inline-flex items-center justify-center border border-[#1c2117] text-[#1c2117] hover:bg-[#1c2117] hover:text-white text-[10px] md:text-[11px] font-bold tracking-[0.16em] uppercase px-5 py-3.5 transition-all duration-300 h-max w-max"
+              className="inline-flex items-center justify-center border border-[#11311e] text-[#11311e] hover:bg-[#11311e] hover:text-white text-[10px] md:text-[11px] font-bold tracking-[0.16em] uppercase px-5 py-3.5 transition-all duration-300 h-max w-max"
             >
               View Collection
             </Link>
@@ -249,7 +249,7 @@ export default function FeaturedProducts() {
                       alt={name}
                       className={`w-full h-full object-cover ${pos} transition-transform duration-700 ease-out ${isActive ? "group-hover:scale-105" : ""}`}
                     />
-                    <span className="absolute top-4 left-4 bg-[#1c2117] text-white text-[9px] font-bold tracking-[0.16em] uppercase px-2.5 py-1.5 z-10">
+                    <span className="absolute top-4 left-4 bg-[#11311e] text-white text-[9px] font-bold tracking-[0.16em] uppercase px-2.5 py-1.5 z-10">
                       {tag}
                     </span>
                   </div>
@@ -260,14 +260,14 @@ export default function FeaturedProducts() {
                     </p>
                     <h3
                       style={DF}
-                      className="text-[22px] font-bold text-[#1c2117] leading-tight tracking-wide uppercase mb-1.5"
+                      className="text-[22px] font-bold text-[#11311e] leading-tight tracking-wide uppercase mb-1.5"
                     >
                       {name}
                     </h3>
                     <p className="text-[13px] text-[#6b7462] mb-5">{sub}</p>
 
                     <span
-                      className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.16em] uppercase text-[#1c2117]/60 group-hover:text-[#1c2117] transition-colors duration-300"
+                      className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.16em] uppercase text-[#11311e]/60 group-hover:text-[#11311e] transition-colors duration-300"
                     >
                       Enquire In-Store
                       <ArrowRight

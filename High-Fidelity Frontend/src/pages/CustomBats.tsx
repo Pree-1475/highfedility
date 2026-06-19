@@ -3,7 +3,7 @@ import CraftsmanshipProcess from "../components/sections/custom-bats/Craftsmansh
 
 export default function CustomBats() {
   return (
-    <div className="min-h-screen bg-[#f5f3ec]">
+    <div className="min-h-screen bg-[#ffffff]">
       <CustomBatBuilder />
       <CraftsmanshipProcess />
     </div>

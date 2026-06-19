@@ -40,7 +40,7 @@ export default function ProductFilters({
               <button
                 onClick={() => onCategoryChange(cat)}
                 className={`text-[14px] font-semibold tracking-wide transition-colors ${
-                  activeCategory === cat ? "text-[#1c2117]" : "text-[#6b7462] hover:text-[#1c2117]"
+                  activeCategory === cat ? "text-[#11311e]" : "text-[#6b7462] hover:text-[#11311e]"
                 }`}
               >
                 {cat}
@@ -60,7 +60,7 @@ export default function ProductFilters({
                   <button
                     onClick={() => onTypeChange(type)}
                     className={`text-[13px] tracking-wide transition-colors ${
-                      activeType === type ? "text-[#1c2117] font-bold" : "text-[#6b7462] hover:text-[#1c2117]"
+                      activeType === type ? "text-[#11311e] font-bold" : "text-[#6b7462] hover:text-[#11311e]"
                     }`}
                   >
                     {type}
@@ -77,7 +77,7 @@ export default function ProductFilters({
         <select
           value={sortByPrice}
           onChange={(e) => onSortChange(e.target.value as any)}
-          className="w-full bg-transparent border border-[rgba(28,33,23,0.15)] text-[13px] font-medium text-[#1c2117] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[#a37c56] appearance-none cursor-pointer"
+          className="w-full bg-transparent border border-[rgba(28,33,23,0.15)] text-[13px] font-medium text-[#11311e] px-3 py-2.5 rounded-sm focus:outline-none focus:border-[#22c55e] appearance-none cursor-pointer"
         >
           <option value="none">Featured</option>
           <option value="asc">Price: Low to High</option>
@@ -87,7 +87,7 @@ export default function ProductFilters({
 
       {/* Mobile Filter Toggle */}
       <div className="lg:hidden flex items-center justify-between mb-6 border-b border-[rgba(28,33,23,0.1)] pb-4">
-        <button onClick={() => onFilterOpenChange(true)} className="flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-[#1c2117]">
+        <button onClick={() => onFilterOpenChange(true)} className="flex items-center gap-2 text-[11px] font-bold tracking-[0.1em] uppercase text-[#11311e]">
           <Filter size={16} /> Filters
         </button>
         <span className="text-[11px] font-semibold text-[#6b7462]">{resultsCount} Results</span>
@@ -99,8 +99,8 @@ export default function ProductFilters({
           <div className="absolute inset-0 bg-black/40" onClick={() => onFilterOpenChange(false)} />
           <div className="relative bg-white w-[85%] max-w-[320px] h-full shadow-xl flex flex-col">
             <div className="flex items-center justify-between p-6 border-b border-[rgba(28,33,23,0.1)]">
-              <span className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#1c2117]">Filters</span>
-              <button onClick={() => onFilterOpenChange(false)}><X size={20} className="text-[#1c2117]" /></button>
+              <span className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#11311e]">Filters</span>
+              <button onClick={() => onFilterOpenChange(false)}><X size={20} className="text-[#11311e]" /></button>
             </div>
             <div className="p-6 overflow-y-auto flex-1 bg-[#fcfaf5]">
               <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-5">Equipment</h3>
@@ -109,7 +109,7 @@ export default function ProductFilters({
                   <li key={cat}>
                     <button
                       onClick={() => onCategoryChangeMobile(cat)}
-                      className={`text-[14px] font-semibold tracking-wide ${activeCategory === cat ? "text-[#1c2117]" : "text-[#6b7462]"}`}
+                      className={`text-[14px] font-semibold tracking-wide ${activeCategory === cat ? "text-[#11311e]" : "text-[#6b7462]"}`}
                     >
                       {cat}
                     </button>
@@ -124,7 +124,7 @@ export default function ProductFilters({
                       <li key={type}>
                         <button
                           onClick={() => onTypeChange(type)}
-                          className={`text-[14px] font-semibold tracking-wide ${activeType === type ? "text-[#1c2117]" : "text-[#6b7462]"}`}
+                          className={`text-[14px] font-semibold tracking-wide ${activeType === type ? "text-[#11311e]" : "text-[#6b7462]"}`}
                         >
                           {type}
                         </button>
@@ -138,7 +138,7 @@ export default function ProductFilters({
               <select
                 value={sortByPrice}
                 onChange={(e) => onSortChange(e.target.value as any)}
-                className="w-full bg-transparent border border-[rgba(28,33,23,0.15)] text-[14px] font-medium text-[#1c2117] px-3 py-3 rounded-sm focus:outline-none focus:border-[#a37c56] appearance-none cursor-pointer mb-6"
+                className="w-full bg-transparent border border-[rgba(28,33,23,0.15)] text-[14px] font-medium text-[#11311e] px-3 py-3 rounded-sm focus:outline-none focus:border-[#22c55e] appearance-none cursor-pointer mb-6"
               >
                 <option value="none">Featured</option>
                 <option value="asc">Price: Low to High</option>
@@ -148,7 +148,7 @@ export default function ProductFilters({
             <div className="p-6 border-t border-[rgba(28,33,23,0.1)] bg-white">
               <button
                 onClick={() => onFilterOpenChange(false)}
-                className="w-full bg-[#1c2117] text-white text-[11px] font-bold tracking-[0.16em] uppercase py-3.5 hover:bg-[#2a3023] transition-all text-center block"
+                className="w-full bg-[#11311e] text-white text-[11px] font-bold tracking-[0.16em] uppercase py-3.5 hover:bg-[#2a3023] transition-all text-center block"
               >
                 Apply
               </button>

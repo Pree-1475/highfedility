@@ -114,7 +114,7 @@ export default function Hero({ data }: HeroProps) {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-40 right-20 w-32 h-32 rounded-full bg-[#7ec89a]/15 blur-3xl pointer-events-none"
+        className="absolute bottom-40 right-20 w-32 h-32 rounded-full bg-[#a7e5b9]/15 blur-3xl pointer-events-none"
         animate={{
           x: [0, -40, 0],
           y: [0, 30, 0],
@@ -136,10 +136,10 @@ export default function Hero({ data }: HeroProps) {
               initial="hidden"
               animate="visible"
               custom={0}
-              className="inline-flex items-center gap-2 bg-[#1c2117] text-[#fdfbf7] px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-mono tracking-wider shadow-sm"
+              className="inline-flex items-center gap-2 bg-[#11311e] text-[#fdfbf7] px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-mono tracking-wider shadow-sm"
             >
               <motion.span
-                className="w-2 h-2 bg-[#7ec89a] rounded-full"
+                className="w-2 h-2 bg-[#a7e5b9] rounded-full"
                 animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -150,7 +150,7 @@ export default function Hero({ data }: HeroProps) {
             <div className="space-y-1 overflow-hidden py-2">
               <motion.h1
                 style={{ x: textX1 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-[#1c2117] leading-[0.9] uppercase"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-[#11311e] leading-[0.9] uppercase"
               >
                 <motion.span
                   variants={fadeUpVariants}
@@ -164,7 +164,7 @@ export default function Hero({ data }: HeroProps) {
               </motion.h1>
               <motion.h1
                 style={{ x: textX2 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-[#1c2117] leading-[0.9] uppercase"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-[#11311e] leading-[0.9] uppercase"
               >
                 <motion.span
                   variants={fadeUpVariants}
@@ -182,7 +182,7 @@ export default function Hero({ data }: HeroProps) {
                 initial="hidden"
                 animate="visible"
                 custom={3}
-                className="text-[13px] sm:text-[15px] font-mono text-[#1c2117]/70 tracking-tight pt-4 max-w-md leading-relaxed"
+                className="text-[13px] sm:text-[15px] font-mono text-[#11311e]/70 tracking-tight pt-4 max-w-md leading-relaxed"
               >
                 {description}
               </motion.p>
@@ -200,7 +200,7 @@ export default function Hero({ data }: HeroProps) {
               {isPrimaryInternal ? (
                 <Link to={primaryLink} className="inline-block">
                   <motion.button
-                    className="bg-[#1c2117] text-[#fdfbf7] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[13px] sm:text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
+                    className="bg-[#11311e] text-[#fdfbf7] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[13px] sm:text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -230,8 +230,8 @@ export default function Hero({ data }: HeroProps) {
               {isSecondaryInternal ? (
                 <Link to={secondaryLink} className="inline-block">
                   <motion.button
-                    className="border-2 border-[#1c2117]/20 text-[#1c2117] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[13px] sm:text-sm tracking-wide relative overflow-hidden"
-                    whileHover={{ scale: 1.02, backgroundColor: "#1c2117", color: "#fdfbf7", borderColor: "#1c2117" }}
+                    className="border-2 border-[#11311e]/20 text-[#11311e] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[13px] sm:text-sm tracking-wide relative overflow-hidden"
+                    whileHover={{ scale: 1.02, backgroundColor: "#11311e", color: "#fdfbf7", borderColor: "#11311e" }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
@@ -252,7 +252,7 @@ export default function Hero({ data }: HeroProps) {
               {features.map((benefit, i) => (
                 <motion.div
                   key={benefit}
-                  className="flex items-center gap-2 text-[11px] sm:text-xs font-mono text-[#1c2117]/60"
+                  className="flex items-center gap-2 text-[11px] sm:text-xs font-mono text-[#11311e]/60"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8 + i * 0.1 }}
@@ -310,9 +310,9 @@ export default function Hero({ data }: HeroProps) {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="w-5 h-8 border-2 border-[#1c2117]/20 rounded-full flex justify-center pt-1.5">
+            <div className="w-5 h-8 border-2 border-[#11311e]/20 rounded-full flex justify-center pt-1.5">
               <motion.div
-                className="w-1 h-2 bg-[#1c2117]/30 rounded-full"
+                className="w-1 h-2 bg-[#11311e]/30 rounded-full"
                 animate={{ y: [0, 6, 0], opacity: [1, 0.5, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />

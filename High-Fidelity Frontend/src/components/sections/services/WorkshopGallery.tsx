@@ -23,7 +23,7 @@ export default function WorkshopGallery({ data }: WorkshopGalleryProps) {
     : defaultItems;
 
   return (
-    <section className="bg-[#1c2117] py-24 px-10 overflow-hidden">
+    <section className="bg-[#11311e] py-24 px-10 overflow-hidden">
       <div className="max-w-[1440px] mx-auto mb-12">
         <SectionLabel n="04" label="Inside the Workshop" />
       </div>

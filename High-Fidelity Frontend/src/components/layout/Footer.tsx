@@ -9,14 +9,14 @@ export function Footer() {
   const whatsappUrl = settings?.whatsapp_url || "https://wa.me/60123456789";
   // The context may not provide opening hours directly, fallback default
   const openingHours = "Mon - Sun: 10:00 AM - 10:00 PM";
-  
+
   const footerRef = useRef(null);
   const isInView = useInView(footerRef, { once: true, margin: "-100px" });
 
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <footer ref={footerRef} className="relative bg-[#1c2117] pt-24 pb-6 overflow-hidden flex flex-col justify-between">
+    <footer ref={footerRef} className="relative bg-[#1c2117] pt-24 pb-[100px] lg:pb-6 overflow-hidden flex flex-col justify-between">
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-10 relative z-10">
 
         {/* Info Grid (Brand Area + Essential Info) */}
@@ -41,14 +41,14 @@ export function Footer() {
           </div>
 
           {/* Essential Info */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="flex flex-col gap-2">
               <h4 className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#f5f3ec]/40 mb-2">Location</h4>
               <address className="not-italic text-[13px] text-[#f5f3ec]/80 leading-relaxed whitespace-pre-line">
                 {address}
               </address>
             </div>
-            
+
             <div className="flex flex-col gap-2">
               <h4 className="text-[10px] font-bold tracking-[0.16em] uppercase text-[#f5f3ec]/40 mb-2">Connect</h4>
               <a href={whatsappUrl} target="_blank" rel="noreferrer" className="text-[13px] text-[#f5f3ec]/80 hover:text-[#a37c56] transition-colors leading-relaxed">
@@ -74,7 +74,7 @@ export function Footer() {
           transition={{ delay: 0.4 }}
         >
           <motion.div
-            className="flex items-center gap-2"
+            className="hidden md:flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
@@ -92,15 +92,15 @@ export function Footer() {
             animate={
               isHovering
                 ? {
-                    rotate: [0, -2, 2, -2, 2, 0],
-                    scale: [1, 1.05, 1],
-                    color: "#a37c56",
-                  }
+                  rotate: [0, -2, 2, -2, 2, 0],
+                  scale: [1, 1.05, 1],
+                  color: "#a37c56",
+                }
                 : {
-                    rotate: 0,
-                    scale: 1,
-                    color: "rgba(245,243,236,0.3)",
-                  }
+                  rotate: 0,
+                  scale: 1,
+                  color: "rgba(245,243,236,0.3)",
+                }
             }
             transition={{ duration: 0.5 }}
           >

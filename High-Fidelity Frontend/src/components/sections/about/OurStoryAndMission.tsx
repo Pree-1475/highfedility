@@ -3,11 +3,11 @@ import { SectionLabel } from "../../ui/SectionLabel";
 
 export default function OurStoryAndMission() {
   return (
-    <section className="bg-[#f5f3ec] py-24 px-10">
+    <section className="bg-[#ffffff] py-24 px-10">
       <div className="max-w-[1440px] mx-auto grid lg:grid-cols-[1fr_1fr] gap-16 items-start">
         <div>
           <SectionLabel n="01" label="Our Roots" />
-          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#1c2117] uppercase mb-6">
+          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase mb-6">
             Why We <br />Started.
           </h2>
           <p className="text-[15px] leading-relaxed text-[#6b7462] mb-6">

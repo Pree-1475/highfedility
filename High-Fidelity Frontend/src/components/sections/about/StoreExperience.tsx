@@ -3,7 +3,7 @@ import { SectionLabel } from "../../ui/SectionLabel";
 
 export default function StoreExperience() {
   return (
-    <section className="bg-[#1c2117] py-24 px-10 text-center text-white">
+    <section className="bg-[#11311e] py-24 px-10 text-center text-white">
       <div className="max-w-[800px] mx-auto">
         <SectionLabel n="03" label="The Experience" />
         <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight uppercase mb-6">

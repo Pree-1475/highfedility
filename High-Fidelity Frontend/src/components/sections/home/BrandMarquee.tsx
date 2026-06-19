@@ -12,7 +12,7 @@ export default function BrandMarquee() {
   ];
 
   return (
-    <section className="w-full bg-[#1c2117] overflow-hidden py-4 border-t border-b border-[rgba(255,255,255,0.05)] flex items-center">
+    <section className="w-full bg-[#11311e] overflow-hidden py-4 border-t border-b border-[rgba(255,255,255,0.05)] flex items-center">
       <div className="flex w-max animate-scroll-marquee items-center">
         {[...displayBrands, ...displayBrands, ...displayBrands, ...displayBrands].map((brand, i) => (
           <div key={i} className="flex items-center">
