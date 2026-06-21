@@ -228,7 +228,7 @@ class HomePageSerializer(serializers.ModelSerializer):
         return None
 
     def get_custom_bats_primary_cta_text(self, obj):
-        return "Start Your Order"
+        return "Build Your Bat"
 
     def get_custom_bats_primary_cta_link(self, obj):
         return "/custom-bats"

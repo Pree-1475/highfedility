@@ -41,6 +41,8 @@ export function Navigation() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  const isSolid = !isHomePage || scrolled || open;
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 6);
@@ -64,8 +66,8 @@ export function Navigation() {
   return (
     <nav
       className={`sticky top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white shadow-[0_2px_24px_rgba(0,0,0,0.07)] border-b border-black/[0.07]"
+        isSolid
+          ? "bg-secondary shadow-[0_2px_24px_rgba(0,0,0,0.07)] border-b border-black/[0.07]"
           : "bg-transparent border-transparent shadow-none"
       }`}
     >
@@ -75,7 +77,7 @@ export function Navigation() {
           <img 
             src={logo} 
             alt="MR.WILLOW" 
-            className="h-full w-auto object-contain scale-[1.2] origin-left transition-all duration-300"
+            className={`h-full w-auto object-contain scale-[1.2] origin-left transition-all duration-300 ${!isSolid ? "brightness-0 invert" : ""}`}
           />
         </Link>
 
@@ -87,8 +89,10 @@ export function Navigation() {
               to={link.path}
               className={`text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors duration-300 ${
                 location.pathname === link.path
-                  ? "text-[#22c55e]"
-                  : "text-[#11311e] hover:text-[#22c55e]"
+                  ? "text-primary"
+                  : isSolid
+                  ? "text-foreground hover:text-primary"
+                  : "text-white hover:text-white/80"
               }`}
             >
               {link.name}
@@ -101,7 +105,7 @@ export function Navigation() {
           href={whatsapp}
           target="_blank"
           rel="noreferrer"
-          className="hidden lg:flex items-center gap-2 bg-[#22c55e] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 hover:bg-[#16a34a] transition-colors duration-200 shrink-0"
+          className="hidden lg:flex items-center gap-2 bg-[#22c55e] text-background text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 hover:bg-[#16a34a] transition-colors duration-200 shrink-0"
         >
           <MessageCircle size={13} />
           WhatsApp Us
@@ -109,7 +113,7 @@ export function Navigation() {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden ml-auto text-[#11311e] transition-colors duration-300 flex items-center gap-2"
+          className={`lg:hidden ml-auto transition-colors duration-300 flex items-center gap-2 ${isSolid ? "text-foreground" : "text-white"}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -119,15 +123,15 @@ export function Navigation() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-white border-t border-black/[0.07] px-6 py-8 flex flex-col gap-5">
+        <div className="lg:hidden bg-secondary border-t border-black/[0.07] px-6 py-8 flex flex-col gap-5">
           {links.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               className={`text-[12px] font-semibold tracking-[0.14em] uppercase ${
                 location.pathname === link.path
-                  ? "text-[#22c55e]"
-                  : "text-[#11311e]"
+                  ? "text-primary"
+                  : "text-foreground"
               }`}
             >
               {link.name}
@@ -137,7 +141,7 @@ export function Navigation() {
             href={whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-2 bg-[#22c55e] text-white text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 w-fit mt-2"
+            className="flex items-center gap-2 bg-[#22c55e] text-background text-[11px] font-bold tracking-[0.1em] uppercase px-5 py-3 w-fit mt-2"
           >
             <MessageCircle size={13} />
             WhatsApp Us
@@ -147,4 +151,5 @@ export function Navigation() {
     </nav>
   );
 }
+
 

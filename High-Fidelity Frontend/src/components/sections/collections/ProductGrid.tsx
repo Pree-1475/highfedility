@@ -1,5 +1,6 @@
 import { Product } from "../../../types";
 import ProductCard from "./ProductCard";
+import { CurrencySwitcher } from "../../ui/CurrencySwitcher";
 
 interface ProductGridProps {
   filteredProducts: Product[];
@@ -16,10 +17,13 @@ export default function ProductGrid({
 }: ProductGridProps) {
   return (
     <div>
-      <div className="hidden lg:block mb-8">
-        <span className="text-[11px] font-semibold tracking-[0.1em] uppercase text-[#6b7462]">
+      <div className="flex items-center justify-between mb-8">
+        <span className="hidden lg:block text-[11px] font-semibold tracking-[0.1em] uppercase text-muted-foreground">
           {filteredProducts.length} Results
         </span>
+        <div className="ml-auto">
+          <CurrencySwitcher />
+        </div>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-5">
         {filteredProducts.map((p) => {
@@ -42,7 +46,7 @@ export default function ProductGrid({
       </div>
       {filteredProducts.length === 0 && (
         <div className="py-20 text-center">
-          <p className="text-[#6b7462] text-[15px]">No products found matching your criteria.</p>
+          <p className="text-muted-foreground text-[15px]">No products found matching your criteria.</p>
         </div>
       )}
     </div>

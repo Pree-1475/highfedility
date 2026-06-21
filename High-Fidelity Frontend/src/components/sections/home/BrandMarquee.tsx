@@ -12,7 +12,7 @@ export default function BrandMarquee() {
   ];
 
   return (
-    <section className="w-full bg-[#11311e] overflow-hidden py-4 border-t border-b border-[rgba(255,255,255,0.05)] flex items-center">
+    <section className="w-full bg-foreground overflow-hidden py-4 border-t border-b border-[rgba(255,255,255,0.05)] flex items-center">
       <div className="flex w-max animate-scroll-marquee items-center">
         {[...displayBrands, ...displayBrands, ...displayBrands, ...displayBrands].map((brand, i) => (
           <div key={i} className="flex items-center">
@@ -27,12 +27,12 @@ export default function BrandMarquee() {
             ) : (
               <span
                 style={DF}
-                className="text-[24px] font-bold text-[#c8c4b8]/50 tracking-[0.2em] whitespace-nowrap uppercase px-12 hover:text-white transition-colors duration-300"
+                className="text-[24px] font-bold text-muted-foreground/50 tracking-[0.2em] whitespace-nowrap uppercase px-12 hover:text-background transition-colors duration-300"
               >
                 {brand.name}
               </span>
             )}
-            <span className="text-[#c8c4b8]/20 text-[10px]">✦</span>
+            <span className="text-muted-foreground/20 text-[10px]">✦</span>
           </div>
         ))}
       </div>

@@ -10,20 +10,20 @@ export default function CoachingPrograms() {
   ];
 
   return (
-    <section className="bg-[#ffffff] py-24 px-10">
+    <section className="bg-card py-24 px-10">
       <div className="max-w-[1440px] mx-auto">
         <div className="mb-12">
           <SectionLabel n="02" label="Our Programs" />
-          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase">
+          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-foreground uppercase">
             Structured For <br />Success.
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 gap-px bg-[rgba(28,33,23,0.1)]">
           {programs.map((p, i) => (
-            <div key={i} className="bg-white p-10 hover:bg-[#ffffff] transition-colors">
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-3">{p.age}</p>
-              <h3 style={DF} className="text-[28px] font-bold text-[#11311e] uppercase mb-4 leading-tight">{p.title}</h3>
-              <p className="text-[13px] leading-relaxed text-[#6b7462] max-w-[340px]">{p.desc}</p>
+            <div key={i} className="bg-card p-10 hover:bg-card transition-colors">
+              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground mb-3">{p.age}</p>
+              <h3 style={DF} className="text-[28px] font-bold text-foreground uppercase mb-4 leading-tight">{p.title}</h3>
+              <p className="text-[13px] leading-relaxed text-muted-foreground max-w-[340px]">{p.desc}</p>
             </div>
           ))}
         </div>

@@ -19,19 +19,19 @@ export default function FinalCTA({ data }: FinalCTAProps) {
   const link = data?.cta_whatsapp_link || settings?.whatsapp_url || "https://wa.me/60123456789";
 
   return (
-    <section className="bg-[#ffffff] py-24 px-10 text-center">
+    <section className="bg-card py-24 px-10 text-center">
       <div className="max-w-[600px] mx-auto">
-        <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase mb-6">
+        <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-foreground uppercase mb-6">
           {renderedTitle}
         </h2>
-        <p className="text-[15px] leading-relaxed text-[#6b7462] mb-10">
+        <p className="text-[15px] leading-relaxed text-muted-foreground mb-10">
           {description}
         </p>
         <a
           href={link}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2.5 bg-[#11311e] text-white text-[11px] font-bold tracking-[0.13em] uppercase px-8 py-4 hover:bg-[#2a3023] transition-colors duration-200"
+          className="inline-flex items-center gap-2.5 bg-foreground text-background text-[11px] font-bold tracking-[0.13em] uppercase px-8 py-4 hover:bg-foreground/90 transition-colors duration-200"
         >
           <MessageCircle size={14} /> WhatsApp Us Now
         </a>

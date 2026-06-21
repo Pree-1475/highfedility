@@ -42,3 +42,7 @@ out/
 *.sw?
 .vscode/workspace.json
 .vscode/tasks.json
+
+
+#temp images
+temp-all-imgs-vids/

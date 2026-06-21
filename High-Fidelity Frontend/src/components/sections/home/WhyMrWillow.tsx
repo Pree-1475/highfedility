@@ -2,6 +2,10 @@ import { DF, PH } from "../../../lib/constants";
 import { SectionLabel } from "../../ui/SectionLabel";
 import { HomePageData } from "../../../types";
 
+import imgFreeBatKnocking from "../../../assets/images/why mr willow - free bat knobbing.jpg";
+import imgWorkshop from "../../../assets/images/why mr willow - workshop.jpg";
+import imgTrustedBrands from "../../../assets/images/WHY MR WILLOW - TRUSTED BRANDS.jpg";
+
 interface WhyMrWillowProps {
   data?: HomePageData;
 }
@@ -11,23 +15,23 @@ const DEFAULT_CARDS = [
     n: "01",
     label: "COMPLIMENTARY SERVICE",
     title: "FREE BAT KNOCKING",
-    body: "Every bat purchased from MR WILLOW includes complimentary bat knocking, helping prepare it for match play while improving durability and performance.",
+    body: "Every bat purchased from MR WILLOW includes complimentary bat knocking using the only bat knocking machine in JB, helping prepare it for match play while improving durability and performance.",
     video: "https://assets.mixkit.co/videos/preview/mixkit-cricket-player-batting-in-nets-practice-42211-large.mp4",
-    image: PH.act1,
+    image: imgFreeBatKnocking,
   },
   {
     n: "02",
     label: "IN-HOUSE EXPERTISE",
     title: "OWN WORKSHOP",
     body: "Repairs, maintenance and bat care handled in-house by people who understand cricket equipment.",
-    image: PH.act1,
+    image: imgWorkshop,
   },
   {
     n: "03",
     label: "PREMIUM SELECTION",
     title: "TRUSTED BRANDS",
     body: "Equipment from the brands players already know and trust.",
-    image: PH.store,
+    image: imgTrustedBrands,
   },
   {
     n: "04",
@@ -43,17 +47,17 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
 
 
   return (
-    <section className="bg-[#ffffff] pt-20 pb-16 lg:pb-24 px-6 lg:px-10 relative w-full">
+    <section className="bg-card pt-20 pb-16 lg:pb-24 px-6 lg:px-10 relative w-full">
       {/* Header */}
       <div className="max-w-[1400px] mx-auto mb-16 text-center lg:text-left">
         <SectionLabel n="04" label="Why MR.WILLOW" />
         <h2
           style={DF}
-          className="text-[44px] md:text-[56px] font-black leading-[0.9] tracking-tight text-[#11311e] uppercase mt-2"
+          className="text-[44px] md:text-[56px] font-black leading-[0.9] tracking-tight text-foreground uppercase mt-2"
         >
-          Why Players Choose <span className="text-[#11311e]">MR.WILLOW</span>
+          Why Players Choose <span className="text-foreground">MR.WILLOW</span>
         </h2>
-        <p className="mt-4 text-[15px] text-[#6b7462] max-w-xl mx-auto lg:mx-0">
+        <p className="mt-4 text-[15px] text-muted-foreground max-w-xl mx-auto lg:mx-0">
           We're Johor Bahru's cricket hub — where craftsmanship meets the game.
         </p>
       </div>
@@ -64,7 +68,7 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
           return (
             <div
               key={n}
-              className={`why-card sticky w-full bg-[#fdfcf7] rounded-2xl border border-[rgba(28,33,23,0.06)] px-6 pb-6 pt-6 md:px-8 md:pb-8 lg:px-12 lg:pb-12 lg:pt-8 shadow-[0_-10px_30px_rgba(0,0,0,0.015),0_15px_30px_rgba(28,33,23,0.03)] flex items-center`}
+              className={`why-card sticky w-full bg-background rounded-2xl border border-[rgba(28,33,23,0.06)] px-6 pb-6 pt-6 md:px-8 md:pb-8 lg:px-12 lg:pb-12 lg:pt-8 shadow-[0_-10px_30px_rgba(0,0,0,0.015),0_15px_30px_rgba(28,33,23,0.03)] flex items-center`}
               style={{
                 zIndex: index + 10,
                 top: `calc(100px + ${index * 72}px)`,
@@ -77,28 +81,28 @@ export default function WhyMrWillow(_props: WhyMrWillowProps) {
                 {/* Left Column - Copy */}
                 <div className="flex flex-col justify-start h-[260px] md:h-[220px] lg:h-auto lg:h-full lg:justify-center">
                   <div className="flex items-center justify-between mb-4 lg:mb-8">
-                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#11311e] bg-[#11311e]/5 px-3 py-1.5 rounded-full w-max">
+                    <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-foreground bg-foreground/5 px-3 py-1.5 rounded-full w-max">
                       {label}
                     </span>
-                    <span style={DF} className="text-[36px] font-black text-[#11311e] leading-none pt-1">
+                    <span style={DF} className="text-[36px] font-black text-foreground leading-none pt-1">
                       {n}
                     </span>
                   </div>
                   
                   <h3
                     style={DF}
-                    className="text-[32px] md:text-[44px] font-black text-[#11311e] uppercase tracking-tight leading-none mb-4"
+                    className="text-[32px] md:text-[44px] font-black text-foreground uppercase tracking-tight leading-none mb-4"
                   >
                     {title}
                   </h3>
                   
-                  <p className="text-[14px] md:text-[15px] leading-relaxed text-[#6b7462]">
+                  <p className="text-[14px] md:text-[15px] leading-relaxed text-muted-foreground">
                     {body}
                   </p>
                 </div>
 
                 {/* Right Column - Media */}
-                <div className={`relative w-full aspect-video rounded-xl overflow-hidden bg-[#eae8e0] border border-[rgba(28,33,23,0.04)] shadow-inner ${video && image ? 'grid grid-cols-2' : ''}`}>
+                <div className={`relative w-full aspect-video rounded-xl overflow-hidden bg-secondary border border-[rgba(28,33,23,0.04)] shadow-inner ${video && image ? 'grid grid-cols-2' : ''}`}>
                   {video && (
                     <video
                       src={video}

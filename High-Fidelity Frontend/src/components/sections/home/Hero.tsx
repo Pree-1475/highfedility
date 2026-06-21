@@ -43,7 +43,7 @@ const scaleInVariants: any = {
 export default function Hero({ data }: HeroProps) {
   const settings = useBusinessSettings();
   const ref = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -70,7 +70,7 @@ export default function Hero({ data }: HeroProps) {
   const titleLines = data?.hero_title
     ? data.hero_title.split("\n").map(l => l.trim()).filter(l => l)
     : ["GEAR. SERVICE.", "EXPERTISE."];
-    
+
   const midIndex = Math.ceil(titleLines.length / 2);
   const firstHalf = titleLines.slice(0, midIndex).join(" ");
   const secondHalf = titleLines.slice(midIndex).join(" ");
@@ -98,14 +98,17 @@ export default function Hero({ data }: HeroProps) {
     <section
       id="hero"
       ref={ref}
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#fdfbf7] noise-overlay -mt-[72px] pt-[72px]"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-primary -mt-[72px] pt-[72px]"
+      style={{
+        backgroundImage:
+          "repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(255,255,255,0.018) 40px,rgba(255,255,255,0.018) 41px)",
+      }}
     >
-      {/* Subtle gradient background - Cream to warm off-white */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#fdfbf7] via-[#8b7355]/5 to-[#fdfbf7]" />
+      <span className="absolute top-[72px] left-0 right-0 h-[2px] bg-gradient-to-r from-accent via-accent/50 to-transparent" />
 
       {/* Floating Ambient Orbs */}
       <motion.div
-        className="absolute top-20 left-10 w-24 h-24 rounded-full bg-[#8b7355]/15 blur-3xl pointer-events-none"
+        className="absolute top-20 left-10 w-24 h-24 rounded-full bg-accent/15 blur-3xl pointer-events-none"
         animate={{
           x: [0, 30, 0],
           y: [0, -20, 0],
@@ -114,7 +117,7 @@ export default function Hero({ data }: HeroProps) {
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-40 right-20 w-32 h-32 rounded-full bg-[#a7e5b9]/15 blur-3xl pointer-events-none"
+        className="absolute bottom-40 right-20 w-32 h-32 rounded-full bg-accent/10 blur-3xl pointer-events-none"
         animate={{
           x: [0, -40, 0],
           y: [0, 30, 0],
@@ -125,7 +128,7 @@ export default function Hero({ data }: HeroProps) {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-8 pb-0 w-full">
         <div className="grid lg:grid-cols-2 gap-0 lg:gap-8 items-center">
-          
+
           {/* ═══════════════════════════════════════
               LEFT COLUMN — Typography & UI
              ═══════════════════════════════════════ */}
@@ -136,10 +139,10 @@ export default function Hero({ data }: HeroProps) {
               initial="hidden"
               animate="visible"
               custom={0}
-              className="inline-flex items-center gap-2 bg-[#11311e] text-[#fdfbf7] px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-mono tracking-wider shadow-sm"
+              className="inline-flex items-center gap-2 bg-background text-primary px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-mono tracking-wider shadow-sm"
             >
               <motion.span
-                className="w-2 h-2 bg-[#a7e5b9] rounded-full"
+                className="w-2 h-2 bg-accent rounded-full"
                 animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -150,7 +153,7 @@ export default function Hero({ data }: HeroProps) {
             <div className="space-y-1 overflow-hidden py-2">
               <motion.h1
                 style={{ x: textX1 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-[#11311e] leading-[0.9] uppercase"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-primary-foreground leading-[0.9] uppercase"
               >
                 <motion.span
                   variants={fadeUpVariants}
@@ -164,25 +167,25 @@ export default function Hero({ data }: HeroProps) {
               </motion.h1>
               <motion.h1
                 style={{ x: textX2 }}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-[#11311e] leading-[0.9] uppercase"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-[64px] xl:text-[76px] font-black tracking-tighter text-primary-foreground leading-[0.9] uppercase"
               >
                 <motion.span
                   variants={fadeUpVariants}
                   initial="hidden"
                   animate="visible"
                   custom={2}
-                  className="inline-block text-[#8b7355] whitespace-nowrap"
+                  className="inline-block text-accent whitespace-nowrap"
                 >
                   {secondHalf}
                 </motion.span>
               </motion.h1>
-              
+
               <motion.p
                 variants={fadeUpVariants}
                 initial="hidden"
                 animate="visible"
                 custom={3}
-                className="text-[13px] sm:text-[15px] font-mono text-[#11311e]/70 tracking-tight pt-4 max-w-md leading-relaxed"
+                className="text-[13px] sm:text-[15px] font-mono text-primary-foreground/70 tracking-tight pt-4 max-w-md leading-relaxed"
               >
                 {description}
               </motion.p>
@@ -200,13 +203,13 @@ export default function Hero({ data }: HeroProps) {
               {isPrimaryInternal ? (
                 <Link to={primaryLink} className="inline-block">
                   <motion.button
-                    className="bg-[#11311e] text-[#fdfbf7] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[13px] sm:text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
+                    className="bg-background text-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[13px] sm:text-sm tracking-wide flex items-center gap-2 group relative overflow-hidden"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full"
                       whileHover={{ x: "200%" }}
                       transition={{ duration: 0.6 }}
                     />
@@ -230,8 +233,8 @@ export default function Hero({ data }: HeroProps) {
               {isSecondaryInternal ? (
                 <Link to={secondaryLink} className="inline-block">
                   <motion.button
-                    className="border-2 border-[#11311e]/20 text-[#11311e] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[13px] sm:text-sm tracking-wide relative overflow-hidden"
-                    whileHover={{ scale: 1.02, backgroundColor: "#11311e", color: "#fdfbf7", borderColor: "#11311e" }}
+                    className="border-2 border-primary-foreground/20 text-primary-foreground px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-[13px] sm:text-sm tracking-wide relative overflow-hidden"
+                    whileHover={{ scale: 1.02, backgroundColor: "var(--primary-foreground)", color: "var(--primary)", borderColor: "var(--primary-foreground)" }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
@@ -252,12 +255,12 @@ export default function Hero({ data }: HeroProps) {
               {features.map((benefit, i) => (
                 <motion.div
                   key={benefit}
-                  className="flex items-center gap-2 text-[11px] sm:text-xs font-mono text-[#11311e]/60"
+                  className="flex items-center gap-2 text-[11px] sm:text-xs font-mono text-primary-foreground/60"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.8 + i * 0.1 }}
                 >
-                  <div className="w-1.5 h-1.5 bg-[#8b7355] rounded-full" />
+                  <div className="w-1.5 h-1.5 bg-accent rounded-full" />
                   {benefit}
                 </motion.div>
               ))}
@@ -267,12 +270,12 @@ export default function Hero({ data }: HeroProps) {
           {/* ═══════════════════════════════════════
               RIGHT COLUMN — Product Showcase
              ═══════════════════════════════════════ */}
-          <motion.div style={{ y, scale }} className="relative flex justify-center w-full h-[180vw] sm:h-[50vw] lg:h-[600px] pointer-events-auto -mt-12 -mb-16 lg:mt-0 lg:mb-0">
+          <motion.div style={{ y, scale }} className="relative flex justify-center w-full h-[180vw] sm:h-[50vw] lg:h-[600px] pointer-events-auto -mt-12 -mb-16 lg:mt-0 lg:mb-0 -translate-x-5 lg:translate-x-0 -translate-y-8 lg:translate-y-0">
             <motion.div variants={scaleInVariants} initial="hidden" animate="visible" className="relative w-full h-full">
-              
+
               {/* Ambient Glow */}
               <motion.div
-                className="absolute inset-0 bg-[#8b7355]/15 blur-[80px] rounded-full scale-75 pointer-events-none"
+                className="absolute inset-0 bg-accent/15 blur-[80px] rounded-full scale-75 pointer-events-none"
                 animate={{
                   scale: [0.75, 0.85, 0.75],
                   opacity: [0.3, 0.5, 0.3],
@@ -310,9 +313,9 @@ export default function Hero({ data }: HeroProps) {
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="w-5 h-8 border-2 border-[#11311e]/20 rounded-full flex justify-center pt-1.5">
+            <div className="w-5 h-8 border-2 border-primary-foreground/20 rounded-full flex justify-center pt-1.5">
               <motion.div
-                className="w-1 h-2 bg-[#11311e]/30 rounded-full"
+                className="w-1 h-2 bg-primary-foreground/30 rounded-full"
                 animate={{ y: [0, 6, 0], opacity: [1, 0.5, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />

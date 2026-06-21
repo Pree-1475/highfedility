@@ -23,7 +23,7 @@ export default function WorkshopGallery({ data }: WorkshopGalleryProps) {
     : defaultItems;
 
   return (
-    <section className="bg-[#11311e] py-24 px-10 overflow-hidden">
+    <section className="bg-foreground py-24 px-10 overflow-hidden">
       <div className="max-w-[1440px] mx-auto mb-12">
         <SectionLabel n="04" label="Inside the Workshop" />
       </div>
@@ -31,7 +31,7 @@ export default function WorkshopGallery({ data }: WorkshopGalleryProps) {
         <div className="flex gap-6">
           {items.map((item, i) => (
             <div key={i} className="flex-[0_0_80%] md:flex-[0_0_40%] lg:flex-[0_0_30%] min-w-0">
-              <div className="aspect-[4/5] bg-white/10 relative overflow-hidden">
+              <div className="aspect-[4/5] bg-card/10 relative overflow-hidden">
                 {item.type === "video" ? (
                   <video
                     src={item.url}

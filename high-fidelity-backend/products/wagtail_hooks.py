@@ -8,7 +8,7 @@ class ProductViewSet(SnippetViewSet):
     icon = 'tag'
     menu_order = 200
     add_to_admin_menu = True
-    list_display = ('name', 'brand', 'category', 'price', 'is_featured')
+    list_display = ('name', 'brand', 'category', 'admin_display_price', 'is_featured')
     search_fields = ('name', 'brand__name', 'category__name')
 
 register_snippet(ProductViewSet)

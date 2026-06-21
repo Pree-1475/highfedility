@@ -12,7 +12,7 @@ export function MobileNav() {
   ];
 
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#ffffff] rounded-t-[24px] shadow-[0_-8px_30px_rgba(163,124,86,0.06)] z-50 pb-[env(safe-area-inset-bottom)] border-t border-[rgba(163,124,86,0.04)]">
+    <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-secondary rounded-t-[24px] shadow-[0_-8px_30px_rgba(163,124,86,0.06)] z-50 pb-[env(safe-area-inset-bottom)] border-t border-[rgba(163,124,86,0.04)]">
       <div className="flex justify-around items-center h-[76px] px-2 relative">
         {navItems.map((item) => {
           const isActive =
@@ -26,13 +26,13 @@ export function MobileNav() {
               to={item.path}
               className={`flex flex-col items-center justify-center w-full h-full relative transition-all duration-300 ${
                 isActive
-                  ? "text-[#22c55e]"
-                  : "text-[#11311e]/40 hover:text-[#11311e]/70"
+                  ? "text-primary"
+                  : "text-foreground/40 hover:text-foreground/70"
               }`}
             >
               {/* Cricket seam subtle active indicator */}
               {isActive && (
-                <div className="absolute top-0 w-8 h-[3px] rounded-b-md bg-[#22c55e] flex items-center justify-center overflow-hidden">
+                <div className="absolute top-0 w-8 h-[3px] rounded-b-md bg-primary flex items-center justify-center overflow-hidden">
                   <div className="w-full h-[1px] border-b border-dashed border-white/60"></div>
                 </div>
               )}

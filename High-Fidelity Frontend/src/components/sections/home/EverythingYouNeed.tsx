@@ -5,6 +5,11 @@ import { SectionLabel } from "../../ui/SectionLabel";
 import { HomePageData } from "../../../types";
 import { useRef, useState } from "react";
 
+import imgBatKnobbing from "../../../assets/images/everything y need - bat knobbing.jpeg";
+import imgRepairs from "../../../assets/images/everything you need - repairs.jpeg";
+import imgCustomBats from "../../../assets/images/everything you need custom bats.jpg";
+import imgTrainAndPlay from "../../../assets/images/everythinh you need - train and play.jpg";
+
 interface EverythingYouNeedProps {
   data?: HomePageData;
 }
@@ -12,31 +17,31 @@ interface EverythingYouNeedProps {
 export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
   const pillars = [
     {
-      image: PH.hero,
+      image: PH.hero, // Fallback since no specific image was provided for EQUIPMENT
       title: "EQUIPMENT",
       desc: "Bats, gear and accessories from trusted brands.",
       link: "/collections",
     },
     {
-      image: PH.act3,
+      image: imgBatKnobbing,
       title: "BAT KNOCKING",
       desc: "Professional preparation for match-ready performance.",
       link: "/services",
     },
     {
-      image: PH.store,
+      image: imgRepairs,
       title: "REPAIRS",
       desc: "Restore performance and extend equipment lifespan.",
       link: "/services",
     },
     {
-      image: PH.shoes,
+      image: imgCustomBats,
       title: "CUSTOM BATS",
       desc: "Built and prepared for your game.",
       link: "/custom-bats",
     },
     {
-      image: PH.storeC,
+      image: imgTrainAndPlay,
       title: "TRAIN & PLAY",
       desc: "Facilities, equipment and cricket essentials.",
       link: "/training",
@@ -55,12 +60,12 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
   };
 
   return (
-    <section className="bg-[#ffffff] py-12 md:py-16 lg:py-24 px-6 md:px-10 overflow-hidden relative">
+    <section className="bg-card py-12 md:py-16 lg:py-24 px-6 md:px-10 overflow-hidden relative">
       <div className="max-w-[1440px] mx-auto">
         <SectionLabel n="01" label="Overview" />
         <h2
           style={DF}
-          className="text-[44px] md:text-[52px] font-black uppercase tracking-tight text-[#11311e] mb-12"
+          className="text-[44px] md:text-[52px] font-black uppercase tracking-tight text-foreground mb-12"
         >
           EVERYTHING YOU NEED
         </h2>
@@ -79,7 +84,7 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
             >
               {/* Premium Editorial Photo - Square/Shorter Aspect */}
               <div className="aspect-square w-full overflow-hidden rounded-xl relative mb-5">
-                <div className="absolute inset-0 bg-[#11311e]/5 z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
+                <div className="absolute inset-0 bg-foreground/5 z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
                 <img 
                   src={image} 
                   alt={title} 
@@ -91,14 +96,14 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
               <div className="flex flex-col flex-grow px-1">
                 <h3
                   style={DF}
-                  className="text-[18px] md:text-[22px] font-bold tracking-wide text-[#11311e] mb-2 uppercase leading-tight"
+                  className="text-[18px] md:text-[22px] font-bold tracking-wide text-foreground mb-2 uppercase leading-tight"
                 >
                   {title}
                 </h3>
-                <p className="text-[13px] leading-relaxed text-[#6b7462] flex-grow mb-5">
+                <p className="text-[13px] leading-relaxed text-muted-foreground flex-grow mb-5">
                   {desc}
                 </p>
-                <div className="flex items-center gap-1.5 mt-auto text-[10px] font-bold tracking-[0.16em] uppercase text-[#11311e]">
+                <div className="flex items-center gap-1.5 mt-auto text-[10px] font-bold tracking-[0.16em] uppercase text-foreground">
                   <span>Explore</span>
                   <ArrowRight
                     size={12}
@@ -116,7 +121,7 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
             <div 
               key={i}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === activeIndex ? "w-6 bg-[#11311e]" : "w-1.5 bg-[#11311e]/20"
+                i === activeIndex ? "w-6 bg-foreground" : "w-1.5 bg-foreground/20"
               }`}
             />
           ))}

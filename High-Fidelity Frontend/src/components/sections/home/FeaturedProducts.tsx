@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import { DF, PH } from "../../../lib/constants";
 import { SectionLabel } from "../../ui/SectionLabel";
 import { apiFetch } from "../../../services/api";
+import { useCurrency } from "../../../contexts/CurrencyContext";
 
 const DEFAULT_PRODUCTS = [
   {
@@ -61,10 +62,12 @@ const DEFAULT_PRODUCTS = [
     photo: PH.act2,
     tag: "Match Ready",
     pos: "object-center",
+    price: "95"
   },
 ];
 
 export default function FeaturedProducts() {
+  const { formatPrice } = useCurrency();
   const [currentIndex, setCurrentIndex] = useState(3); // Start at the first real product (offset by 3 clones)
   const [disableTransition, setDisableTransition] = useState(false);
   const [products, setProducts] = useState<any[]>(DEFAULT_PRODUCTS);
@@ -79,6 +82,7 @@ export default function FeaturedProducts() {
             brand: p.brand,
             name: p.name,
             sub: p.sub,
+            price: p.price,
             photo: p.photo || DEFAULT_PRODUCTS[idx % DEFAULT_PRODUCTS.length].photo,
             tag: DEFAULT_PRODUCTS[idx % DEFAULT_PRODUCTS.length].tag,
             pos: p.pos || "object-center"
@@ -162,14 +166,14 @@ export default function FeaturedProducts() {
   const realIndex = (currentIndex - 3 + products.length) % products.length;
 
   return (
-    <section className="bg-white relative overflow-hidden pt-20 pb-6 lg:pt-28 lg:pb-12">
+    <section className="bg-background relative overflow-hidden pt-20 pb-6 lg:pt-28 lg:pb-12">
       <div className="relative z-10 w-full mb-6">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <SectionLabel n="02" label="Featured Products" />
             <h2
               style={DF}
-              className="text-[44px] md:text-[52px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase"
+              className="text-[44px] md:text-[52px] font-black leading-[0.88] tracking-tight text-foreground uppercase"
             >
               Premium
               <br />
@@ -179,20 +183,20 @@ export default function FeaturedProducts() {
 
           {/* Navigation Controls */}
           <div className="flex items-center gap-4 md:gap-6 flex-wrap md:flex-nowrap">
-            <span style={DF} className="text-[18px] font-bold text-[#11311e]/40 tracking-wider">
-              0{realIndex + 1} <span className="text-[#11311e]/20">/</span> 0{products.length}
+            <span style={DF} className="text-[18px] font-bold text-foreground/40 tracking-wider">
+              0{realIndex + 1} <span className="text-foreground/20">/</span> 0{products.length}
             </span>
             <div className="flex gap-2">
               <button
                 onClick={prevSlide}
-                className="w-12 h-12 rounded-full border border-[#11311e]/20 flex items-center justify-center text-[#11311e] hover:bg-[#11311e] hover:text-white hover:scale-105 transition-all duration-300"
+                className="w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background hover:scale-105 transition-all duration-300"
                 aria-label="Previous slide"
               >
                 <ArrowLeft size={18} strokeWidth={2} />
               </button>
               <button
                 onClick={nextSlide}
-                className="w-12 h-12 rounded-full border border-[#11311e]/20 flex items-center justify-center text-[#11311e] hover:bg-[#11311e] hover:text-white hover:scale-105 transition-all duration-300"
+                className="w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center text-foreground hover:bg-foreground hover:text-background hover:scale-105 transition-all duration-300"
                 aria-label="Next slide"
               >
                 <ArrowRight size={18} strokeWidth={2} />
@@ -200,7 +204,7 @@ export default function FeaturedProducts() {
             </div>
             <Link
               to="/collections"
-              className="inline-flex items-center justify-center border border-[#11311e] text-[#11311e] hover:bg-[#11311e] hover:text-white text-[10px] md:text-[11px] font-bold tracking-[0.16em] uppercase px-5 py-3.5 transition-all duration-300 h-max w-max"
+              className="inline-flex items-center justify-center border border-foreground text-foreground hover:bg-foreground hover:text-background text-[10px] md:text-[11px] font-bold tracking-[0.16em] uppercase px-5 py-3.5 transition-all duration-300 h-max w-max"
             >
               View Collection
             </Link>
@@ -221,7 +225,7 @@ export default function FeaturedProducts() {
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEndAction}
         >
-          {clonedProducts.map(({ brand, name, sub, photo, tag, pos }, index) => {
+          {clonedProducts.map(({ brand, name, sub, price, photo, tag, pos }, index) => {
             const isActive = index === currentIndex;
             const productSlug = `${brand}-${name}`.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
@@ -242,32 +246,38 @@ export default function FeaturedProducts() {
                   }
                 }}
               >
-                <div className="bg-white h-full flex flex-col border border-[rgba(28,33,23,0.06)] group text-left">
-                  <div className="relative overflow-hidden bg-[#eae8e0] aspect-[3/4]">
+                <div className="bg-card h-full flex flex-col border border-[rgba(28,33,23,0.06)] group text-left">
+                  <div className="relative overflow-hidden bg-secondary aspect-[3/4]">
                     <img
                       src={photo}
                       alt={name}
                       className={`w-full h-full object-cover ${pos} transition-transform duration-700 ease-out ${isActive ? "group-hover:scale-105" : ""}`}
                     />
-                    <span className="absolute top-4 left-4 bg-[#11311e] text-white text-[9px] font-bold tracking-[0.16em] uppercase px-2.5 py-1.5 z-10">
+                    <span className="absolute top-4 left-4 bg-foreground text-background text-[9px] font-bold tracking-[0.16em] uppercase px-2.5 py-1.5 z-10">
                       {tag}
                     </span>
                   </div>
 
-                  <div className="pt-5 pb-6 px-6 flex-grow bg-white">
-                    <p className="text-[9px] font-bold tracking-[0.22em] uppercase text-[#6b7462] mb-1.5">
+                  <div className="pt-5 pb-6 px-6 flex-grow bg-card">
+                    <p className="text-[9px] font-bold tracking-[0.22em] uppercase text-muted-foreground mb-1.5">
                       {brand}
                     </p>
                     <h3
                       style={DF}
-                      className="text-[22px] font-bold text-[#11311e] leading-tight tracking-wide uppercase mb-1.5"
+                      className="text-[22px] font-bold text-foreground leading-tight tracking-wide uppercase mb-1.5"
                     >
                       {name}
                     </h3>
-                    <p className="text-[13px] text-[#6b7462] mb-5">{sub}</p>
+                    <p className="text-[13px] text-muted-foreground mb-5">{sub}</p>
+                    
+                    {price && (
+                      <p style={DF} className="text-[18px] font-bold text-foreground mb-4 mt-auto">
+                        {formatPrice(price)}
+                      </p>
+                    )}
 
                     <span
-                      className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.16em] uppercase text-[#11311e]/60 group-hover:text-[#11311e] transition-colors duration-300"
+                      className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.16em] uppercase text-foreground/60 group-hover:text-foreground transition-colors duration-300"
                     >
                       Enquire In-Store
                       <ArrowRight

@@ -18,7 +18,7 @@ export default function KnockingMachineUSP({ data }: KnockingMachineUSPProps) {
       <span key={idx}>
         {parts.map((part, pIdx) => {
           if (part === "Match Play.") {
-            return <span key={pIdx} className="text-[#11311e]">Match Play.</span>;
+            return <span key={pIdx} className="text-foreground">Match Play.</span>;
           }
           return part;
         })}
@@ -38,31 +38,31 @@ export default function KnockingMachineUSP({ data }: KnockingMachineUSPProps) {
   ];
 
   return (
-    <section className="bg-[#ffffff] py-24 px-10">
+    <section className="bg-card py-24 px-10">
       <div className="max-w-[1440px] mx-auto grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
-        <div className="relative aspect-square overflow-hidden bg-[#ddd9cf]">
+        <div className="relative aspect-square overflow-hidden bg-secondary">
           <img src={imageSrc} alt="Bat Knocking Machine" className="w-full h-full object-cover" />
-          <div className="absolute bottom-6 left-6 right-6 bg-white p-6 shadow-lg">
-            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#6b7462] mb-1">{badge}</p>
-            <p style={DF} className="text-[24px] font-black uppercase text-[#11311e] leading-none">{badgeText}</p>
+          <div className="absolute bottom-6 left-6 right-6 bg-card p-6 shadow-lg">
+            <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-muted-foreground mb-1">{badge}</p>
+            <p style={DF} className="text-[24px] font-black uppercase text-foreground leading-none">{badgeText}</p>
           </div>
         </div>
         <div>
           <SectionLabel n="02" label="Our Speciality" />
-          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-[#11311e] uppercase mb-6">
+          <h2 style={DF} className="text-[48px] font-black leading-[0.88] tracking-tight text-foreground uppercase mb-6">
             {renderedTitle}
           </h2>
-          <p className="text-[15px] leading-relaxed text-[#6b7462] mb-6">
+          <p className="text-[15px] leading-relaxed text-muted-foreground mb-6">
             {desc1}
           </p>
-          <p className="text-[15px] leading-relaxed text-[#6b7462] mb-8">
+          <p className="text-[15px] leading-relaxed text-muted-foreground mb-8">
             {desc2}
           </p>
           <ul className="flex flex-col gap-4">
             {bullets.map((item, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="text-[#11311e] mt-1">✦</span>
-                <span className="text-[14px] font-semibold text-[#11311e]">{item}</span>
+                <span className="text-foreground mt-1">✦</span>
+                <span className="text-[14px] font-semibold text-foreground">{item}</span>
               </li>
             ))}
           </ul>
