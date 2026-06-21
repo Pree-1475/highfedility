@@ -1,8 +1,20 @@
 import { Link, useLocation } from "react-router";
 import { Home, Package, Hammer, MapPin } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export function MobileNav() {
   const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", fn);
+    fn();
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
+
+  const isHomePage = location.pathname === "/";
+  const hidden = isHomePage && !scrolled;
 
   const navItems = [
     { name: "Home", path: "/", icon: <Home size={20} strokeWidth={1.5} /> },
@@ -12,7 +24,7 @@ export function MobileNav() {
   ];
 
   return (
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-secondary rounded-t-[24px] shadow-[0_-8px_30px_rgba(163,124,86,0.06)] z-50 pb-[env(safe-area-inset-bottom)] border-t border-[rgba(163,124,86,0.04)]">
+    <nav className={`lg:hidden fixed bottom-0 left-0 right-0 bg-secondary rounded-t-[24px] shadow-[0_-8px_30px_rgba(163,124,86,0.06)] z-50 pb-[env(safe-area-inset-bottom)] border-t border-[rgba(163,124,86,0.04)] transition-transform duration-500 ${hidden ? "translate-y-full" : "translate-y-0"}`}>
       <div className="flex justify-around items-center h-[76px] px-2 relative">
         {navItems.map((item) => {
           const isActive =

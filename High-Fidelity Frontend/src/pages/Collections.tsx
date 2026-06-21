@@ -4,6 +4,7 @@ import { PH } from "../lib/constants";
 import { useInquiry } from "../contexts/InquiryContext";
 import { getProducts } from "../services/products";
 import { useBusinessSettings } from "../contexts/BusinessSettingsContext";
+import { SetNavTheme } from "../contexts/NavigationThemeContext";
 
 // Modularized section components
 import CollectionsHero from "../components/sections/collections/CollectionsHero";
@@ -235,6 +236,7 @@ export default function Collections() {
 
   return (
     <div className="bg-[#ffffff] min-h-screen pb-20">
+      <SetNavTheme theme="dark" />
       <CollectionsHero />
 
       <div className="w-full max-w-[1920px] mx-auto px-4 lg:px-6 mt-12 grid lg:grid-cols-[180px_1fr] gap-6 items-start">

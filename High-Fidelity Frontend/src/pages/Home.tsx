@@ -9,6 +9,7 @@ import CustomBatsSection from "../components/sections/home/CustomBats";
 import Community from "../components/sections/home/Community";
 import { getHomepageData } from "../services/homepage";
 import { HomePageData } from "../types";
+import { SetNavTheme } from "../contexts/NavigationThemeContext";
 
 export default function Home() {
   const [data, setData] = useState<HomePageData | undefined>(undefined);
@@ -48,6 +49,7 @@ export default function Home() {
 
   return (
     <>
+      <SetNavTheme theme="dark" />
       <Hero data={data} />
       <EverythingYouNeed data={data} />
       <BrandMarquee />

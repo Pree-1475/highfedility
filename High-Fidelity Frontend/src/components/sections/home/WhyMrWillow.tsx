@@ -16,7 +16,6 @@ const DEFAULT_CARDS = [
     label: "COMPLIMENTARY SERVICE",
     title: "FREE BAT KNOCKING",
     body: "Every bat purchased from MR WILLOW includes complimentary bat knocking using the only bat knocking machine in JB, helping prepare it for match play while improving durability and performance.",
-    video: "https://assets.mixkit.co/videos/preview/mixkit-cricket-player-batting-in-nets-practice-42211-large.mp4",
     image: imgFreeBatKnocking,
   },
   {

@@ -98,13 +98,12 @@ export default function Hero({ data }: HeroProps) {
     <section
       id="hero"
       ref={ref}
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-primary -mt-[72px] pt-[72px]"
+      className="relative bg-primary min-h-screen flex flex-col items-center justify-center overflow-hidden w-full pt-[100px] pb-12"
       style={{
         backgroundImage:
           "repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(255,255,255,0.018) 40px,rgba(255,255,255,0.018) 41px)",
       }}
     >
-      <span className="absolute top-[72px] left-0 right-0 h-[2px] bg-gradient-to-r from-accent via-accent/50 to-transparent" />
 
       {/* Floating Ambient Orbs */}
       <motion.div
@@ -285,7 +284,7 @@ export default function Hero({ data }: HeroProps) {
 
               {/* Levitating Asset wrapper */}
               <motion.div
-                className="absolute inset-0 z-10 drop-shadow-2xl"
+                className="absolute inset-0 z-10"
                 animate={{
                   y: [0, -15, 0],
                   rotate: [0, 2, 0],

@@ -19,9 +19,9 @@ export default function ProductCard({
   return (
     <div 
       id={`product-${productSlug}`}
-      className="group flex flex-col h-full bg-card border border-transparent hover:border-[rgba(28,33,23,0.1)] transition-all duration-500"
+      className="group flex flex-col h-full bg-card border border-transparent rounded-2xl overflow-hidden hover:border-[rgba(28,33,23,0.1)] transition-all duration-500"
     >
-      <div className="relative overflow-hidden bg-secondary aspect-[3/4]">
+      <div className="relative bg-secondary aspect-[3/4]">
         <img 
           src={product.photo || PH.hero} 
           alt={product.name} 

@@ -6,10 +6,12 @@ interface KnockingMachineUSPProps {
   data?: WorkshopData;
 }
 
+import imgSpecialty from "../../../assets/images/Workshop services - Our Specialty.png";
+
 export default function KnockingMachineUSP({ data }: KnockingMachineUSPProps) {
   const badge = data?.usp_badge || "Exclusive";
   const badgeText = data?.usp_badge_text || "The Only Knocking Machine in JB";
-  const imageSrc = data?.usp_image || PH.storeB;
+  const imageSrc = data?.usp_image || imgSpecialty;
 
   const titleText = data?.usp_title || "Ready for\nMatch Play.";
   const renderedTitle = titleText.split("\n").map((line, idx) => {

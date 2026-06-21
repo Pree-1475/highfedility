@@ -17,7 +17,7 @@ export function Footer() {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <footer ref={footerRef} className="relative bg-foreground pt-0 md:pt-24 pb-[100px] lg:pb-6 overflow-hidden flex flex-col justify-between">
+    <footer ref={footerRef} className="relative bg-primary pt-0 md:pt-24 pb-[100px] lg:pb-6 overflow-hidden flex flex-col justify-between">
       <div className="max-w-[1440px] w-full mx-auto px-6 md:px-10 relative z-10">
 
         {/* Info Grid (Brand Area + Essential Info) */}

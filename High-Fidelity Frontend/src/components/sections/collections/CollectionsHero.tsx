@@ -3,7 +3,7 @@ import { SectionLabel } from "../../ui/SectionLabel";
 
 export default function CollectionsHero() {
   return (
-    <section className="bg-primary text-primary-foreground pt-20 pb-16 px-10 relative overflow-hidden">
+    <section className="bg-primary text-primary-foreground pt-[120px] pb-12 px-10 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(255,255,255,0.018) 40px,rgba(255,255,255,0.018) 41px)" }} />
       <div className="w-full max-w-[1920px] mx-auto relative z-10">
         <SectionLabel n="01" label="Shop Collections" />

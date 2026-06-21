@@ -3,11 +3,15 @@ import { useEffect, useRef } from "react";
 import { DF, PH } from "../../../lib/constants";
 import { useBusinessSettings } from "../../../contexts/BusinessSettingsContext";
 
+import centerVideo from "../../../assets/images/center video.mp4";
+import centerLeftVideo from "../../../assets/images/home - life at mr wilow - centerleft.mp4";
+import centerRightVideo from "../../../assets/images/center right.mp4";
+
 const SOCIAL_MEDIA = [
   { id: "m1", type: "image", src: PH.act2, translateY: "translate-y-0 lg:translate-y-0" },
-  { id: "m2", type: "video", src: "https://res.cloudinary.com/dazmuwwsq/video/upload/v1/samples/elephants.mp4", translateY: "translate-y-6 lg:translate-y-20" },
-  { id: "m3", type: "video", src: "https://res.cloudinary.com/dazmuwwsq/video/upload/v1/samples/sea-turtle.mp4", translateY: "translate-y-12 lg:translate-y-40" },
-  { id: "m4", type: "video", src: "https://res.cloudinary.com/dazmuwwsq/video/upload/v1/samples/cld-sample-video.mp4", translateY: "translate-y-6 lg:translate-y-20" },
+  { id: "m2", type: "video", src: centerLeftVideo, translateY: "translate-y-6 lg:translate-y-20" },
+  { id: "m3", type: "video", src: centerVideo, translateY: "translate-y-12 lg:translate-y-40" },
+  { id: "m4", type: "video", src: centerRightVideo, translateY: "translate-y-6 lg:translate-y-20" },
   { id: "m5", type: "image", src: PH.storeB, translateY: "translate-y-0 lg:translate-y-0" },
 ];
 

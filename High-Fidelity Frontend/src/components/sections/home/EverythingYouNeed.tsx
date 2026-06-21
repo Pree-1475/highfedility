@@ -8,7 +8,8 @@ import { useRef, useState } from "react";
 import imgBatKnobbing from "../../../assets/images/everything y need - bat knobbing.jpeg";
 import imgRepairs from "../../../assets/images/everything you need - repairs.jpeg";
 import imgCustomBats from "../../../assets/images/everything you need custom bats.jpg";
-import imgTrainAndPlay from "../../../assets/images/everythinh you need - train and play.jpg";
+import imgEquipment from "../../../assets/images/everything youneed - equipment.jpg";
+import imgTrainAndPlay from "../../../assets/images/everything you need - train and play.jpg";
 
 interface EverythingYouNeedProps {
   data?: HomePageData;
@@ -17,7 +18,7 @@ interface EverythingYouNeedProps {
 export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
   const pillars = [
     {
-      image: PH.hero, // Fallback since no specific image was provided for EQUIPMENT
+      image: imgEquipment,
       title: "EQUIPMENT",
       desc: "Bats, gear and accessories from trusted brands.",
       link: "/collections",
@@ -62,13 +63,15 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
   return (
     <section className="bg-card py-12 md:py-16 lg:py-24 px-6 md:px-10 overflow-hidden relative">
       <div className="max-w-[1440px] mx-auto">
-        <SectionLabel n="01" label="Overview" />
-        <h2
-          style={DF}
-          className="text-[44px] md:text-[52px] font-black uppercase tracking-tight text-foreground mb-12"
-        >
-          EVERYTHING YOU NEED
-        </h2>
+        <div className="mb-10">
+          <SectionLabel n="01" label="Overview" />
+          <h2
+            style={DF}
+            className="text-[44px] md:text-[52px] font-black leading-[0.88] tracking-tight text-foreground uppercase"
+          >
+            EVERYTHING YOU NEED
+          </h2>
+        </div>
 
         {/* Carousel / Grid Container */}
         <div 
@@ -82,14 +85,13 @@ export default function EverythingYouNeed(_props: EverythingYouNeedProps) {
               to={link}
               className="flex flex-col group w-[60%] sm:w-[240px] lg:w-auto shrink-0 snap-center lg:snap-start transition-all duration-300"
             >
-              {/* Premium Editorial Photo - Square/Shorter Aspect */}
-              <div className="aspect-square w-full overflow-hidden rounded-xl relative mb-5">
-                <div className="absolute inset-0 bg-foreground/5 z-10 pointer-events-none transition-opacity duration-300 group-hover:opacity-0" />
+              <div className="aspect-square w-full overflow-hidden rounded-xl relative mb-5 bg-foreground/5">
                 <img 
                   src={image} 
                   alt={title} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" 
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/25 pointer-events-none z-10" />
               </div>
 
               {/* Text Content - No borders, sitting on background */}

@@ -10,23 +10,26 @@ import Training from "../pages/Training";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import { BusinessSettingsProvider } from "../contexts/BusinessSettingsContext";
+import { NavigationThemeProvider } from "../contexts/NavigationThemeContext";
 
 export default function App() {
   return (
     <BusinessSettingsProvider>
-      <GlobalLoader />
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="collections" element={<Collections />} />
-          <Route path="services" element={<Services />} />
-          <Route path="custom-bats" element={<CustomBats />} />
-          <Route path="training" element={<Training />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-        </Route>
-      </Routes>
+      <NavigationThemeProvider>
+        <GlobalLoader />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="collections" element={<Collections />} />
+            <Route path="services" element={<Services />} />
+            <Route path="custom-bats" element={<CustomBats />} />
+            <Route path="training" element={<Training />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </NavigationThemeProvider>
     </BusinessSettingsProvider>
   );
 }

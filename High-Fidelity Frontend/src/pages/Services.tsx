@@ -6,6 +6,9 @@ import FinalCTA from "../components/sections/services/FinalCTA";
 import { getWorkshopData } from "../services/workshop";
 import { WorkshopData } from "../types";
 import { DF, PH } from "../lib/constants";
+import { SetNavTheme } from "../contexts/NavigationThemeContext";
+
+import imgServicesHero from "../assets/images/workshop services - hero.jpg";
 
 export default function Services() {
   const [data, setData] = useState<WorkshopData | undefined>(undefined);
@@ -44,21 +47,22 @@ export default function Services() {
   }, [data]);
 
   return (
-    <div className="min-h-screen bg-[#ffffff]">
+    <div className="min-h-screen bg-card">
+      <SetNavTheme theme="light" />
       {/* Minimalist Editorial Hero */}
-      <div className="pt-[70px] md:pt-[80px] pb-12 lg:pb-20 px-6 lg:px-10 max-w-[1440px] mx-auto">
+      <div className="pt-[142px] md:pt-[152px] pb-12 lg:pb-20 px-6 lg:px-10 max-w-[1440px] mx-auto">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-20 items-end">
           <div className="flex flex-col pb-4 lg:pb-8">
             <h1 style={DF} className="text-[52px] md:text-[80px] lg:text-[100px] xl:text-[120px] leading-[0.85] tracking-tight font-black text-[#11311e] uppercase mb-6">
               Workshop<br />Services
             </h1>
             <p className="text-[13px] md:text-[15px] leading-relaxed text-[#6b7462] max-w-md">
-              {data?.hero_description || "Expert repairs, professional bat knocking, and premium craftsmanship designed to extend the lifespan and performance of your gear."}
+              Expert repairs, professional bat knocking, and premium craftsmanship designed to extend the lifespan and performance of your gear.
             </p>
           </div>
           <div className="h-[40vh] md:h-[50vh] lg:h-[60vh] w-full overflow-hidden rounded-2xl relative">
             <img 
-              src={data?.hero_image || PH.act3} 
+              src={imgServicesHero} 
               alt="Workshop Services" 
               className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out hover:scale-105" 
             />
@@ -66,10 +70,10 @@ export default function Services() {
         </div>
       </div>
 
-      <KnockingMachineUSP data={data} />
-      <ServicesGrid data={data} />
+      <KnockingMachineUSP />
+      <ServicesGrid />
       <WorkshopGallery data={data} />
-      <FinalCTA data={data} />
+      <FinalCTA />
     </div>
   );
 }

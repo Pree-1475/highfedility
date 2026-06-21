@@ -2,10 +2,12 @@ import CoachingPrograms from "../components/sections/training/CoachingPrograms";
 import FacilitiesAndBenefits from "../components/sections/training/FacilitiesAndBenefits";
 import EnrollmentCTA from "../components/sections/training/EnrollmentCTA";
 import { DF, PH } from "../lib/constants";
+import { SetNavTheme } from "../contexts/NavigationThemeContext";
 
 export default function Training() {
   return (
     <div className="min-h-screen bg-[#ffffff]">
+      <SetNavTheme theme="dark" />
       {/* The Simple Banner Header */}
       <div className="w-full h-[40vh] relative overflow-hidden rounded-b-[2rem] mb-12 lg:mb-20">
         <img src={PH.act2} alt="Training" className="absolute inset-0 w-full h-full object-cover" />
