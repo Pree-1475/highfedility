@@ -20,7 +20,7 @@
 
 /* ── Product Slider Track ───────────────────────────────────────────────────── */
 .fp-slider-track {
-  --card-w: 280px;
+  --card-w: 240px;
   --gap: 1.5rem;
   padding-left: 24px;
   padding-right: 24px;
@@ -29,10 +29,10 @@
 
 @media (min-width: 1024px) {
   .fp-slider-track {
-    --card-w: 320px;
+    --card-w: 280px;
     --gap: 2rem;
-    padding-left: calc(50vw - 160px);
-    padding-right: calc(50vw - 160px);
+    padding-left: calc(50vw - 140px);
+    padding-right: calc(50vw - 140px);
   }
 }
 

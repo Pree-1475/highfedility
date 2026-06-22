@@ -3,7 +3,7 @@ import { SectionLabel } from "../../ui/SectionLabel";
 
 export default function FacilitiesAndBenefits() {
   return (
-    <section className="bg-card py-24 px-10 border-t border-[rgba(28,33,23,0.06)]">
+    <section className="bg-card pt-12 pb-24 px-6 lg:px-10 border-t border-[rgba(28,33,23,0.06)]">
       <div className="max-w-[1440px] mx-auto grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
         <div className="relative overflow-hidden bg-secondary aspect-square">
           <img src={PH.act2} alt="Coaching Session" className="w-full h-full object-cover" />

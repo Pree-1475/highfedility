@@ -10,7 +10,7 @@ export default function CoachingPrograms() {
   ];
 
   return (
-    <section className="bg-card py-24 px-10">
+    <section className="bg-card pt-24 pb-12 px-6 lg:px-10">
       <div className="max-w-[1440px] mx-auto">
         <div className="mb-12">
           <SectionLabel n="02" label="Our Programs" />

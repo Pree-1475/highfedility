@@ -10,7 +10,7 @@ import imgTraining from "../../../assets/images/shop by category - training and 
 
 export default function ShopByCategory() {
   return (
-    <section className="bg-background py-12 md:py-16 lg:py-20 px-6 lg:px-10">
+    <section className="bg-background pt-8 pb-12 md:pt-10 md:pb-16 lg:pt-12 lg:pb-20 px-6 lg:px-10">
       <div className="max-w-[1440px] mx-auto">
         <div className="mb-10">
           <SectionLabel n="03" label="Shop By Category" />

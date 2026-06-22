@@ -233,7 +233,7 @@ export default function FeaturedProducts() {
               <Link
                 key={`${name}-${index}`}
                 to={`/collections?product=${productSlug}`}
-                className={`w-[280px] lg:w-[320px] shrink-0 transition-all duration-700 ease-out cursor-pointer block ${isActive
+                className={`w-[240px] lg:w-[280px] shrink-0 transition-all duration-700 ease-out cursor-pointer block ${isActive
                   ? "opacity-100 scale-100 blur-none z-20 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]"
                   : "opacity-35 scale-95 blur-[1px] z-10"
                   }`}
